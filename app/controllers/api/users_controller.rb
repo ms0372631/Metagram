@@ -1,26 +1,27 @@
 class Api::UsersController < ApplicationController
 
-  before_action :require_logout, only: [:create]
+  
+  # before_action :require_logout, only: [:create]
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.save
-      login(@user)
+      login!(@user)
+      render :show
     else
-      flash.now[:errors] = @user.errors.full_messages
-      render :json
+      render json: ['invalid username/password combination'], status: 401
     end
   end
 
   def show
     @user = User.find(params[:id])
-    render :json
+    render :json ['invalid username/password combination'], status: 402
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :email, :fullname)
   end
 
 end

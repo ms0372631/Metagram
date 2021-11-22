@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :logged_in?
+    
+    protect_from_forgery :except => [:index, :show]
+    helper_method :current_user, :logged_in?
     
     private
 
@@ -8,18 +10,18 @@ class ApplicationController < ActionController::Base
     end
 
     def require_login
-        redirect_to new_session_url unless logged_in?
+        # redirect_to new_session_url unless logged_in?
     end
 
     def require_logout
-        redirect_to users_url if logged_in?
+        # redirect_to users_url if logged_in?
     end
 
     def logged_in?
         !!current_user
     end
 
-    def log_in(user)
+    def login!(user)
         session[:session_token] = user.reset_session_token!
     end
 

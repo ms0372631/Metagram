@@ -12,12 +12,21 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  clearState() {
+    this.setState({
+      username: '',
+      password: '',
+      email: '',
+      fullname: ''
+    });
+  }
   
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    console.log(user);
     this.props.processForm(user);
+    this.clearState();
   }
 
   update(field) {
@@ -47,13 +56,15 @@ class SessionForm extends React.Component {
       action = (
         <>
           <p>Have an account?</p>
-          <Link to="/login">Login</Link>
+          <Link className="link" to="/login">Login</Link>
         </>
       )
       signupInfo = (
         <>
-          <input type="text" value={this.props.email} onChange={this.update('email')}/>
-          <input type="text" value={this.props.fullname} onChange={this.update('fullname')}/>
+          <p>email</p>
+          <input type="text" value={this.state.email} onChange={this.update('email')}/>
+          <p>fullname</p>
+          <input type="text" value={this.state.fullname} onChange={this.update('fullname')}/>
         </>
       )
     }
@@ -61,19 +72,25 @@ class SessionForm extends React.Component {
       action = (
         <>
           <p>Don't have an account?</p>
-          <Link to="/signup">Signup</Link>
+          <Link className="link" to="/signup">Signup</Link>
         </>
       )
     }
     return (
-      <div>
-        <div>
-          <h3>Instagram</h3>
-            <form onSubmit={this.handleSubmit}>
+      <div className="container">
+        <div className="box">
+          <h3 className="heading">Instagram</h3>
+            <form className="login-form" onSubmit={this.handleSubmit}>
               {signupInfo}
-              <input type="text" value={this.props.username} onChange={this.update('username')}/>
-              <input type="password" value={this.props.password} onChange={this.update('password')}/>
-              <input type="submit" value={this.props.formType}/>
+              <div class="field">
+                <input id="username" type="username" placeholder="Phone number, username, or email" value={this.state.username} onChange={this.update('username')}/>
+                <label for="username">username</label>
+              </div>
+              <div class="field">
+                <input type="password" type="password" placeholder="password" value={this.state.password} onChange={this.update('password')}/>
+                <label for="password">password</label>
+              </div>
+            <button className="login-button" title="login" type="submit" >{this.props.formType}</button>
             </form>
             <p>OR</p>
             {this.renderErrors}

@@ -101,11 +101,12 @@ class SessionForm extends React.Component {
                 <i className="fa fa-facebook-official fb-icon"></i>
                 <span className="">Log in with Facebook</span>
               </button>
+              <a className="forgot-password" href="#">Forgot password?</a>
               </div>
             </form>
             {this.renderErrors}
         </div>
-        <div>
+        <div className="box">
             {action}
         </div>
       </div>

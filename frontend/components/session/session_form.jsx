@@ -51,44 +51,51 @@ class SessionForm extends React.Component {
   render() {
     let action;
     let signupInfo;
+    let usernameInfo;
 
     if (this.props.formType === 'Sign up') {
       action = (
         <>
           <p>Have an account?</p>
-          <Link className="link" to="/login">Login</Link>
+          <Link className="signup" to="/login">{this.props.formType}</Link>
         </>
       )
       signupInfo = (
         <>
-          <p>email</p>
-          <input type="text" value={this.state.email} onChange={this.update('email')}/>
-          <p>fullname</p>
-          <input type="text" value={this.state.fullname} onChange={this.update('fullname')}/>
+          <div className="field">
+            <input id="email" type="email" placeholder="Phone number, username, or email" value={this.state.email} onChange={this.update('email')} />
+            <label for="email">Mobile Number or Email</label>
+          </div>
+          <div className="field">
+            <input id="fullname" type="fullname" placeholder="fullname" value={this.state.fullname} onChange={this.update('fullname')} />
+            <label for="fullname">Full Name</label>
+          </div>
         </>
       )
+      usernameInfo = <label for="username">Username</label>
     }
     else {
       action = (
         <>
           <p>Don't have an account?</p>
-          <Link className="link" to="/signup">Signup</Link>
+          <Link className="signup" to="/signup">{this.props.formType}</Link>
         </>
       )
+      usernameInfo = <label for="username">Phone number, username, or email</label>
     }
     return (
       <div className="container">
         <div className="box">
-          <h3 className="heading">Instagram</h3>
+          <h3 className="heading"></h3>
             <form className="login-form" onSubmit={this.handleSubmit}>
               {signupInfo}
               <div className="field">
                 <input id="username" type="username" placeholder="Phone number, username, or email" value={this.state.username} onChange={this.update('username')}/>
-                <label for="username">username</label>
+              {usernameInfo}
               </div>
               <div className="field">
-                <input type="password" type="password" placeholder="password" value={this.state.password} onChange={this.update('password')}/>
-                <label for="password">password</label>
+                <input id="password" type="password" placeholder="Password" value={this.state.password} onChange={this.update('password')}/>
+                <label for="password">Password</label>
               </div>
               <button className="login-button" title="login" type="submit" >{this.props.formType}</button>
               <div className="separator">

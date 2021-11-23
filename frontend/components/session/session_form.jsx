@@ -82,17 +82,27 @@ class SessionForm extends React.Component {
           <h3 className="heading">Instagram</h3>
             <form className="login-form" onSubmit={this.handleSubmit}>
               {signupInfo}
-              <div class="field">
+              <div className="field">
                 <input id="username" type="username" placeholder="Phone number, username, or email" value={this.state.username} onChange={this.update('username')}/>
                 <label for="username">username</label>
               </div>
-              <div class="field">
+              <div className="field">
                 <input type="password" type="password" placeholder="password" value={this.state.password} onChange={this.update('password')}/>
                 <label for="password">password</label>
               </div>
-            <button className="login-button" title="login" type="submit" >{this.props.formType}</button>
+              <button className="login-button" title="login" type="submit" >{this.props.formType}</button>
+              <div className="separator">
+                <div className="line"></div>
+                  <p>OR</p>
+                <div className="line"></div>
+              </div>
+              <div className="other">
+              <button className="fb-login-btn" type="button">
+                <i className="fa fa-facebook-official fb-icon"></i>
+                <span className="">Log in with Facebook</span>
+              </button>
+              </div>
             </form>
-            <p>OR</p>
             {this.renderErrors}
         </div>
         <div>

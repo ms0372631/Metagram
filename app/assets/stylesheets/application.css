@@ -298,7 +298,7 @@ body{
   inline-size: 16rem;
   overflow-wrap: break-word;
   font-size: 14px;
-  color: rgb(201, 14, 76, 0.8);
+  color: rgba(201, 14, 76, 0.8);
   text-align: center;
 }
 

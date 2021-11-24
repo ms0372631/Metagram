@@ -8,10 +8,13 @@ class SessionForm extends React.Component {
       username: '',
       password: '',
       email: '',
-      fullname: ''
+      fullname: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    console.log(this.props.errors)
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
   }
 
   clearState() {
@@ -19,7 +22,7 @@ class SessionForm extends React.Component {
       username: '',
       password: '',
       email: '',
-      fullname: ''
+      fullname: '',
     });
   }
   
@@ -48,6 +51,7 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
+
 
   render() {
     let action;

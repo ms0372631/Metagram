@@ -212,7 +212,6 @@ input:not(:placeholder-shown) {
 }
 
 .forgot-password {
-  margin-top: 0.5rem;
   padding: 0.5rem;
   font-size: 11px;
   color: #003569;

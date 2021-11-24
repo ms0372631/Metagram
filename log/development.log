@@ -27919,3 +27919,12 @@ Processing by Api::UsersController#create as JSON
 Completed 401 Unauthorized in 233ms (Views: 0.2ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/" for ::1 at 2021-11-24 11:03:22 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 458ms (Views: 449.2ms | ActiveRecord: 4.3ms)
+
+

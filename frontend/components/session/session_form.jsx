@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
       fullname: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    console.log(this.props.errors)
   }
 
   clearState() {
@@ -38,7 +39,7 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="error_messages">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -57,36 +58,36 @@ class SessionForm extends React.Component {
       action = (
         <>
           <p>Have an account?</p>
-          <Link className="signup" to="/login">{this.props.formType}</Link>
+          <Link className="signup" to="/login">Log In</Link>
         </>
       )
       signupInfo = (
         <>
           <div className="field">
             <input id="email" type="email" placeholder="Phone number, username, or email" value={this.state.email} onChange={this.update('email')} />
-            <label for="email">Mobile Number or Email</label>
+            <label htmlFor="email">Mobile Number or Email</label>
           </div>
           <div className="field">
             <input id="fullname" type="fullname" placeholder="fullname" value={this.state.fullname} onChange={this.update('fullname')} />
-            <label for="fullname">Full Name</label>
+            <label htmlFor="fullname">Full Name</label>
           </div>
         </>
       )
-      usernameInfo = <label for="username">Username</label>
+      usernameInfo = <label htmlFor="username">Username</label>
     }
     else {
       action = (
         <>
           <p>Don't have an account?</p>
-          <Link className="signup" to="/signup">{this.props.formType}</Link>
+          <Link className="signup" to="/signup">Sign Up</Link>
         </>
       )
-      usernameInfo = <label for="username">Phone number, username, or email</label>
+      usernameInfo = <label htmlFor="username">Phone number, username, or email</label>
     }
     return (
       <div className="container">
         <div className="box">
-          <h3 className="heading"></h3>
+          <div className="heading"></div>
             <form className="login-form" onSubmit={this.handleSubmit}>
               {signupInfo}
               <div className="field">
@@ -95,7 +96,7 @@ class SessionForm extends React.Component {
               </div>
               <div className="field">
                 <input id="password" type="password" placeholder="Password" value={this.state.password} onChange={this.update('password')}/>
-                <label for="password">Password</label>
+                <label htmlFor="password">Password</label>
               </div>
               <button className="login-button" title="login" type="submit" >{this.props.formType}</button>
               <div className="separator">
@@ -108,10 +109,10 @@ class SessionForm extends React.Component {
                 <i className="fa fa-facebook-official fb-icon"></i>
                 <span className="">Log in with Facebook</span>
               </button>
+              {this.renderErrors()}
               <a className="forgot-password" href="#">Forgot password?</a>
               </div>
             </form>
-            {this.renderErrors}
         </div>
         <div className="box">
             {action}

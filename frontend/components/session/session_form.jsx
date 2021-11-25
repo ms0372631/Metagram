@@ -11,7 +11,19 @@ class SessionForm extends React.Component {
       fullname: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginDemoUser = this.loginDemoUser.bind(this);
   }
+
+  loginDemoUser() {
+    const _demoUser = Object.freeze({
+      username: 'demoUser',
+      password: 'demoPassword',
+      email: '',
+      fullname: ''
+    });
+    this.props.loginDemo(_demoUser);
+  }
+
 
   componentDidMount() {
     this.props.clearErrors();
@@ -111,7 +123,7 @@ class SessionForm extends React.Component {
               <div className="other">
               <button className="fb-login-btn" type="button">
                 <i className="fa fa-facebook-official fb-icon"></i>
-                <span className="">Log in with Facebook</span>
+                <span className="" onClick={this.loginDemoUser}>Log in with Facebook</span>
               </button>
               {this.renderErrors()}
               <a className="forgot-password" href="#">Forgot password?</a>

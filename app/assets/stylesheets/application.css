@@ -199,6 +199,7 @@ input:not(:placeholder-shown) {
 .fb-login-btn {
   margin: 1rem;
   padding-top: 0.5rem;
+  margin-bottom: 11px;
   border: 0;
   cursor: pointer;
   font-size: 14px;

@@ -1,20 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UserShowItem from './user_show_item'
 
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+  }
 
-    };
+  componentDidMount() {
+    this.props.requestPosts();
   }
   
   render() {
-  
+
+    const {user, posts, updatePost, deletePost} = this.props;
+
     return (
-      <>
-      <p>this is {this.props.user.username} page</p>
-      </>
+      <div>
+        <ul>
+          {
+            posts.map(post => (
+              <UserShowItem
+                key={`${post.id}`}
+                post={post}
+                updatePost={updatePost}
+                deletePost={deletePost}
+              />
+            ))
+          }
+        </ul>
+      </div>
     )
   }
 }

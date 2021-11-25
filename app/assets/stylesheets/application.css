@@ -228,6 +228,7 @@ input:not(:placeholder-shown) {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 
+
 *:focus{
     outline: none;
 }
@@ -285,6 +286,9 @@ body{
 }
 
 .nav-items{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     height: 22px;
     position: relative;
 }

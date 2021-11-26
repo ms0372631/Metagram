@@ -20,7 +20,7 @@ export const removePost = postId => ({
   postId
 })
 
-export const recievePostErrors = errors => ({
+export const receivePostErrors = errors => ({
   type: RECEIVE_POST_ERRORS,
   errors
 })
@@ -28,30 +28,30 @@ export const recievePostErrors = errors => ({
 export const requestPosts = () => dispatch => (
   PostAPIUtil.fetchPosts()
   .then(posts => dispatch(receivePosts(posts)))
-  .fail(err => dispatch(recievePostErrors(err)))
+  .fail(err => dispatch(receivePostErrors(err)))
 )
 
 export const requestPost = postId => dispatch => (
   PostAPIUtil.fetchPost(postId)
   .then(post => dispatch(receivePost(post)))
-  .fail(err => dispatch(recievePostErrors(err)))
+  .fail(err => dispatch(receivePostErrors(err)))
 )
 
 export const createPost = post => dispatch => (
   PostAPIUtil.createPost(post)
   .then(post => dispatch(receivePost(post)))
-  .fail(err => dispatch(recievePostErrors(err)))
+  .fail(err => dispatch(receivePostErrors(err)))
 )
 
 export const updatePost = post => dispatch => (
   PostAPIUtil.updatePost(post)
-  .then(post => dispatch(requestPost(post)))
-  .fail(err => dispatch(receivePosts(err)))
+  .then(post => dispatch(receivePost(post)))
+  .fail(err => dispatch(receivePostErrors(err)))
 )
 
 export const deletePost = postId => dispatch => (
-  PostAPIUtil.updatePost(postId)
-  .then(() => dispatch(receivePosts(postId)))
-  .fail(err => dispatch(recievePostErrors(err)))
+  PostAPIUtil.deletePost(postId)
+  .then(() => dispatch(removePost(postId)))
+  .fail(err => dispatch(receivePostErrors(err)))
 )
 

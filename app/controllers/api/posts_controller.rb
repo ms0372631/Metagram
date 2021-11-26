@@ -28,7 +28,7 @@ class Api::PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    render "api/posts/show"
+    render "api/posts/index"
   end
 
   private

@@ -1,14 +1,16 @@
 import { connect } from "react-redux";
-import { requestPosts } from "../../actions/post_actions";
+import { requestPosts, updatePost, deletePost } from "../../actions/post_actions";
+import PostIndex from "./post_index";
 
-const mSTP = state => ({
-  posts: state.posts
-})
+const mSTP = state => {
+  return {
+  posts: Object.values(state.entities.posts)
+}}
 
-const mDTP = () => dispatch => ({
+const mDTP = dispatch => ({
   requestPosts: () => dispatch(requestPosts()),
-  updatePost: post => dispatch(updatePosts(post)),
+  updatePost: post => dispatch(updatePost(post)),
   deletePost: postId => dispatch(deletePost(postId))
 })
 
-export default connect(mSTP, mDTP)()
+export default connect(mSTP, mDTP)(PostIndex)

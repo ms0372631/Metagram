@@ -1,23 +1,21 @@
 import React from "react";
-import PostIndexItem from "./post_index_container";
+import PostIndexItem from "./post_index_item";
 
 class PostIndex extends React.Component {
-  constructor(props) {
-    this.state = {
-      posts: []
-    };
-  }
+
   componentDidMount() {
-    this.props.requestPosts()
+    this.props.requestPosts();
   }
 
   render() {
+    const {posts} = this.props;
+    console.log(posts)
     return (
       <div>
         {
-          this.props.posts.map(post => (
+          posts.map((post, idx) => (
             <ul>
-              <PostIndexItem post={post}/>
+              <PostIndexItem post={post} key={idx}/>
             </ul>
           ))
         }

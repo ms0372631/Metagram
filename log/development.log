@@ -29593,3 +29593,146 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 70ms (Views: 58.3ms | ActiveRecord: 9.7ms)
 
 
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (4.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2[0m  [["author_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2[0m  [["author_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2[0m  [["author_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2[0m  [["author_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2[0m  [["author_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2[0m  [["author_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2[0m  [["author_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2[0m  [["author_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (4.5ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "body", "author_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-11-26 00:18:23.778673"], ["updated_at", "2021-11-26 00:18:23.778673"], ["body", "demo"], ["author_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+[36m  S3 Storage (3187.0ms) [0m[32mUploaded file to key: cemqsHHTggoj2H4NTyHQfTbh (checksum: rOMohaqr2xmdYKjuK7EFNg==)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (5.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "cemqsHHTggoj2H4NTyHQfTbh"], ["filename", "911gt3-1.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 217522], ["checksum", "rOMohaqr2xmdYKjuK7EFNg=="], ["created_at", "2021-11-26 00:20:44.731532"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (3.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Post"], ["record_id", 1], ["blob_id", 1], ["created_at", "2021-11-26 00:20:44.783799"]]
+  [1m[36mPost Update (0.9ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2021-11-26 00:20:44.790315"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 95a5cd44-01cf-44a6-a933-6f468b2e5c15) to Async(default) with arguments: #<GlobalID:0x00007fd27acd1c58 @uri=#<URI::GID gid://test/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [95a5cd44-01cf-44a6-a933-6f468b2e5c15] Performing ActiveStorage::AnalyzeJob (Job ID: 95a5cd44-01cf-44a6-a933-6f468b2e5c15) from Async(default) with arguments: #<GlobalID:0x00007fd27df7c810 @uri=#<URI::GID gid://test/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [95a5cd44-01cf-44a6-a933-6f468b2e5c15] [36m  S3 Storage (1164.5ms) [0m[34mDownloaded file from key: cemqsHHTggoj2H4NTyHQfTbh[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [95a5cd44-01cf-44a6-a933-6f468b2e5c15] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [95a5cd44-01cf-44a6-a933-6f468b2e5c15]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [95a5cd44-01cf-44a6-a933-6f468b2e5c15]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [95a5cd44-01cf-44a6-a933-6f468b2e5c15]   [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [95a5cd44-01cf-44a6-a933-6f468b2e5c15] Performed ActiveStorage::AnalyzeJob (Job ID: 95a5cd44-01cf-44a6-a933-6f468b2e5c15) from Async(default) in 1182.4ms
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (2.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  S3 Storage (2341.3ms) [0m[32mUploaded file to key: owLu9WdS9N2RLNjk3VaQ1m3F (checksum: b9pIASwGUVwy5sJ5iwodQg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "owLu9WdS9N2RLNjk3VaQ1m3F"], ["filename", "911gt3-2.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 88906], ["checksum", "b9pIASwGUVwy5sJ5iwodQg=="], ["created_at", "2021-11-26 01:08:14.443135"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 1]]
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Post"], ["record_id", 1], ["blob_id", 2], ["created_at", "2021-11-26 01:08:14.448812"]]
+  [1m[36mPost Update (0.6ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2021-11-26 01:08:14.450104"], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 092fe7d0-764f-4c35-9792-3d54701c70db) to Async(default) with arguments: #<GlobalID:0x00007fa199ab4ae0 @uri=#<URI::GID gid://test/ActiveStorage::Blob/2>>
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 6485e4f1-1f33-4411-9781-768b7adf3ba1) to Async(default) with arguments: #<GlobalID:0x00007fa18e3e7c68 @uri=#<URI::GID gid://test/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [092fe7d0-764f-4c35-9792-3d54701c70db] Performing ActiveStorage::AnalyzeJob (Job ID: 092fe7d0-764f-4c35-9792-3d54701c70db) from Async(default) with arguments: #<GlobalID:0x00007fa192a90778 @uri=#<URI::GID gid://test/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [092fe7d0-764f-4c35-9792-3d54701c70db] [36m  S3 Storage (1038.2ms) [0m[34mDownloaded file from key: owLu9WdS9N2RLNjk3VaQ1m3F[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [092fe7d0-764f-4c35-9792-3d54701c70db] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [092fe7d0-764f-4c35-9792-3d54701c70db]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [092fe7d0-764f-4c35-9792-3d54701c70db]   [1m[36mActiveStorage::Blob Update (1.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [092fe7d0-764f-4c35-9792-3d54701c70db]   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [092fe7d0-764f-4c35-9792-3d54701c70db] Performed ActiveStorage::AnalyzeJob (Job ID: 092fe7d0-764f-4c35-9792-3d54701c70db) from Async(default) in 1051.43ms
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6485e4f1-1f33-4411-9781-768b7adf3ba1] Performing ActiveStorage::PurgeJob (Job ID: 6485e4f1-1f33-4411-9781-768b7adf3ba1) from Async(default) with arguments: #<GlobalID:0x00007fa19152c828 @uri=#<URI::GID gid://test/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [6485e4f1-1f33-4411-9781-768b7adf3ba1]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6485e4f1-1f33-4411-9781-768b7adf3ba1]   [1m[36mActiveStorage::Attachment Exists (3.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6485e4f1-1f33-4411-9781-768b7adf3ba1]   [1m[36mActiveStorage::Blob Destroy (3.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6485e4f1-1f33-4411-9781-768b7adf3ba1]   [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6485e4f1-1f33-4411-9781-768b7adf3ba1]   [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [6485e4f1-1f33-4411-9781-768b7adf3ba1] [36m  S3 Storage (155.6ms) [0m[31mDeleted file from key: cemqsHHTggoj2H4NTyHQfTbh[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6485e4f1-1f33-4411-9781-768b7adf3ba1] [36m  S3 Storage (154.6ms) [0m[31mDeleted files by key prefix: variants/cemqsHHTggoj2H4NTyHQfTbh/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [6485e4f1-1f33-4411-9781-768b7adf3ba1] Performed ActiveStorage::PurgeJob (Job ID: 6485e4f1-1f33-4411-9781-768b7adf3ba1) from Async(default) in 372.18ms
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "body", "author_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-11-26 01:10:37.294083"], ["updated_at", "2021-11-26 01:10:37.294083"], ["body", "demo"], ["author_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+[36m  S3 Storage (2889.0ms) [0m[32mUploaded file to key: JnF3s41NWLuuCE7xrGm4Bv2s (checksum: rOMohaqr2xmdYKjuK7EFNg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "JnF3s41NWLuuCE7xrGm4Bv2s"], ["filename", "911gt3-1.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 217522], ["checksum", "rOMohaqr2xmdYKjuK7EFNg=="], ["created_at", "2021-11-26 01:11:19.591283"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Post"], ["record_id", 2], ["blob_id", 3], ["created_at", "2021-11-26 01:11:19.601171"]]
+  [1m[36mPost Update (0.6ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2021-11-26 01:11:19.602702"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: e34258c7-de67-4610-b0ba-96182e96f758) to Async(default) with arguments: #<GlobalID:0x00007fa19256aaa0 @uri=#<URI::GID gid://test/ActiveStorage::Blob/3>>
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e34258c7-de67-4610-b0ba-96182e96f758] Performing ActiveStorage::AnalyzeJob (Job ID: e34258c7-de67-4610-b0ba-96182e96f758) from Async(default) with arguments: #<GlobalID:0x00007fa19253e770 @uri=#<URI::GID gid://test/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e34258c7-de67-4610-b0ba-96182e96f758] [36m  S3 Storage (725.6ms) [0m[34mDownloaded file from key: JnF3s41NWLuuCE7xrGm4Bv2s[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e34258c7-de67-4610-b0ba-96182e96f758] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e34258c7-de67-4610-b0ba-96182e96f758]   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e34258c7-de67-4610-b0ba-96182e96f758]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e34258c7-de67-4610-b0ba-96182e96f758]   [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e34258c7-de67-4610-b0ba-96182e96f758] Performed ActiveStorage::AnalyzeJob (Job ID: e34258c7-de67-4610-b0ba-96182e96f758) from Async(default) in 735.34ms
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at", "body", "author_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-11-26 01:12:02.994218"], ["updated_at", "2021-11-26 01:12:02.994218"], ["body", "demo"], ["author_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+[36m  S3 Storage (1936.6ms) [0m[32mUploaded file to key: g4exjPXxytscoMRRjPs8Dg5J (checksum: bEl+LPBqC3ObXIGgGMIzWg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "g4exjPXxytscoMRRjPs8Dg5J"], ["filename", "911gt3-3.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 47682], ["checksum", "bEl+LPBqC3ObXIGgGMIzWg=="], ["created_at", "2021-11-26 01:15:00.734913"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Post"], ["record_id", 3], ["blob_id", 4], ["created_at", "2021-11-26 01:15:00.738154"]]
+  [1m[36mPost Update (0.8ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2021-11-26 01:15:00.741090"], ["id", 3]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 471e2a8f-9b53-4352-aaa1-9fd765a7d7b6) to Async(default) with arguments: #<GlobalID:0x00007fa192991098 @uri=#<URI::GID gid://test/ActiveStorage::Blob/4>>
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [471e2a8f-9b53-4352-aaa1-9fd765a7d7b6] Performing ActiveStorage::AnalyzeJob (Job ID: 471e2a8f-9b53-4352-aaa1-9fd765a7d7b6) from Async(default) with arguments: #<GlobalID:0x00007fa19297b338 @uri=#<URI::GID gid://test/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [471e2a8f-9b53-4352-aaa1-9fd765a7d7b6] [36m  S3 Storage (443.4ms) [0m[34mDownloaded file from key: g4exjPXxytscoMRRjPs8Dg5J[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [471e2a8f-9b53-4352-aaa1-9fd765a7d7b6] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [471e2a8f-9b53-4352-aaa1-9fd765a7d7b6]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [471e2a8f-9b53-4352-aaa1-9fd765a7d7b6]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [471e2a8f-9b53-4352-aaa1-9fd765a7d7b6]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [471e2a8f-9b53-4352-aaa1-9fd765a7d7b6] Performed ActiveStorage::AnalyzeJob (Job ID: 471e2a8f-9b53-4352-aaa1-9fd765a7d7b6) from Async(default) in 463.9ms
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]

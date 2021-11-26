@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { requestPosts } from "../../actions/post_actions";
 
 const mSTP = state => ({
-  posts: Object.value(this.state.posts)
+  posts: state.posts
 })
 
 const mDTP = () => dispatch => ({

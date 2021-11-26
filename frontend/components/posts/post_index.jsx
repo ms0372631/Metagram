@@ -2,7 +2,11 @@ import React from "react";
 import PostIndexItem from "./post_index_container";
 
 class PostIndex extends React.Component {
-  
+  constructor(props) {
+    this.state = {
+      posts: []
+    };
+  }
   componentDidMount() {
     this.props.requestPosts()
   }

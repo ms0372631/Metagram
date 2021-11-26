@@ -4,6 +4,7 @@ import SignupFormContainer from "./session/signup_form_container";
 import NavBarContainer from "./nav_bar/nav_bar_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import { Switch, Route, Link } from 'react-router-dom';
+import { $CombinedState } from "redux";
 
 const App = () => (
   <div>

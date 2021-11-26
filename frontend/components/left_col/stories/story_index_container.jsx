@@ -1,5 +1,6 @@
 
-import {connect} from 'react-redux';
+
+import { connect } from 'react-redux';
 import StoryIndex from './story_index'
 
 const mSTP = state => ({
@@ -11,4 +12,3 @@ const mDTP = dispatch => ({
 });
 
 export default connect(mSTP, mDTP)(StoryIndex);
-

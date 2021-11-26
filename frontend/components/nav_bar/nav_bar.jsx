@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default ({ currentUser, logout }) => {
   const display = currentUser ? (
     <>
-      <img src="https://lh3.google.com/u/0/d/1aMykwMlA83NxXm36R0tKZ7qk1cgE_GNW=w2732-h1840-iv1" className="icon" alt=""/>
+      <img src="https://lh3.google.com/u/0/d/1aMykwMlA83NxXm36R0tKZ7qk1cgE_GNW=w2724-h1840-iv1" className="icon" alt=""/>
       <img src="https://lh3.google.com/u/0/d/1gaitJO61JA1XlA8KQtA7EIG3J0w9OWYo=w2732-h1726-iv1" className="icon" alt=""/>
       <img src="https://lh3.google.com/u/0/d/1nf-JGwFe2VMcxVl-8m0dlpRfbsZCQlRW=w2732-h1840-iv1" className="icon" alt="" />
       <img src="https://lh3.google.com/u/0/d/1c24OJ5w9gx_1sNRDFlwrUjIsfSMOYDor=w2732-h1840-iv1" className="icon" alt=""/>

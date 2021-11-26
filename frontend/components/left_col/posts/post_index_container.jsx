@@ -1,11 +1,10 @@
 import { connect } from "react-redux";
-import { requestPosts, updatePost, deletePost } from "../../actions/post_actions";
+import { requestPosts, updatePost, deletePost } from "../../../actions/post_actions";
 import PostIndex from "./post_index";
 
-const mSTP = state => {
-  return {
+const mSTP = state => ({
   posts: Object.values(state.entities.posts)
-}}
+})
 
 const mDTP = dispatch => ({
   requestPosts: () => dispatch(requestPosts()),

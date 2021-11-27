@@ -146,14 +146,9 @@ label {
 
 /* hiding placeholder in all browsers */
 
-input::placeholder {
-  visibility: hidden;
-}
 
 /* hiding  placeholder in mozilla */
-.login-form ::-moz-placeholder {
-  color: transparent;
-}
+
 
 /* label final position */
 input:not(:placeholder-shown) + label {
@@ -277,7 +272,7 @@ body{
     left: 50%;
     transform: translateX(-50%);
     width: 200px;
-    height: 25px;
+    height: 15px;
     background: #fafafa;
     border: 1px solid #dfdfdf;
     border-radius: 2px;
@@ -436,7 +431,7 @@ body{
   align-items: center;
 }
 
-.info .profile-pic img{
+.info .profile-pic {
   height: 40px;
   width: 40px;
   padding: 0;
@@ -450,7 +445,6 @@ body{
 }
 
 .post-content{
-  width: 100%;
   padding: 20px;
 }
 
@@ -475,6 +469,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: 1px solid #dfdfdf;
 }
 
 .comment-wrapper .icon {
@@ -482,14 +477,16 @@ body{
 }
 
 .comment-box {
+  background-color: transparent;
+  margin-left: 10px;
   width: 80%;
-  height: 100%;
   border: none;
   outline: none;
   font-size: 14px;
 }
 
-.comment-btn, .action-btn {
+.comment-btn, 
+.action-btn {
   width: 70px;
   height: 100%;
   background: none;

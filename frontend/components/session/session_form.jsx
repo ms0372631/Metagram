@@ -80,11 +80,11 @@ class SessionForm extends React.Component {
       signupInfo = (
         <>
           <div className="field">
-            <input id="email" type="email" placeholder="Phone number, username, or email" value={this.state.email} onChange={this.update('email')} />
+            <input id="email" type="email" value={this.state.email} onChange={this.update('email')} />
             <label htmlFor="email">Mobile Number or Email</label>
           </div>
           <div className="field">
-            <input id="fullname" type="fullname" placeholder="fullname" value={this.state.fullname} onChange={this.update('fullname')} />
+            <input id="fullname" type="fullname" value={this.state.fullname} onChange={this.update('fullname')} />
             <label htmlFor="fullname">Full Name</label>
           </div>
         </>
@@ -107,11 +107,11 @@ class SessionForm extends React.Component {
             <form className="login-form" onSubmit={this.handleSubmit}>
               {signupInfo}
               <div className="field">
-                <input id="username" type="username" placeholder="Phone number, username, or email" value={this.state.username} onChange={this.update('username')}/>
+                <input id="username" type="username" value={this.state.username} onChange={this.update('username')}/>
               {usernameInfo}
               </div>
               <div className="field">
-                <input id="password" type="password" placeholder="Password" value={this.state.password} onChange={this.update('password')}/>
+                <input id="password" type="password"  value={this.state.password} onChange={this.update('password')}/>
                 <label htmlFor="password">Password</label>
               </div>
               <button className="login-button" title="login" type="submit" >{this.props.formType}</button>

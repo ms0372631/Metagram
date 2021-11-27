@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 export default ({ currentUser, logout }) => {
   const display = currentUser ? (
     <>
-      <img src="https://lh3.google.com/u/0/d/1aMykwMlA83NxXm36R0tKZ7qk1cgE_GNW=w2724-h1840-iv1" className="icon" alt=""/>
+      <Link to="/feed">
+        <img src="https://lh3.google.com/u/0/d/1aMykwMlA83NxXm36R0tKZ7qk1cgE_GNW=w2724-h1840-iv1" className="icon" alt=""/>
+      </Link>
       <img src="https://lh3.google.com/u/0/d/1gaitJO61JA1XlA8KQtA7EIG3J0w9OWYo=w2732-h1726-iv1" className="icon" alt=""/>
       <img src="https://lh3.google.com/u/0/d/1nf-JGwFe2VMcxVl-8m0dlpRfbsZCQlRW=w2732-h1840-iv1" className="icon" alt="" />
       <img src="https://lh3.google.com/u/0/d/1c24OJ5w9gx_1sNRDFlwrUjIsfSMOYDor=w2732-h1840-iv1" className="icon" alt=""/>
@@ -25,7 +27,7 @@ export default ({ currentUser, logout }) => {
   return (
     <nav className="navbar">
       <div className="nav-wrapper">
-        <img className="brand-img" src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" alt=""/>
+        <img className="brand-img" src="https://lh3.google.com/u/0/d/1Gg1qVxN0Z2UcBjF52OQqwR3ikAwoyEep=w2732-h1726-iv1" alt=""/>
         <input type="text" className="search-box" placeholder="search"/>
         <div className="nav-items">
           {display}

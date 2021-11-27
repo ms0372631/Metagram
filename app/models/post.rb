@@ -20,7 +20,4 @@ class Post < ApplicationRecord
     class_name: :like
 
   
-
-
-  
 end

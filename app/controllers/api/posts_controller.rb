@@ -1,11 +1,10 @@
 class Api::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
-    if @post.save!
-      login!(@user)
-      render "api/users/show"
+    if @post.save
+      render "api/posts/show"
     else
-      render json: @post.full_messages
+      render json: @post.errors.full_messages
     end
   end
 
@@ -14,15 +13,24 @@ class Api::PostsController < ApplicationController
     if @post
       render "api/posts/show"
     else
-      render json: ['the post is currently unavaliable']
+      render json: ['the post cannot be found']
     end
   end
 
   def destroy
     if @post.delete
-      reender "api/users/show"
+      render "api/posts/show"
     else
-     render json: @post.full_messages
+      render json: @post.errors.full_messages
+    end
+  end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+    if @post.update(post_params)
+      render "api/posts/show"
+    else
+      redner json: @post.errors.full_messages
     end
   end
 

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { createComment } from '../../../../actions/comment_actions';
 import CommentCreate from './comment_create';
 
-const msTP = (state, ownProps) => ({
+const mSTP = (state, ownProps) => ({
   user: state.session.currentUser
 })
 
@@ -10,4 +10,4 @@ const mDTP = dispatch => ({
   createComment: comment => dispatch(createComment(comment))
 })
 
-export default connect(msTP, mDTP)(CommentCreate);
+export default connect(mSTP, mDTP)(CommentCreate);

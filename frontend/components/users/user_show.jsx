@@ -14,7 +14,7 @@ class UserShow extends React.Component {
   render() {
 
     const {user, posts, updatePost, deletePost} = this.props;
-  
+    
     return (
 
       <div className="user">
@@ -24,10 +24,10 @@ class UserShow extends React.Component {
               <img src="" alt="" />
             </div>
             <div className="profile-user-settings">
-              <h1 class="profile-user-name">{user.fullname}</h1>
+              <h1 className="profile-user-name">{user.username}</h1>
               <button className="btn profile-edit-bin">Edit Profile</button>
-              <button class="btn profile-settings-btn" aria-label="profile settings">
-                <i class="fas fa-cog" aria-hidden="true"></i>
+              <button className="btn profile-settings-btn" aria-label="profile settings">
+                <i className="fas fa-cog" aria-hidden="true"></i>
               </button>
             </div>
             <div className="profile-stats">
@@ -37,15 +37,18 @@ class UserShow extends React.Component {
                 <li><span className="profile-stat-count">16</span>following</li>
               </ul>
             </div>
-            <div className="profile-boi">
+            <div className="profile-bio">
               <p><span className="profile-real-name">{user.fullname}</span>A Porsche 9-11 lover </p>
             </div>
           </div>
         </div>
-        <div className="user-container">
+        <div className="container">
           <div className="gallery">
-            
-            <UserShowItem/>
+            {
+              posts.map(post => (
+                <UserShowItem key="{post.id}" post={post}/>
+              ))
+            }
           </div>
           <div class="loader"></div>
         </div>

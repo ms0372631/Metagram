@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default ({post, updatePost, deletePost}) => {
+const UserShowItem = ({post, updatePost, deletePost}) => {
+
 
   return (
     <div className="gallery-item" tabIndex="0">

@@ -14,10 +14,11 @@ class UserShow extends React.Component {
   render() {
 
     const {user, posts, updatePost, deletePost} = this.props;
-
+  
     return (
-      <>
-        <div className="user-container">
+
+      <div className="user">
+        <div className="container">
           <div className="profile">
             <div className="profile-image">
               <img src="" alt="" />
@@ -37,16 +38,19 @@ class UserShow extends React.Component {
               </ul>
             </div>
             <div className="profile-boi">
-              <p><span className="profile-real-name">{this.user.fullname}</span>A Porsche 9-11 lover </p>
+              <p><span className="profile-real-name">{user.fullname}</span>A Porsche 9-11 lover </p>
             </div>
           </div>
         </div>
         <div className="user-container">
           <div className="gallery">
+            
             <UserShowItem/>
           </div>
+          <div class="loader"></div>
         </div>
-     </>
+      </div>
+  
     )
   }
 }

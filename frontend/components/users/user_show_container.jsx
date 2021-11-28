@@ -4,8 +4,10 @@ import UserShow from './user_show';
 import { requestPosts, updatePost, deletePost} from '../../actions/post_actions';
 
 const mSTP = (state, ownProps) => ({
-  user: state.entities.users[ownProps.match.params.userId],
-  posts: state.entities.posts.filter(post => post.authorId === ownProps.match.params.userId)
+  user: state.session.currentUser,
+  // state.entities.users[ownProps.match.params.userId],
+  posts: Object.values(state.entities.posts)
+  // .filter(post => post.authorId === ownProps.match.params.userId)
 });
 
 const mDTP = dispatch => ({

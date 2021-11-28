@@ -9,12 +9,12 @@ const UserShowItem = ({post, updatePost, deletePost}) => {
       <div className="gallery-item-info">
         <ul>
           <li className="gallery-item-likes">
-            <span class="visually-hidden">Likes:</span>
-            <i class="fas fa-heart" aria-hidden="true"></i>42
+            <span className="visually-hidden">Likes:</span>
+            <i className="fas fa-heart" aria-hidden="true"></i>42
           </li>
           <li className="gallery-item-comments">
-            <span class="visually-hidden">Comments:</span>
-            <i class="fas fa-comment" aria-hidden="true"></i>3
+            <span className="visually-hidden">Comments:</span>
+            <i className="fas fa-comment" aria-hidden="true"></i>3
           </li>
         </ul>
       </div>

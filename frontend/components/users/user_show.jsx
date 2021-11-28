@@ -16,7 +16,6 @@ class UserShow extends React.Component {
     const {user, posts, updatePost, deletePost} = this.props;
     
     return (
-
       <div className="user">
         <div className="container">
           <div className="profile">
@@ -32,13 +31,13 @@ class UserShow extends React.Component {
             </div>
             <div className="profile-stats">
               <ul>
-                <li><span className="profile-stat-count">3</span>posts</li>
-                <li><span className="profile-stat-count">21</span>followers</li>
-                <li><span className="profile-stat-count">16</span>following</li>
+                <li><span className="profile-stat-count">3 </span>posts</li>
+                <li><span className="profile-stat-count">21 </span>followers</li>
+                <li><span className="profile-stat-count">16 </span>following</li>
               </ul>
             </div>
             <div className="profile-bio">
-              <p><span className="profile-real-name">{user.fullname}</span>A Porsche 9-11 lover </p>
+              <p><span className="profile-real-name">{user.fullname}</span> A Porsche 9-11 lover </p>
             </div>
           </div>
         </div>
@@ -50,10 +49,9 @@ class UserShow extends React.Component {
               ))
             }
           </div>
-          <div class="loader"></div>
+          <div className="loader"></div>
         </div>
       </div>
-  
     )
   }
 }

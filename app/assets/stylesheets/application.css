@@ -74,7 +74,7 @@ a {
   text-decoration: none;
 }
 
-.container {
+.login.container {
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
@@ -233,7 +233,7 @@ input:not(:placeholder-shown) {
     outline: none;
 }
 
-body{
+.navbar body{
     width: 100%;
     background: #fafafa;
     position: relative;
@@ -603,20 +603,24 @@ body{
 
 
 
-.user :root {
+.user {
   font-size: 10px;
+}
+
+.user h1, button, span, li, p {
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 .user *, .user *::before, .user *::after {
   box-sizing: border-box;
+  
 }
 
 .user body {
-  font-family: "Open Sans", Arial, sans-serif;
-  min-height: 100wh;
+  min-height: 100vh;
   background-color: #fafafa;
   color: #262626;
-  padding-bottom: 3rem;
+  padding-bottom: 3em;
 }
 
 .user img {
@@ -624,9 +628,9 @@ body{
 }
 
 .user .container {
-  max-width: 93.5rem;
+  max-width: 93.5em;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2em;
 }
 
 .btn {
@@ -640,7 +644,7 @@ body{
 }
 
 .btn:focus {
-  outline: 0.5rem auto #4d90fe;
+  outline: 0.5em auto #4d90fe;
 }
 
 .visually-hidden {
@@ -651,72 +655,86 @@ body{
   clip: rect(1px, 1px, 1px,1px);
 }
 
-.profile {
-  padding: 5rem 0;
+.user .profile {
+  padding: 5em 0;
 }
 
-.profile::after {
+.user .profile::after {
   content: "";
   display: block;
   clear: both
 }
 
-.profile-image {
+.user .profile-image {
   float: left;
-  width: calc(33.33% - 1rem)
+  width: calc(33.33% - 1em);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3em;
 }
 
-.profile-pic img {
+.user .profile-pic img {
   border-radius: 50%
 }
 
-.profile-user-settings,
-.profile-stats,
-.profile-bio {
+.user .profile-user-settings,
+.user .profile-stats,
+.user .profile-bio {
   float: left;
-  width: calc(66.666% - 2rem);
+  width: calc(66.666% - 2em);
 }
 
-.profile-user-settings {
-  margin-top: 1.1rem;
+.user .profile-user-settings {
+  margin-top: 1.1em;
 }
 
-.profile-user-name {
+.user .profile-user-name {
   display: inline-block;
-  font-size: 3.2rem;
+  font-size: 3.2em;
   font-weight: 300;
 }
 
-.profile-edit-btn {
-  font-size: 1.4rem;
+.user .profile-edit-btn {
+  font-size: 1.4em;
   line-height: 1.8;
-  border: 0.1rem soild #dbdbdb;
-  border-radius: 0.3rem;
-  padding: 0 2.4rem;
-  margin-left: 2rem;
+  border: 0.1em soild #dbdbdb;
+  border-radius: 0.3em;
+  padding: 0 2.4em;
+  margin-left: 2em;
 }
 
-.profile-settings-btn {
-  font-size: 2rem;
-  margin-left: 4rem;
-  cursor: pointer;
+.user .profile-settings-btn {
+  font-size: 2em;
+  margin-left: 1em;
 }
 
+.user .profile-stats {
+  margin-top: 2.3em;
+}
 
-.profile-stats li:last-of-type {
+.user .profile-stats li {
+  display: inline-block;
+  font-size: 1.6em;
+  line-height: 1.5;
+  margin-right: 4em;
+  cursor: ;
+}
+
+.user .profile-stats li:last-of-type {
   margin-right: 0;
 }
 
-.profile-bio {
-  font-size: 1.6rem;
+.user .profile-bio {
+  font-size: 1.6em;
   font-weight: 400;
   line-height: 1.5;
-  margin-top: 2.3rem;
+  margin-top: 2.3em;
 }
 
-.profile-real-name,
-.profile-state-count,
-.profile-edit-btn {
+.user .profile-real-name,
+.user .profile-state-count,
+.user .profile-edit-btn {
   font-weight: 600;
 }
 
@@ -725,14 +743,14 @@ body{
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  margin: -1rem -1rem;
-  padding-bottom: 3rem;
+  margin: -1em -1em;
+  padding-bottom: 3em;
 }
 
 .gallery-item {
   position: relative;
-  flex: 1 0 22rem;
-  margin: 1rem;
+  flex: 1 0 22em;
+  margin: 1em;
   color: #fff;
   cursor: pointer;
 }
@@ -755,20 +773,20 @@ body{
 
 .gallery-item-info li {
   display: inline-block;
-  font-size: 1.7rem;
+  font-size: 1.7em;
   font-weight: 600;
 }
 
 .gallery-item-likes {
-  margin-right: 2.2rem;
+  margin-right: 2.2em;
 }
 
 .gallery-item-type {
   position: absoulte;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2.5rem;
-  text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+  top: 1em;
+  right: 1em;
+  font-size: 2.5em;
+  text-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.1);
 }
 
 .fa-clone,
@@ -783,12 +801,171 @@ body{
 }
 
 /* .loader {
-  width: 5rem;
-  height: 5rem;
-  border: 0.6rem solid #999;
+  width: 5em;
+  height: 5em;
+  border: 0.6em solid #999;
   border-bottom-color: transparent;
   border-radius: 50%;
   margin: 0 auto;
   animation: loader 500ms linear infinite;
 } */
+
+
+@media screen and (max-width: 40em) {
+    .user .profile {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 4em 0;
+    }
+
+    .user .profile::after {
+        display: none;
+    }
+
+    .user .profile-image,
+    .user .profile-user-settings,
+    .user .profile-bio,
+    .user .profile-stats {
+        float: none;
+        width: auto;
+    }
+
+    .user .profile-image img {
+        width: 7.7em;
+    }
+
+    .user .profile-user-settings {
+        flex-basis: calc(100% - 10.7em);
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 1em;
+    }
+
+    .user .profile-user-name {
+        font-size: 2.2em;
+    }
+
+    .user .profile-edit-btn {
+        order: 1;
+        padding: 0;
+        text-align: center;
+        margin-top: 1em;
+    }
+
+    .user .profile-edit-btn {
+        margin-left: 0;
+    }
+
+    .user .profile-bio {
+        font-size: 1.4em;
+        margin-top: 1.5em;
+    }
+
+    .user .profile-edit-btn,
+    .user .profile-bio,
+    .user .profile-stats {
+        flex-basis: 100%;
+    }
+
+    .user .profile-stats {
+        order: 1;
+        margin-top: 1.5em;
+    }
+
+    .user .profile-stats ul {
+        display: flex;
+        text-align: center;
+        padding: 1.2em 0;
+        border-top: 0.1em solid #dadada;
+        border-bottom: 0.1em solid #dadada;
+    }
+
+    .user .profile-stats li {
+        font-size: 1.4em;
+        flex: 1;
+        margin: 0;
+    }
+
+    .user .profile-stat-count {
+        display: block;
+    }
+}
+
+/* Spinner Animation */
+
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*
+
+The following code will only run if your browser supports CSS grid.
+
+emove or comment-out the code block below to see how the browser will fall-back to flexbox & floated styling. 
+
+*/
+
+@supports (display: grid) {
+    .profile {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(3, auto);
+        grid-column-gap: 3em;
+        align-items: center;
+    }
+
+    .profile-image {
+        grid-row: 1 / -1;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
+        grid-gap: 2em;
+    }
+
+    .profile-image,
+    .profile-user-settings,
+    .profile-stats,
+    .profile-bio,
+    .gallery-item,
+    .gallery {
+        width: auto;
+        margin: 0;
+    }
+
+    @media (max-width: 40rem) {
+        .profile {
+            grid-template-columns: auto 1fr;
+            grid-row-gap: 1.5em;
+        }
+
+        .profile-image {
+            grid-row: 1 / 2;
+        }
+
+        .profile-user-settings {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 1em;
+        }
+
+        .profile-edit-btn,
+        .profile-stats,
+        .profile-bio {
+            grid-column: 1 / -1;
+        }
+
+        .profile-user-settings,
+        .profile-edit-btn,
+        .profile-settings-btn,
+        .profile-bio,
+        .profile-stats {
+            margin: 0;
+        }
+    }
+}
+
 

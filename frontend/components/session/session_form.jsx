@@ -101,7 +101,7 @@ class SessionForm extends React.Component {
       usernameInfo = <label htmlFor="username">Phone number, username, or email</label>
     }
     return (
-      <div className="container">
+      <div className="login container">
         <div className="box">
           <div className="heading"></div>
             <form className="login-form" onSubmit={this.handleSubmit}>

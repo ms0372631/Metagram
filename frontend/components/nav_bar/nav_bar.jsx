@@ -27,6 +27,7 @@ export default ({ currentUser, logout }) => {
     </div>
   );
   return (
+    <>
     <nav className="navbar">
       <div className="nav-wrapper">
         <img className="brand-img" src="https://lh3.google.com/u/0/d/1Gg1qVxN0Z2UcBjF52OQqwR3ikAwoyEep=w2732-h1726-iv1" alt=""/>
@@ -36,5 +37,7 @@ export default ({ currentUser, logout }) => {
         </div>
       </div>
     </nav>
+    <div style={{height: '50px'}}/>
+    </>
   )
 }

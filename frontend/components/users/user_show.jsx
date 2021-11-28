@@ -16,20 +16,37 @@ class UserShow extends React.Component {
     const {user, posts, updatePost, deletePost} = this.props;
 
     return (
-      <div>
-        <ul>
-          {
-            posts.map(post => (
-              <UserShowItem
-                key={`${post.id}`}
-                post={post}
-                updatePost={updatePost}
-                deletePost={deletePost}
-              />
-            ))
-          }
-        </ul>
-      </div>
+      <>
+        <div className="user-container">
+          <div className="profile">
+            <div className="profile-image">
+              <img src="" alt="" />
+            </div>
+            <div className="profile-user-settings">
+              <h1 class="profile-user-name">{user.fullname}</h1>
+              <button className="btn profile-edit-bin">Edit Profile</button>
+              <button class="btn profile-settings-btn" aria-label="profile settings">
+                <i class="fas fa-cog" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div className="profile-stats">
+              <ul>
+                <li><span className="profile-stat-count">3</span>posts</li>
+                <li><span className="profile-stat-count">21</span>followers</li>
+                <li><span className="profile-stat-count">16</span>following</li>
+              </ul>
+            </div>
+            <div className="profile-boi">
+              <p><span className="profile-real-name">{this.user.fullname}</span>A Porsche 9-11 lover </p>
+            </div>
+          </div>
+        </div>
+        <div className="user-container">
+          <div className="gallery">
+            <UserShowItem/>
+          </div>
+        </div>
+     </>
     )
   }
 }

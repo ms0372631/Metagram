@@ -1,12 +1,20 @@
 import React from 'react';
 
 export default ({post, updatePost, deletePost}) => {
-  
+
   return (
-    <li>
-      <h3>{post.id}</h3>
-      <button onClick={updatePost}>Update Post</button>
-      <button onClick={deletePost}>Delete Post</button>
-    </li>
+    <div className="gallery-item" tabIndex="0">
+      <img className="gallery-image" src={post.photoUrl} alt="" />
+      <div className="gallery-item-info">
+        <ul>
+          <li className="gallery-item-likes">
+            <span class="visually-hidden">Likes:</span>
+            <i class="fas fa-heart" aria-hidden="true"></i>42
+            </li>
+        </ul>
+      </div>
+    </div>
   )
 }
+
+export default UserShowItem;

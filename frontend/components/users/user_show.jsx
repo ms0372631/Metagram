@@ -24,7 +24,6 @@ class UserShow extends React.Component {
             </div>
             <div className="profile-user-settings">
               <h1 className="profile-user-name">{user.username}</h1>
-              <button className="btn profile-edit-bin">Edit Profile</button>
               <button className="btn profile-settings-btn" aria-label="profile settings">
                 <i className="fas fa-cog" aria-hidden="true"></i>
               </button>

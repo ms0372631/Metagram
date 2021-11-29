@@ -13,7 +13,7 @@ const App = () => (
   <div>
     <AuthRoute exact path='/login' component={LoginFormContainer}/>
     <AuthRoute exact path='/signup' component={SignupFormContainer}/>
-    <Route path='/' component={NavBarContainer} />
+    <ProtectedRoute path='/' component={NavBarContainer} />
     <Route path='/index' component={LeftCol}/>
     <Route path='/create' component={PostCreateContainer}/>
     <Route path='/demo' component={UserShowContainer} />

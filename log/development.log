@@ -50940,3 +50940,12 @@ Processing by Api::PostsController#index as JSON
 Completed 200 OK in 60ms (Views: 22.9ms | ActiveRecord: 36.5ms)
 
 
+Started GET "/" for ::1 at 2021-11-29 00:18:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JmaQqhWixN8w_ykgYZ4Wsg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 520ms (Views: 515.0ms | ActiveRecord: 3.1ms)
+
+

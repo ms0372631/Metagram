@@ -1,17 +1,16 @@
 import React from 'react';
 import { closeModal } from '../actions/modal_actions';
-import connect from 'react-redux';
+import { connect } from 'react-redux';
 import PostCreateContainer from './nav_bar/posts/post_create_container';
 
 function Modal({modal, closeModal}) {
-
   if (!modal) {
     return null;
   }
 
   let component;
   switch (modal) {
-    case 'create post':
+    case 'createPost':
       component = <PostCreateContainer />;
       break;
     default:
@@ -35,4 +34,4 @@ const mDTP = dispatch => ({
   closeModal: () => dispatch(closeModal())
 })
 
-export default connect (mSTP, mDTP)(Modal);
+export default connect(mSTP, mDTP)(Modal);

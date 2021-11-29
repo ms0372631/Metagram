@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-export default ({ currentUser, logout }) => {
+import modal from '../modal';
+export default ({ currentUser, logout, openModal }) => {
   const display = currentUser ? (
     <>
       <Link to="/index">
         <img src="https://lh3.google.com/u/0/d/1aMykwMlA83NxXm36R0tKZ7qk1cgE_GNW=w2724-h1840-iv1" className="icon" alt=""/>
       </Link>
-        <img src="https://lh3.google.com/u/0/d/1gaitJO61JA1XlA8KQtA7EIG3J0w9OWYo=w2732-h1726-iv1" className="icon" alt=""/>
-      <Link to="/create">
-        <img src="https://lh3.google.com/u/0/d/1nf-JGwFe2VMcxVl-8m0dlpRfbsZCQlRW=w2732-h1840-iv1" className="icon" alt="" />
-      </Link>
-        <img src="https://lh3.google.com/u/0/d/1c24OJ5w9gx_1sNRDFlwrUjIsfSMOYDor=w2732-h1840-iv1" className="icon" alt=""/>
+      
+      <img src="https://lh3.google.com/u/0/d/1gaitJO61JA1XlA8KQtA7EIG3J0w9OWYo=w2732-h1726-iv1" className="icon" alt=""/>
+     
+      <img src="https://lh3.google.com/u/0/d/1nf-JGwFe2VMcxVl-8m0dlpRfbsZCQlRW=w2732-h1840-iv1" className="icon" onClick={() => openModal('createPost')} alt="" />
+      
+      <img src="https://lh3.google.com/u/0/d/1c24OJ5w9gx_1sNRDFlwrUjIsfSMOYDor=w2732-h1840-iv1" className="icon" alt=""/>
       <img src="https://lh3.google.com/u/0/d/1vP-vNl5nbffr_g12mrhFeyGP_Jx8-dt_=w2732-h1840-iv1" className="icon"alt=""/>
       <h3>{currentUser.fullname}</h3>
       <div className="icon user-proflie"></div>

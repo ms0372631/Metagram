@@ -25,7 +25,7 @@ export const requestUser = userId => dispatch => (
   .fail(err => dispatch(receiveUserErrors(err)))
 )
 
-export const receiveUsers = () => dispatch => (
+export const requestUsers = () => dispatch => (
   UserAPIUtil.fetchUsers(userId)
   .then(users => dispatch(receiveUsers(users)))
   .fail(err => dispatch(receiveUserErrors(err)))

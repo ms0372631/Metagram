@@ -3,14 +3,10 @@ import PostIndexContainer from './posts/post_index_container';
 import StoryIndexContainer from './stories/story_index_container';
 
 const LeftCol = () => (
-  <section className="main">
-    <div className="wrapper">
-      <div className="left-col">
-        <StoryIndexContainer />
-        <PostIndexContainer />
-      </div>
-    </div>
-  </section>
+  <div className="left-col">
+    <StoryIndexContainer />
+    <PostIndexContainer />
+  </div>
 )
 
 export default LeftCol

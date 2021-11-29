@@ -1,31 +1,36 @@
 import React from 'react';
-import UserIndextItem from './'
+import UserIndexItem from './user_index_item';
 
 class UserIndex extends React.Component {
-  constructor(props) {
-    super(props);
+
+  componentDidMount() {
+    this.props.requestUsers();
   }
 
   render() {
+
+    const {users, currentUser} = this.props;
+
     return (
       <>
-        <section className="main">
-          <div className="wrapper">
-            <div className="right-col">
-              <div className="profile-pic">
-                <img src="" alt="" />
-              </div>
-              <div>
-                <p class="username">Current User</p>
-                <p class="sub-text">current user fullname</p>
-              </div>
-              <button className="action-btn">switch</button>
+        <div className="right-col">
+          <div className="profile-card">
+            <div className="profile-pic">
+              <img src="" alt="" />
             </div>
-            <p className="suggestion-text">Suggestions for you</p>
-            <UserIndexItem/>
+            <div>
+              <p className="username">{currentUser.username}</p>
+              <p className="sub-text">{currentUser.fullname}</p>
+            </div>
+            <button className="action-btn">switch</button>
           </div>
-
-        </section>
+          <p className="suggestion-text">Suggestions for you</p>
+          {
+            users.map(user => 
+              <UserIndexItem user={user} />
+            )
+          }
+        </div>
       </>
     )
   }

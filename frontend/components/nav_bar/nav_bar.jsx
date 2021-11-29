@@ -37,7 +37,6 @@ export default ({ currentUser, logout }) => {
         </div>
       </div>
     </nav>
-    <div style={{height: '50px'}}/>
     </>
   )
 }

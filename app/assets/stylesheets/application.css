@@ -251,7 +251,7 @@ input:not(:placeholder-shown) {
     display: flex;
     justify-content: center;
     padding: 5px 0;
-    z-index: 5;
+    z-index: 1;
 }
 
 .nav-wrapper{
@@ -261,12 +261,13 @@ input:not(:placeholder-shown) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .brand-img{
     height: 100%;
     margin-top: 5px;
-}
+  }
 
 .search-box{
     position: absolute;
@@ -542,6 +543,7 @@ input:not(:placeholder-shown) {
 }
 
 .modal-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 60%;
@@ -551,11 +553,11 @@ input:not(:placeholder-shown) {
 }
 
 .modal.header{
-  width: 70%;
-  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4px 8px;
   display: flex;
   justify-content: space-between;
-  align-items: top;
 }
 
 .modal.header-title {
@@ -565,28 +567,32 @@ input:not(:placeholder-shown) {
 }
 
 .modal.header-back {
-  padding: 16px;
+  display: block;
 }
 
-.modal.share-button {
-  padding-bottom: 16px;
-  padding-top: 16px;
+.modal.header-share {
+  display: block;
 }
 
 .modal.bottom {
+  height: calc(100% - 29px);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
 .modal.bottom-left {
+  height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .modal.bottom-right {
   display: flex;
+  height: 100%;
+  width: 50%;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -597,7 +603,17 @@ input:not(:placeholder-shown) {
   right: 20px;
   font-size: 36px;
   line-height: 1;
+  z-index: 2;
   cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #f00;
+}
+
+
+.modal.modal-picture {
+  width: 50%;
 }
 
 /* usershow */

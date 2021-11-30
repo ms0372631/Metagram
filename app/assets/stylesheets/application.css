@@ -590,12 +590,18 @@ input:not(:placeholder-shown) {
   align-items: center;
 }
 
-
+.modal #blah {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
 
 .modal.bottom-right {
   box-sizing: border-box;
   width: 50%;
-  padding: 4px 8px;
   display: flex;
   flex-direction: column;
 }

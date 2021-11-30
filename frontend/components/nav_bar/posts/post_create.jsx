@@ -20,10 +20,6 @@ class PostCreate extends React.Component {
     formData.append('post[body]', this.state.body);
     formData.append('post[photo]', this.state.photoFile);
     formData.append('post[authorId]', this.state.authorId);
-    this.props.fetchPosts()
-      .then(posts => this.setState({
-        imageUrl: posts[posts.length - 1].photoUrl
-      }))
   }
 
   updateFile() {
@@ -46,22 +42,16 @@ class PostCreate extends React.Component {
     })
   }
 
+  preview(e) {
+    const [file] = e.currentTarget.files
+    if (file) {
+      blah.src = URL.createObjectURL(file);
+      blah.removeAttribute('hidden');
+    }
+  }
+
+
   render() {
-
-    let imageSelector;
-
-    if (this.state.imageUrl === '') {
-      imageSelector = (
-        <form className="modal bottom-left" onSubmit={() => this.updateFile()}>
-          <input type="file" />
-        </form>
-      )
-    }
-    else {
-      imageSelector = (
-        <img src={this.state.imageUrl} alt="" />
-      )
-    }
 
     const {currentUser} = this.props;
 
@@ -74,7 +64,10 @@ class PostCreate extends React.Component {
             <button className="modal header-share" type="submit" form="rightform">Share</button>
           </div>
           <div className="modal bottom">
-            {imageSelector}
+            <form className="modal bottom-left" runat="server">
+              <input accept="image/*" type='file' onChange={this.preview} />
+              <img id="blah" src="#" alt="your image" hidden/>
+            </form>
             <form id="rightform" className="modal bottom-right" onSubmit={this.handleSubmit}>
               <div className="modal username">{currentUser.username}</div>
               <div className="modal text-area">

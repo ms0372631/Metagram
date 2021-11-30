@@ -6,7 +6,7 @@ import PostCreate from './post_create';
 
 const mSTP = state => ({
   // errors: state.errors.posts,
-  currentUserId: state.session.currentUser,
+  currentUser: state.session.currentUser,
   formType: 'create post'
 })
 

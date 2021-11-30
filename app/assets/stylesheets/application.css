@@ -118,7 +118,7 @@ a {
   text-overflow: ellipsis;
 }
 
-input {
+.login input {
   padding: 9px 0px 7px 9px;
   font-size: 12px;
   width: 16rem;
@@ -274,7 +274,7 @@ input:not(:placeholder-shown) {
     left: 50%;
     transform: translateX(-50%);
     width: 200px;
-    height: 15px;
+    height: 25px;
     background: #fafafa;
     border: 1px solid #dfdfdf;
     border-radius: 2px;
@@ -615,9 +615,9 @@ input:not(:placeholder-shown) {
 
 .modal.text-area {
   display: flex;
-  box-sizing: border-box;
   width: 100%;
   height: 100%;
+
 }
 
 
@@ -1014,7 +1014,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
 /* UserIndex */
 
 .right-col {
-  padding: 20px;
+  margin-left: 20px;
 }
 
 .profile-card {
@@ -1022,7 +1022,8 @@ emove or comment-out the code block below to see how the browser will fall-back 
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .profile-card .profile-pic {
@@ -1031,7 +1032,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
   background: none;
   width: 40px;
   height: 40px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .profile-card:first-child .profile-pic {
@@ -1060,6 +1061,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
   opacity: 1;
   font-weight: 700;
   margin-top: 12px;
+  margin-left: 65px;
 }
 
 .suggestion-text {

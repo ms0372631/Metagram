@@ -70,9 +70,7 @@ class PostCreate extends React.Component {
             </form>
             <form id="rightform" className="modal bottom-right" onSubmit={this.handleSubmit}>
               <div className="modal username">{currentUser.username}</div>
-              <div className="modal text-area">
-                <input type="text" value={this.state.body} onChange={this.update('body')}/>
-              </div>
+              <input className="modal text-area" type="text" value={this.state.body} onChange={this.update('body')}/>
             </form>
           </div>
         </div>

@@ -6,10 +6,12 @@ class PostCreate extends React.Component {
     this.state = {
       authorId: this.props.currentUser.id,
       body: '',
-      photoFile: null
+      photoFile: null,
+      imageUrl: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -18,17 +20,21 @@ class PostCreate extends React.Component {
     formData.append('post[body]', this.state.body);
     formData.append('post[photo]', this.state.photoFile);
     formData.append('post[authorId]', this.state.authorId);
+    this.props.fetchPosts()
+      .then(posts => this.setState({
+        imageUrl: posts[posts.length - 1].photoUrl
+      }))
   }
 
   updateFile() {
     return e => this.setState({
-      photoFile: e.curretTarget.files[0]
+      photoFile: e.target.files[0]
     });
   }
 
   update(field) {
     return e => this.setState({
-      [field]: e.currentUser.value
+      [field]: e.target.value
     });
   }
 
@@ -42,6 +48,21 @@ class PostCreate extends React.Component {
 
   render() {
 
+    let imageSelector;
+
+    if (this.state.imageUrl === '') {
+      imageSelector = (
+        <form className="modal bottom-left" onSubmit={() => this.updateFile()}>
+          <input type="file" />
+        </form>
+      )
+    }
+    else {
+      imageSelector = (
+        <img src={this.state.imageUrl} alt="" />
+      )
+    }
+
     const {currentUser} = this.props;
 
     return (
@@ -53,9 +74,7 @@ class PostCreate extends React.Component {
             <button className="modal header-share" type="submit" form="rightform">Share</button>
           </div>
           <div className="modal bottom">
-            <form className="modal bottom-left" onSubmit={this.handleSubmit}>
-              <button type="file">Select from computer</button>
-            </form>
+            {imageSelector}
             <form id="rightform" className="modal bottom-right" onSubmit={this.handleSubmit}>
               <div className="modal username">{currentUser.username}</div>
               <div className="modal text-area">

@@ -103,7 +103,7 @@ a {
 
 .heading {
   margin: 22px auto 12px;
-  background-image: url("https://www.instagram.com/static/bundles/es6/sprite_core_b20f2a3cd7e4.png/b20f2a3cd7e4.png");
+  background-image: url("https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262503/b20f2a3cd7e4_w3y1fb.png");
   background-position: -98px 0;
   height: 51px;
   width: 177px;
@@ -407,7 +407,7 @@ input:not(:placeholder-shown) {
 }
 
 .info {
-  width: 100%;
+  width: calc(100% - 40px);
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -611,7 +611,7 @@ input:not(:placeholder-shown) {
   display: flex;
   box-sizing: border-box;
   width: 100%;
-  height: 50%;
+  height: 100%;
 }
 
 

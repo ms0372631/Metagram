@@ -7,31 +7,39 @@ class PostCreate extends React.Component {
       authorId: this.props.currentUser.id,
       body: '',
       photoFile: null,
-      imageUrl: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
 
   handleSubmit(e) {
     e.preventDefault();
-    const post = Object.assign({}, this.state);
     const formData = new FormData();
     formData.append('post[body]', this.state.body);
     formData.append('post[photo]', this.state.photoFile);
     formData.append('post[authorId]', this.state.authorId);
+    $.ajax({
+      url: 'api/posts',
+      method: 'POST',
+      data: formData,
+      contentType: false,
+      processData: false
+    });
   }
 
-  updateFile() {
-    return e => this.setState({
-      photoFile: e.target.files[0]
+
+
+  updateFile(e) {
+    this.setState({
+      photoFile: e.currentTarget.files[0]
     });
   }
 
   update(field) {
     return e => this.setState({
-      [field]: e.target.value
-    });
+      [field]: e.currentTarget.value
+    })
   }
 
   clearState() {
@@ -65,12 +73,17 @@ class PostCreate extends React.Component {
           </div>
           <div className="modal bottom">
             <form className="modal bottom-left" runat="server">
-              <input accept="image/*" type='file' onChange={this.preview} />
+              <input accept="image/*" type='file' onChange={this.updateFile}/>
               <img id="blah" src="#" alt="your image" hidden/>
             </form>
             <form id="rightform" className="modal bottom-right" onSubmit={this.handleSubmit}>
               <div className="modal username">{currentUser.username}</div>
-              <input className="modal text-area" type="text" value={this.state.body} onChange={this.update('body')}/>
+              <input 
+              className="modal text-area" 
+              type="text" 
+              value={this.state.body} 
+              placeholder="Write a caption..." 
+              onChange={this.update('body')}/>
             </form>
           </div>
         </div>

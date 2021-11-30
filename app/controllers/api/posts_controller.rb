@@ -3,6 +3,7 @@ class Api::PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       render "api/posts/show"
+      debugger
     else
       render json: @post.errors.full_messages
     end
@@ -42,7 +43,7 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params 
-    params.require(:post).permit(:body)
+    params.require(:post).permit(:body, :author_id, :photo)
   end
 
 end

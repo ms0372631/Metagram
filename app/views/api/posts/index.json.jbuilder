@@ -7,3 +7,10 @@ json.array! @posts do |post|
     json.photoUrl ""
   end
 end
+
+
+# if post.photo.attached?
+#   json.photoUrl url_for(post.photo)
+# else
+#   json.photoUrl ""
+# end

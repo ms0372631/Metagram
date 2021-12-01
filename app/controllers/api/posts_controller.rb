@@ -3,7 +3,6 @@ class Api::PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       render "api/posts/show"
-      debugger
     else
       render json: @post.errors.full_messages
     end

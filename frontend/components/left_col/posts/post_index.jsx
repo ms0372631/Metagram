@@ -11,14 +11,13 @@ class PostIndex extends React.Component {
 
   render() {
     const posts = this.props.posts;
-    if (this.props.posts.length === 0)
-      return 'loading'
+  
     return (
       <>
         {
           posts.map(post => (
             <>
-              <PostIndexItem key="{post.id}" post={post}/>
+              <PostIndexItem key={post.id} post={post}/>
             </>
           ))
         }

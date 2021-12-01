@@ -590,7 +590,7 @@ label {
   align-items: center;
 }
 
-.modal #blah {
+.modal.image {
   display: flex;
   box-sizing: border-box;
   align-items: center;

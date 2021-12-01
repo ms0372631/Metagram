@@ -4,9 +4,10 @@ class PostCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      authorId: this.props.currentUser.id,
+      author_id: this.props.currentUser.id,
       body: '',
       photoFile: null,
+      imageUrl: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -17,8 +18,10 @@ class PostCreate extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('post[body]', this.state.body);
-    formData.append('post[photo]', this.state.photoFile);
-    formData.append('post[authorId]', this.state.authorId);
+    formData.append('post[author_id]', this.state.author_id);
+    if (this.state.photoFile) {
+      formData.append('post[photo]', this.state.photoFile);
+    }
     $.ajax({
       url: 'api/posts',
       method: 'POST',
@@ -31,9 +34,16 @@ class PostCreate extends React.Component {
 
 
   updateFile(e) {
-    this.setState({
-      photoFile: e.currentTarget.files[0]
-    });
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () => 
+      this.setState({ imageUrl: reader.result, photoFile: file });
+  
+    if (file) 
+      reader.readAsDataURL(file);
+    else
+      this.setState({ imageUrl: '', photoFile: null });
+   
   }
 
   update(field) {
@@ -44,24 +54,27 @@ class PostCreate extends React.Component {
 
   clearState() {
     this.setState({
-      authorId: 0,
+      author_id: 0,
       body: '',
       photoUrl: ''
     })
   }
 
-  preview(e) {
-    const [file] = e.currentTarget.files
-    if (file) {
-      blah.src = URL.createObjectURL(file);
-      blah.removeAttribute('hidden');
-    }
-  }
+ 
 
 
   render() {
 
     const {currentUser} = this.props;
+    let image;
+    let submit;
+
+    if (this.state.imageUrl != '') {
+      image = ( <img className="modal image" src={this.state.imageUrl} alt="your image" /> )
+    }
+    else {
+      submit = ( <input type='file' onChange={this.updateFile} /> )
+    }
 
     return (
       <>
@@ -73,8 +86,8 @@ class PostCreate extends React.Component {
           </div>
           <div className="modal bottom">
             <form className="modal bottom-left" runat="server">
-              <input accept="image/*" type='file' onChange={this.updateFile}/>
-              <img id="blah" src="#" alt="your image" hidden/>
+              {submit}
+              {image}
             </form>
             <form id="rightform" className="modal bottom-right" onSubmit={this.handleSubmit}>
               <div className="modal username">{currentUser.username}</div>

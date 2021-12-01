@@ -1,12 +1,13 @@
 import React from 'react';
-import CommentCreateContainer from './comments/comment_create_container';
+import CommentCreate from '../posts/comments/comment_create';
+import CommentIndexContainer from '../posts/comments/comment_index_container';
 
-const PostIndexItem = ({post}) => (
+const PostIndexItem = ({post, user, createComment}) => (
   <div className="post">
     <div className="info">
       <div className="user">
         <div className="profile-pic"><img src="" alt="" /></div>
-        <p className="username"></p>
+        <p className="username">{user.username}</p>
       </div>
       <img className="options" src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262823/option_hdakyy.png" alt="" />
     </div>
@@ -18,11 +19,12 @@ const PostIndexItem = ({post}) => (
         {/* <img className="icon" src="https://lh3.google.com/u/0/d/1YZp2Sob8-irx-MsJvJuIDiiCdn1IYOZE=w2732-h1726-iv1" alt="" />
         <img className="icon" src="https://lh3.google.com/u/0/d/18oLwdSv9d1yAaBaR6mKTch4Lg4BVLgqL=w2732-h1726-iv1" alt="" /> */}
       </div>
-      <p className="likes"></p>
+      <p className="likes">5 likes</p>
       <p className="description">{post.body}</p>
+      <CommentIndexContainer/>
       <p className="post-time"></p>
     </div>
-    <CommentCreateContainer/>
+    <CommentCreate post={post} user={user} createComment={createComment}/>
   </div>
 )
 

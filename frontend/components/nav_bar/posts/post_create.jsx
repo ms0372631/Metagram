@@ -64,7 +64,7 @@ class PostCreate extends React.Component {
 
 
   render() {
-
+    
     const {currentUser} = this.props;
     let image;
     let submit;
@@ -90,7 +90,7 @@ class PostCreate extends React.Component {
               {image}
             </form>
             <form id="rightform" className="modal bottom-right" onSubmit={this.handleSubmit}>
-              <div className="modal username">{currentUser.username}</div>
+              <div className="modal username">username</div>
               <input 
               className="modal text-area" 
               type="text" 

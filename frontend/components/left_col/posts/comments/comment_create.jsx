@@ -4,18 +4,18 @@ class CommentCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: this.props.user,
-      body: ''
+      author_id: props.user.id,
+      body: '',
+      post_id: props.post.id
     };
-    
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.update = this.update.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const comment = Object.assign({}, this.state)
     this.props.createComment(comment);
+    debugger
     this.clearState();
   }
 
@@ -27,8 +27,7 @@ class CommentCreate extends React.Component {
 
   clearState() {
     this.setState({
-      user: {},
-      body: ''
+      body: '',
     })
   }
 

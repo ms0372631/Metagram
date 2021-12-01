@@ -5,7 +5,6 @@ import { login, removeSessionErrors, loginDemo } from "../../actions/session_act
 
 
 const mapStateToProps = (state, ownProps) => {
- 
   return {
   errors: Object.values(state.errors.session),
   formType: 'Log in'

@@ -18,6 +18,11 @@ class Api::UsersController < ApplicationController
     render json: @user.errors.full_messages, status: 401
   end
 
+  def index
+    @users = User.all
+    render :index
+  end
+
   private
 
   def user_params

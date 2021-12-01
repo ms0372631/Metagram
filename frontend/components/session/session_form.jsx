@@ -49,7 +49,6 @@ class SessionForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
-  
   }
 
   renderErrors() {

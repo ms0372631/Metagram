@@ -12,3 +12,11 @@ export const fetchUser = userId => (
     url: `api/users/${userId}`
   })
 )
+
+export const createUser = user => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/users',
+    data: {user}
+  })
+)

@@ -1,0 +1,2 @@
+module Api::CommentLikesHelper
+end

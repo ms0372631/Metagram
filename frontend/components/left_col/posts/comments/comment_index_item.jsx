@@ -1,9 +1,17 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
-const CommentIndexItem = ({user, comment}) => (
+const CommentIndexItem = ({user, comment}) => {
+  debugger 
+  return (
   <p className="description">
     <span>{user.username}</span> {comment.body}
-  </p>
-)
+  </p>)
+}
 
-export default CommentIndexItem;
+const mSTP = (state, ownProps) => ({
+  user: state.entities.users[ownProps.comment.author_id]
+})
+
+
+export default connect(mSTP, null)(CommentIndexItem);

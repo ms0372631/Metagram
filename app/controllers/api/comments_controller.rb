@@ -34,6 +34,11 @@ class Api::CommentsController < ApplicationController
     end
   end
 
+  def index 
+    @comments = Comment.where(post_id: params[:post_id])
+    render 'api/comments/index'
+  end
+
   private
 
   def comment_params

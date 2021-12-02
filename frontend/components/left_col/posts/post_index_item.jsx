@@ -22,8 +22,8 @@ const PostIndexItem = ({post, user, createComment}) => (
       <p className="likes">5 likes</p>
       <p className="description">
         <span>{user.username}</span> {post.body}
-        <CommentIndexContainer postId={post.id}/>
       </p>
+      <CommentIndexContainer/>
       <p className="post-time"></p>
     </div>
     <CommentCreate post={post} user={user} createComment={createComment}/>

@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux';
 
 const CommentIndexItem = ({user, comment}) => {
-  debugger 
   return (
   <p className="description">
     <span>{user.username}</span> {comment.body}

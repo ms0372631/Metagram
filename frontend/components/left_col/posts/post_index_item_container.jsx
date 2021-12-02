@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 
 const mSTP = (state, ownProps) =>({
-  user: state.entities.users[ownProps.post.author_id]
+  user: state.entities.users[ownProps.post.author_id],
+  currentUser: state.session.currentUser
 })
 
 export default connect(mSTP, null)(PostIndexItem)

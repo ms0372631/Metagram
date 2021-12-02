@@ -25,20 +25,20 @@ export const receiveCommentErrors = errors => ({
   errors
 })
 
-export const requestComments = () => dispatch => (
-  CommentAPIUtil.fetchComments()
+export const requestComments = postId => dispatch => (
+  CommentAPIUtil.fetchComments(postId)
   .then(comments => dispatch(receiveComments(comments))
   .fail(err => dispatch(receiveCommentErrors(err))))
 )
 
-export const requestComment = (commentId) => dispatch => (
+export const requestComment = commentId => dispatch => (
   CommentAPIUtil.fetchComment(commentId)
   .then(comment => dispatch(receiveComment(comment)))
   .fail(err => dispatch(receiveCommentErrors(err)))
 )
 
-export const createComment = comment => dispatch => (
-  CommentAPIUtil.createComment(comment)
+export const createComment = (comment, postId) => dispatch => (
+  CommentAPIUtil.createComment(comment, postId)
   .then(comment => dispatch(receiveComment(comment)))
   .fail(err => dispatch(receiveCommentErrors(err)))
 )

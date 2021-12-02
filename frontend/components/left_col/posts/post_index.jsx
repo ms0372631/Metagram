@@ -12,7 +12,7 @@ class PostIndex extends React.Component {
 
   render() {
     const {posts, users} = this.props;
-    console.log(this.props);
+    
     return (
       <>
         {

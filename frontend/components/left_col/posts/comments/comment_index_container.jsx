@@ -3,12 +3,12 @@ import { updateComment, removeComment, requestComments } from "../../../../actio
 import CommentIndex from "./comment_index";
 
 const mSTP = (state, ownProps) => ({
-  comments: Object.values(state.entities.comments).filter(comment => ownProps.postId === comment.post_id)
+  comments: Object.values(state.entities.comments)
 })
 
 const mDTP = dispatch => ({
   removeComments: comment => dispatch(removeComment(comment)),
-  requestComments: comments => dispatch(requestComments(comments))
+  requestComments: postId => dispatch(requestComments(postId))
 })
 
 export default connect(mSTP, mDTP)(CommentIndex)

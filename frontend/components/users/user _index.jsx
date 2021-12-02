@@ -8,8 +8,11 @@ class UserIndex extends React.Component {
   }
 
   render() {
-
     const {users, currentUser} = this.props;
+    
+    if (!currentUser)
+      return ''
+
     console.log(users);
     return (
       <>

@@ -14,7 +14,7 @@ const mDTP = dispatch => ({
   requestUsers: () => dispatch(requestUsers()),
   updatePost: post => dispatch(updatePost(post)),
   deletePost: postId => dispatch(deletePost(postId)),
-  createComment: comment => dispatch(createComment(comment))
+  createComment: (comment, postId) => dispatch(createComment(comment, postId))
 })
 
 export default connect(mSTP, mDTP)(PostIndex)

@@ -24,7 +24,6 @@ class SessionForm extends React.Component {
     this.props.loginDemo(_demoUser);
   }
 
-
   componentDidMount() {
     this.props.clearErrors();
   }

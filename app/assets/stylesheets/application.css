@@ -1051,6 +1051,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
   font-weight: 500;
   font-size: 14px;
   color: #000;
+  text-align: left;
 }
 
 .sub-text {
@@ -1058,13 +1059,13 @@ emove or comment-out the code block below to see how the browser will fall-back 
   font-size: 12px;
   font-weight: 500;
   margin-top: 5px;
+  margin-right: 65px;
 }
 
 .action-btn {
   opacity: 1;
   font-weight: 700;
   margin-top: 12px;
-  margin-left: 65px;
 }
 
 .suggestion-text {

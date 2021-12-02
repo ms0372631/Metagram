@@ -1,17 +1,19 @@
 import React from "react"
 
-const UserIndexItem = user => (
+const UserIndexItem = ({user}) => {
+  console.log(user)
+  return (
   <div className="profile-card">
     <div className="profile-pic">
       <img src="" alt="" />
     </div>
     <div>
-      <p className={user.username}></p>
+      <p className="username">{user.username}</p>
       <p className="sub-text">followed by user</p>
     </div>
     <button className="action-btn">Follow</button>
-  </div>
-)
+  </div>)
+}
 
 
 export default UserIndexItem;

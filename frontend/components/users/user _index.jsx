@@ -10,7 +10,7 @@ class UserIndex extends React.Component {
   render() {
 
     const {users, currentUser} = this.props;
-
+    console.log(users);
     return (
       <>
         <div className="right-col">

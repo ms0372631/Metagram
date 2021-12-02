@@ -8,7 +8,7 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-  requestUsers: () => dispatch(requestUsers)
+  requestUsers: () => dispatch(requestUsers())
 })
 
 

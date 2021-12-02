@@ -20,8 +20,10 @@ const PostIndexItem = ({post, user, createComment}) => (
         <img className="icon" src="https://lh3.google.com/u/0/d/18oLwdSv9d1yAaBaR6mKTch4Lg4BVLgqL=w2732-h1726-iv1" alt="" /> */}
       </div>
       <p className="likes">5 likes</p>
-      <p className="description">{post.body}</p>
-      <CommentIndexContainer/>
+      <p className="description">
+        <span>{user.username}</span> {post.body}
+        <CommentIndexContainer/>
+      </p>
       <p className="post-time"></p>
     </div>
     <CommentCreate post={post} user={user} createComment={createComment}/>

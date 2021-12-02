@@ -447,16 +447,25 @@ label {
 }
 
 .post-content{
-  padding: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
 }
 
 .likes {
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .description span {
   font-weight: bold;
   margin-right: 10px;
+}
+
+.description {
+ margin-bottom: 5px;
+ margin-top: 5px;
 }
 
 .post-time {
@@ -477,6 +486,7 @@ label {
 .comment-wrapper .icon {
   height: 30px;
 }
+
 
 .comment-box {
   background-color: transparent;

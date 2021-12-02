@@ -3,7 +3,7 @@ import { updateComment, removeComment, requestComments } from "../../../../actio
 import CommentIndex from "./comment_index";
 
 const mSTP = (state, ownProps) => ({
-  comments: Object.values(state.entities.comments)
+  comments: Object.values(state.entities.comments).filter(comment => comment.post_id === ownProps.post.id)
 })
 
 const mDTP = dispatch => ({

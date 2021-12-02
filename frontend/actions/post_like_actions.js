@@ -15,9 +15,8 @@ export const receivePostLike = postLike => ({
   postLike
 })
 
-export const removePostLike = postLike => ({
-  type: REMOVE_POST_LIKE,
-  postLike
+export const removePostLike = () => ({
+  type: REMOVE_POST_LIKE
 })
 
 export const receivePostLikeErrors = errors => ({

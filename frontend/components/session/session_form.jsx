@@ -18,8 +18,8 @@ class SessionForm extends React.Component {
     const _demoUser = Object.freeze({
       username: 'demoUser',
       password: 'demoPassword',
-      email: '',
-      fullname: ''
+      email: 'demo@gmail.com',
+      fullname: 'Demo User'
     });
     this.props.loginDemo(_demoUser);
   }

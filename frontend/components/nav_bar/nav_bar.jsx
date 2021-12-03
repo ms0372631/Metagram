@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import modal from '../modal';
-export default ({ currentUser, logout, openModal }) => {
+export default ({ currentUser, openModal }) => {
   const display = currentUser ? (
     <>
       <Link to="/index">
@@ -14,9 +14,7 @@ export default ({ currentUser, logout, openModal }) => {
       
       <img src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638263620/explore_vj6upp.png" className="icon" alt=""/>
       <img src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638263642/like_wbgxzs.png" className="icon"alt=""/>
-      <h3>{currentUser.fullname}</h3>
       <div className="icon user-proflie"></div>
-      <button className="icon user-proflie" onClick={logout}>Logout</button>
     </>
   ) : (
     <div className="session-bar">
@@ -32,7 +30,7 @@ export default ({ currentUser, logout, openModal }) => {
     <>
     <nav className="navbar">
       <div className="nav-wrapper">
-          <img className="brand-img" src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262822/logo_qb03ym.png" alt=""/>
+        <img className="brand-img" src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262822/logo_qb03ym.png" alt=""></img>
         <input type="text" className="search-box" placeholder="search"/>
         <div className="nav-items">
           {display}

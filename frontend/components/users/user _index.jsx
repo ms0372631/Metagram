@@ -1,5 +1,6 @@
 import React from 'react';
 import UserIndexItem from './user_index_item';
+import { Link } from 'react-router-dom';
 
 class UserIndex extends React.Component {
 
@@ -8,7 +9,7 @@ class UserIndex extends React.Component {
   }
 
   render() {
-    const {users, currentUser} = this.props;
+    const {users, currentUser, logout} = this.props;
     
     if (!currentUser)
       return ''
@@ -17,14 +18,18 @@ class UserIndex extends React.Component {
       <>
         <div className="right-col">
           <div className="profile-card">
-            <div className="profile-pic">
-              <img src="" alt="" />
-            </div>
+            <Link to={`/users/${currentUser.id}`}>
+              <div className="profile-pic">
+                <img src="" alt="" />
+              </div>
+            </Link>
             <div>
-              <p className="username">{currentUser.username}</p>
+              <Link to={`/users/${currentUser.id}`}>
+                <p className="username">{currentUser.username}</p>
+              </Link>
               <p className="sub-text">{currentUser.fullname}</p>
             </div>
-            <button className="action-btn">switch</button>
+            <button className="action-btn" onClick={logout}>switch</button>
           </div>
           <p className="suggestion-text">Suggestions for you</p>
           {

@@ -33,14 +33,14 @@ export const requestComments = postId => dispatch => (
 
 export const requestComment = commentId => dispatch => (
   CommentAPIUtil.fetchComment(commentId)
-  .then(comment => dispatch(receiveComment(comment)))
-  .fail(err => dispatch(receiveCommentErrors(err)))
+  .then(comment => dispatch(receiveComment(comment))
+  .fail(err => dispatch(receiveCommentErrors(err))))
 )
 
 export const createComment = (comment, postId) => dispatch => (
   CommentAPIUtil.createComment(comment, postId)
-  .then(comment => dispatch(receiveComment(comment)))
-  .fail(err => dispatch(receiveCommentErrors(err)))
+  .then(comment => dispatch(receiveComment(comment))
+  .fail(err => dispatch(receiveCommentErrors(err))))
 )
 
 export const updateComment = comment => dispatch => (

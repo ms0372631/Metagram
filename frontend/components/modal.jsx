@@ -11,7 +11,7 @@ function Modal({modal, closeModal}) {
   let component;
   switch (modal) {
     case 'createPost':
-      component = <PostCreateContainer />;
+      component = <PostCreateContainer closeModal={closeModal}/>;
       break;
     default:
       return null;

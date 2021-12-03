@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class PostCreate extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class PostCreate extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.clearState = this.clearState.bind(this);
   }
 
 
@@ -29,6 +31,7 @@ class PostCreate extends React.Component {
       contentType: false,
       processData: false
     });
+    this.props.closeModal();
   }
 
 
@@ -43,7 +46,6 @@ class PostCreate extends React.Component {
       reader.readAsDataURL(file);
     else
       this.setState({ imageUrl: '', photoFile: null });
-   
   }
 
   update(field) {
@@ -56,15 +58,14 @@ class PostCreate extends React.Component {
     this.setState({
       author_id: 0,
       body: '',
-      photoUrl: ''
+      imageUrl: '',
+      photoFile: null
     })
   }
 
 
   render() {
     
-    const {currentUser} = this.props;
-
     let image;
     let submit;
 
@@ -79,17 +80,19 @@ class PostCreate extends React.Component {
       <>
         <div className="modal-form">
           <div className="modal header">
-            <div className="modal header-back">back</div>
+            <button className="modal header-back" onClick={this.clearState}>back</button>
             <div className="modal header-title">Create new post</div>
+            
             <button className="modal header-share" type="submit" form="rightform">Share</button>
+ 
           </div>
           <div className="modal bottom">
             <form className="modal bottom-left" runat="server">
               {submit}
               {image}
             </form>
-            <form id="rightform" className="modal bottom-right" onSubmit={this.handleSubmit}>
-              <div className="modal username">username</div>
+            <form id="rightform" className="modal bottom-right" onSubmit={this.handleSubmit} >
+              <div className="modal username">{this.props.currentUser.fullname}</div>
               <input 
               className="modal text-area" 
               type="text" 

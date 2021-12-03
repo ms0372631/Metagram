@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentCreate from '../posts/comments/comment_create';
 import CommentIndexContainer from '../posts/comments/comment_index_container';
+import { Link } from 'react-router-dom';
 
 class PostIndexItem extends React.Component {
   
@@ -19,8 +20,12 @@ class PostIndexItem extends React.Component {
     <div className="post">
       <div className="info">
         <div className="user">
-          <div className="profile-pic"><img src="" alt="" /></div>
-          <p className="username">{user.username}</p>
+          <Link to={`/users/${user.id}`}>
+            <div className="profile-pic"><img src="" alt="" /></div>
+          </Link>
+          <Link to={`/users/${user.id}`}>
+            <p className="username">{user.username}</p>
+          </Link>
         </div>
         <img className="options" src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262823/option_hdakyy.png" alt="" />
       </div>

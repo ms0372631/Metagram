@@ -11,10 +11,10 @@ class CommentIndex extends React.Component {
   }
 
   render () {
-    
+
     return (
       <> 
-        {
+        { 
           this.props.comments.map(comment => (
             <CommentIndexItem comment={comment}/>
           ))

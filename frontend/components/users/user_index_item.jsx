@@ -1,7 +1,6 @@
 import React from "react"
 
 const UserIndexItem = ({user}) => {
-  console.log(user)
   return (
   <div className="profile-card">
     <div className="profile-pic">

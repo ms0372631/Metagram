@@ -13,7 +13,7 @@ class UserShow extends React.Component {
   
   render() {
 
-    const {user, posts, updatePost, deletePost} = this.props;
+    const {user, posts} = this.props;
     
     return (
       <>
@@ -32,7 +32,7 @@ class UserShow extends React.Component {
               </div>
               <div className="profile-stats">
                 <ul>
-                  <li><span className="profile-stat-count">3 </span>posts</li>
+                  <li><span className="profile-stat-count">{posts.length} </span>posts</li>
                   <li><span className="profile-stat-count">21 </span>followers</li>
                   <li><span className="profile-stat-count">16 </span>following</li>
                 </ul>
@@ -46,7 +46,7 @@ class UserShow extends React.Component {
             <div className="gallery">
               {
                 posts.map(post => (
-                  <UserShowItem key="{post.id}" post={post}/>
+                  <UserShowItem key={post.id} post={post}/>
                 ))
               }
             </div>
@@ -57,5 +57,7 @@ class UserShow extends React.Component {
     )
   }
 }
+
+
 
 export default UserShow;

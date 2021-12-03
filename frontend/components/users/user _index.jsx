@@ -30,7 +30,7 @@ class UserIndex extends React.Component {
           <p className="suggestion-text">Suggestions for you</p>
           {
             users.map(user => 
-              <UserIndexItem user={user} />
+              <UserIndexItem key={user.id} user={user} />
             )
           }
         </div>

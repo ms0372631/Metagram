@@ -60,12 +60,11 @@ class PostCreate extends React.Component {
     })
   }
 
- 
-
 
   render() {
     
     const {currentUser} = this.props;
+
     let image;
     let submit;
 

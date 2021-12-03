@@ -13,7 +13,6 @@ class UserIndex extends React.Component {
     if (!currentUser)
       return ''
 
-    console.log(users);
     return (
       <>
         <div className="right-col">

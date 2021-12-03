@@ -11,7 +11,7 @@ class PostIndexItem extends React.Component {
   render () {
 
     const { post, user, currentUser, createComment } = this.props;
-
+    
     if (!user)
       return '';
       

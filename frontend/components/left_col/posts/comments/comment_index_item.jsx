@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 
 const CommentIndexItem = ({user, comment}) => {
+  
   return (
   <p className="description">
     <span>{user.username}</span> {comment.body}
@@ -9,7 +10,7 @@ const CommentIndexItem = ({user, comment}) => {
 }
 
 const mSTP = (state, ownProps) => ({
-  user: state.entities.users[ownProps.comment.author_id]
+  user: state.entities.users[ownProps.comment.authorId]
 })
 
 

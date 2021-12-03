@@ -11,7 +11,7 @@ class CommentIndex extends React.Component {
   }
 
   render () {
-
+    
     return (
       <> 
         { 

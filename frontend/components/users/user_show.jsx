@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import UserShowItem from './user_show_item'
+import { connect } from 'react-redux';
+import { requestUsers } from '../../actions/user_actions';
+import UserShowSub from './user_show_sub_container';
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -8,56 +9,24 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestPosts();
+    this.props.requestUsers();
   }
-  
-  render() {
 
-    const {user, posts} = this.props;
-    
+  render() {
     return (
       <>
-        <div style={{height: '50px'}}/>
-        <div className="user">
-          <div className="container">
-            <div className="profile">
-              <div className="profile-image">
-                <img src="" alt="" />
-              </div>
-              <div className="profile-user-settings">
-                <h1 className="profile-user-name">{user.username}</h1>
-                <button className="btn profile-settings-btn" aria-label="profile settings">
-                  <i className="fas fa-cog" aria-hidden="true"></i>
-                </button>
-              </div>
-              <div className="profile-stats">
-                <ul>
-                  <li><span className="profile-stat-count">{posts.length} </span>posts</li>
-                  <li><span className="profile-stat-count">21 </span>followers</li>
-                  <li><span className="profile-stat-count">16 </span>following</li>
-                </ul>
-              </div>
-              <div className="profile-bio">
-                <p><span className="profile-real-name">{user.fullname}</span> A Porsche 9-11 lover </p>
-              </div>
-            </div>
-          </div>
-          <div className="container">
-            <div className="gallery">
-              {
-                posts.map(post => (
-                  <UserShowItem key={post.id} post={post}/>
-                ))
-              }
-            </div>
-            <div className="loader"></div>
-          </div>
-        </div>
+        <UserShowSub user={this.props.user}/>
       </>
     )
   }
 }
 
+const mSTP = (state, ownProps) => ({
+  user: state.entities.users[ownProps.match.params.userId]
+});
 
+const mDTP = dispatch => ({
+  requestUsers: () => dispatch(requestUsers())
+})
 
-export default UserShow;
+export default connect(mSTP, mDTP)(UserShow);

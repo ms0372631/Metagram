@@ -56,7 +56,6 @@ class PostCreate extends React.Component {
 
   clearState() {
     this.setState({
-      author_id: 0,
       body: '',
       imageUrl: '',
       photoFile: null

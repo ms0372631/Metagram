@@ -24,7 +24,7 @@ class UserShowItem extends React.Component {
           <ul>
             <li className="gallery-item-likes">
               <span className="visually-hidden">Likes:</span>
-              <i className="fas fa-heart" aria-hidden="true"></i>42
+              <i className="fas fa-heart" aria-hidden="true"></i>
             </li>
             <li className="gallery-item-comments">
               <span className="visually-hidden">Comments:</span>

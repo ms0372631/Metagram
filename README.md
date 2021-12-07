@@ -1,24 +1,26 @@
-# README
+# Metagram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Metagram, an cloned website of the social media platform, Instagram, where the users are allowed to create account, view all posts from all the users in the post index page, create posts with images and leave comments on any post.
+# Technologies
 
-Things you may want to cover:
+- Ruby on rails
+- PostgresSQL
+- React
+- Redux
+- Javascript
+- AWS S3
+# Key Features
 
-* Ruby version
+## Ability to view posts from all signed up users
 
-* System dependencies
+- User can view posts from all users on the index page
+- User can leave comments on any post on the index page
 
-* Configuration
+## Ability to create posts
 
-* Database creation
+- User can create posts with an image and description that would be shown both on the index page and user profile page
 
-* Database initialization
 
-* How to run the test suite
+## Ability to view the number of comments and posts on user profile page
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- User can see the number of posts and the number of comments of each post when hoverd over

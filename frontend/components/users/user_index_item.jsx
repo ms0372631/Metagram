@@ -15,7 +15,9 @@ const UserIndexItem = ({user}) => {
       </Link>
       <p className="sub-text">followed by user</p>
     </div>
-    <button className="action-btn">Follow</button>
+    <Link to={`/users/${user.id}`}>
+      <button className="action-btn">Visit</button>
+    </Link>
   </div>)
 }
 

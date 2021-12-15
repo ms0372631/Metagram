@@ -5,7 +5,7 @@ class PostCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      authorId: this.props.currentUser.id,
+      authord: this.props.currentUser.id,
       body: '',
       photoFile: null,
       imageUrl: ''

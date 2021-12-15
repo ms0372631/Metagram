@@ -30,7 +30,9 @@ export default ({ currentUser, openModal }) => {
     <>
     <nav className="navbar">
       <div className="nav-wrapper">
-        <img className="brand-img" src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262822/logo_qb03ym.png" alt=""></img>
+        <Link style={{height: "100%", marginTop: "5px"}} to="/index">
+          <img className="brand-img" src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262822/logo_qb03ym.png" alt="Logo"></img>
+        </Link>
         <input type="text" className="search-box" placeholder="search"/>
         <div className="nav-items">
           {display}

@@ -5,7 +5,7 @@ class PostCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      author_id: this.props.currentUser.id,
+      authorId: this.props.currentUser.id,
       body: '',
       photoFile: null,
       imageUrl: ''
@@ -20,7 +20,7 @@ class PostCreate extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('post[body]', this.state.body);
-    formData.append('post[author_id]', this.state.author_id);
+    formData.append('post[author_id]', this.state.authorId);
     if (this.state.photoFile) {
       formData.append('post[photo]', this.state.photoFile);
     }
@@ -81,6 +81,7 @@ class PostCreate extends React.Component {
           <div className="modal header">
             <button className="modal header-back" onClick={this.clearState}>back</button>
             <div className="modal header-title">Create new post</div>
+
             
             <button className="modal header-share" type="submit" form="rightform">Share</button>
  

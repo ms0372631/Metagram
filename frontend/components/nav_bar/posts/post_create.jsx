@@ -5,7 +5,7 @@ class PostCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      authord: this.props.currentUser.id,
+      author_id: this.props.currentUser.id,
       body: '',
       photoFile: null,
       imageUrl: ''
@@ -20,7 +20,7 @@ class PostCreate extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('post[body]', this.state.body);
-    formData.append('post[author_id]', this.state.authorId);
+    formData.append('post[author_id]', this.state.author_id);
     if (this.state.photoFile) {
       formData.append('post[photo]', this.state.photoFile);
     }

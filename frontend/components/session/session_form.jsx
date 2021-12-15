@@ -121,7 +121,7 @@ class SessionForm extends React.Component {
               <div className="other">
               <button className="fb-login-btn" type="button">
                 <i className="fa fa-facebook-official fb-icon"></i>
-                <span className="" onClick={this.loginDemoUser}>Log in with Facebook</span>
+                <span className="" onClick={this.loginDemoUser}>Log in with Demo</span>
               </button>
               {this.renderErrors()}
               <a className="forgot-password" href="#">Forgot password?</a>

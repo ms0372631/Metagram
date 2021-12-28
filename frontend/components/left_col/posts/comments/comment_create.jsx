@@ -4,9 +4,9 @@ class CommentCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      author_id: props.currentUser.id,
+      author_id: this.props.currentUser.id,
       body: '',
-      post_id: props.post.id
+      post_id: this.props.post.id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }

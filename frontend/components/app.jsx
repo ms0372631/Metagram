@@ -12,9 +12,9 @@ import { Switch, Route, Link } from 'react-router-dom';
 const App = () => (
   <>
     <Modal/>
+    <ProtectedRoute path='/' component={NavBarContainer} />
     <AuthRoute exact path='/login' component={LoginFormContainer}/>
     <AuthRoute exact path='/signup' component={SignupFormContainer}/>
-    <ProtectedRoute path='/' component={NavBarContainer} />
     <ProtectedRoute path='/index' component={Main}/>
     <Route path='/users/:userId' component={UserShow} />
   </>

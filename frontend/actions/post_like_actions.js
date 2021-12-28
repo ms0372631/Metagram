@@ -30,8 +30,8 @@ export const requestPostLikes = postId => (
   .fail(err => dispatch(receivePostLikeErrors(err)))
 )
 
-export const createPostLike = (postLikes, postId) => (
-  PostLikeAPIUtil.createPostLike(postLikes, postId)
+export const createPostLike = (postLike, postId) => (
+  PostLikeAPIUtil.createPostLike(postLike, postId)
   .then(postLike => dispatch(receivePostLike(postLike)))
   .fail(err => dispatch(receivePostLikeErrors(err)))
 )

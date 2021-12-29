@@ -2,7 +2,7 @@ class Api::PostLikesController < ApplicationController
   def create
     @post_like = PostLike.new(post_like_params)
     if @post_like.save
-      render 
+      render 'api/post_likes/show'
     else
       render json: @post_like.errors.full_messages
     end
@@ -24,6 +24,6 @@ class Api::PostLikesController < ApplicationController
   private
 
   def post_like_params
-    params.require(:post_like).permit(:post_id)
+    params.require(:post_like).permit(:post_id, :author_id)
   end
 end

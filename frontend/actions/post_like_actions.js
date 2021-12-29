@@ -2,7 +2,7 @@ import * as PostLikeAPIUtil from '../util/post_like_api_util';
 
 export const RECEIVE_POST_LIKES = 'RECEIVE_POST_LIKES';
 export const RECEIVE_POST_LIKE = 'RECEIVE_POST_LIKE';
-export const REMOVE_POST_LIKE = 'RECEIVE_POST_LIKE';
+export const REMOVE_POST_LIKE = 'REMOVE_POST_LIKE';
 export const RECEIVE_POST_LIKES_ERRORS = 'RECEIVE_POST_LIKES_ERRORS';
 
 export const receivePostLikes = postLikes => ({
@@ -15,8 +15,9 @@ export const receivePostLike = postLike => ({
   postLike
 })
 
-export const removePostLike = () => ({
-  type: REMOVE_POST_LIKE
+export const removePostLike = postLikeId => ({
+  type: REMOVE_POST_LIKE,
+  postLikeId
 })
 
 export const receivePostLikeErrors = errors => ({
@@ -24,20 +25,21 @@ export const receivePostLikeErrors = errors => ({
   errors
 })
 
-export const requestPostLikes = postId => (
+
+export const requestPostLikes = postId => dispatch => (
   PostLikeAPIUtil.fetchPostLikes(postId)
   .then(postLikes => dispatch(receivePostLikes(postLikes)))
   .fail(err => dispatch(receivePostLikeErrors(err)))
 )
 
-export const createPostLike = (postLike, postId) => (
+export const createPostLike = (postLike, postId) => dispatch => (
   PostLikeAPIUtil.createPostLike(postLike, postId)
   .then(postLike => dispatch(receivePostLike(postLike)))
   .fail(err => dispatch(receivePostLikeErrors(err)))
 )
 
-export const deletePostLike = (postId, postLikeId) => (
-  PostLikeAPIUtil.deletePostLike(postId, postLikeId)
+export const deletePostLike = postLikeId => dispatch => (
+  PostLikeAPIUtil.deletePostLike(postLikeId)
   .then(postLike => dispatch(removePostLike(postLike)))
   .fail(err => dispatch(receivePostLikeErrors(err)))
 )

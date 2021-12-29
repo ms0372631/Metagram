@@ -1,0 +1,1 @@
+json.extract! @post_like, :id, :author_id, :post_id

@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => ({
   currentUser: state.session.currentUser
 })
 
-const mDTP = postId => dispatch => ({
+const mDTP = dispatch => ({
   deletePost: postId => dispatch(deletePost(postId)),
   receivePostLikes: postId => dispatch(receivePostLikes(postId))
 })

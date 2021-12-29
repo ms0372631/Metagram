@@ -11,12 +11,14 @@ class PostLikeCreate extends React.Component {
     });
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  
+
 
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.liked) {
-      this.props.requestPostLikes();
-      this.props.deletePostLike(this.props.postLike);
+      this.props.requestPostLikes()
+      .then(console.log(this.props.postLike))
       this.setState({
         liked: false
       });

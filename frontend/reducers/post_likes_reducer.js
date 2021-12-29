@@ -9,7 +9,7 @@ const postLikesReducer = (state = {}, action) => {
     case RECEIVE_POST_LIKES:
         return Object.assign(nextState, action.postLikes);
     case REMOVE_POST_LIKE:
-      delete nextState[action.postLikeId];
+      delete nextState[action.postLike.id];
       return nextState;
     default:
       return state;

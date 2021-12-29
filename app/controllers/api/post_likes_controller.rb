@@ -10,12 +10,12 @@ class Api::PostLikesController < ApplicationController
 
   def index 
     @post_likes = PostLike.all
-    render 'api/post_like/index'
+    render 'api/post_likes/index'
   end
 
   def destroy
     if @post_like.delete
-      render 'api/post_like/show'
+      render 'api/post_likes/show'
     else
       render json: @post_like.errors.full_messages
     end

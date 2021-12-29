@@ -3,11 +3,13 @@ import { createPostLike, deletePostLike, requestPostLikes } from '../../../../ac
 import PostLikeCreate from './post_like_create';
 
 
-const mSTP = state => ({
+const mSTP = (state, ownProps) => {
+  console.log(Object.values(state.entities.postLikes));
+  return {
   postLikes: Object.values(state.entities.postLikes),
-  postLike: Object.values(state.entities.postLikes).filter(postLike => postLike.author_id === state.session.currentUser),
+  postLike: Object.values(state.entities.postLikes).filter(postLike => postLike.post_id === ownProps.post.id),
   currentUser: state.session.currentUser
-})
+}}
 
 const mDTP = dispatch => ({
   requestPostLikes: postId => dispatch(requestPostLikes(postId)),

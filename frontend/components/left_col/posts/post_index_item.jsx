@@ -13,9 +13,6 @@ class PostIndexItem extends React.Component {
     });
   }
 
-  componentDidMount() {
-
-  }
 
 
   render () {
@@ -40,13 +37,7 @@ class PostIndexItem extends React.Component {
       </div>
       <img className="post-image" src={post.photoUrl} alt="" />
       <div className="post-content">
-        <div className="reaction-wrapper">
-          <PostLikeCreateContainer post={post} user={user}/>
-          <img className="icon" src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1640691758/NicePng_new-instagram-icon-png_7786050_oxsohf.png" alt="" />
-          {/* <img className="icon" src="https://lh3.google.com/u/0/d/1YZp2Sob8-irx-MsJvJuIDiiCdn1IYOZE=w2732-h1726-iv1" alt="" />
-          <img className="icon" src="https://lh3.google.com/u/0/d/18oLwdSv9d1yAaBaR6mKTch4Lg4BVLgqL=w2732-h1726-iv1" alt="" /> */}
-        </div>
-        <p className="likes">5 likes</p>
+        <PostLikeCreateContainer  post={post} user={user}/>
         <p className="description">
           <span>{user.username}</span> {post.body}
         </p>

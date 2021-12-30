@@ -1,20 +1,21 @@
 import { connect } from 'react-redux';
-import { createPostLike, deletePostLike, requestPostLikes } from '../../../../actions/post_like_actions';
+import { createPostLike, deletePostLike, requestPostLikes, requestPostLike } from '../../../../actions/post_like_actions';
 import PostLikeCreate from './post_like_create';
 
 
 const mSTP = (state, ownProps) => {
-  console.log(Object.values(state.entities.postLikes));
+
   return {
+  postLike: state.entities.postLikes,
   postLikes: Object.values(state.entities.postLikes),
-  postLike: Object.values(state.entities.postLikes).filter(postLike => postLike.post_id === ownProps.post.id),
   currentUser: state.session.currentUser
 }}
 
 const mDTP = dispatch => ({
+  requestPostLike: (postId, postLikeId) => dispatch(requestPostLike(postId, postLikeId)),
   requestPostLikes: postId => dispatch(requestPostLikes(postId)),
   createPostLike: (postLike, postId) => dispatch(createPostLike(postLike, postId)),
-  deletePostLike: postLikeId => dispatch(deletePostLike(postLikeId))
+  deletePostLike: (postId, postLikeId) => dispatch(deletePostLike(postId, postLikeId))
 })
 
 export default connect(mSTP, mDTP)(PostLikeCreate);

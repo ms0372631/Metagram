@@ -6,6 +6,7 @@ import { receivePostLikes } from '../../../actions/post_like_actions';
 
 
 const mSTP = (state, ownProps) => ({
+  postLikes: Object.values(state.entities.postLikes),
   user: state.entities.users[ownProps.post.authorId],
   currentUser: state.session.currentUser
 })

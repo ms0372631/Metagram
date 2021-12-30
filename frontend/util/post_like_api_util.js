@@ -7,6 +7,13 @@ export const fetchPostLikes = postId => (
   })
 )
 
+export const fetchPostLike = (postId, postLikeId) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/posts/${postId}/post_likes/${postLikeId}`
+  })
+)
+
 export const createPostLike = (post_like, postId) => (
   $.ajax({
     method: 'POST',

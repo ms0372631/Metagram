@@ -8,13 +8,23 @@ class Api::PostLikesController < ApplicationController
     end
   end
 
+  def show
+    @post = PostLike.find(post_like_params[:id])
+    if @post
+      render 'api/post_likes/show'
+    else
+      render json: @post_like.errors.full_messages
+    end
+  end
+
   def index 
     @post_likes = PostLike.all
     render 'api/post_likes/index'
   end
 
   def destroy
-    if @post_like.delete
+    @post_like = PostLike.find(params[:id])
+    if @post_like.destroy
       render 'api/post_likes/show'
     else
       render json: @post_like.errors.full_messages

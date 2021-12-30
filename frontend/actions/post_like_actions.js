@@ -25,10 +25,15 @@ export const receivePostLikeErrors = errors => ({
   errors
 })
 
-
 export const requestPostLikes = postId => dispatch => (
   PostLikeAPIUtil.fetchPostLikes(postId)
   .then(postLikes => dispatch(receivePostLikes(postLikes)))
+  .fail(err => dispatch(receivePostLikeErrors(err)))
+)
+
+export const requestPostLike = (postId, postLikeId) => dispatch => (
+  PostLikeAPIUtil.fetchPostLike(postId, postLikeId)
+  .then(postLike => dispatch(receivePostLike(postLike)))
   .fail(err => dispatch(receivePostLikeErrors(err)))
 )
 
@@ -38,8 +43,8 @@ export const createPostLike = (postLike, postId) => dispatch => (
   .fail(err => dispatch(receivePostLikeErrors(err)))
 )
 
-export const deletePostLike = postLikeId => dispatch => (
-  PostLikeAPIUtil.deletePostLike(postLikeId)
-  .then(postLike => dispatch(removePostLike(postLike)))
+export const deletePostLike = (postId, postLikeId)  => dispatch => (
+  PostLikeAPIUtil.deletePostLike(postId, postLikeId)
+  .then(postLikeId => dispatch(removePostLike(postLikeId)))
   .fail(err => dispatch(receivePostLikeErrors(err)))
 )

@@ -557,24 +557,30 @@ label {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 60%;
-  width: 75%;
+  height: 80vh;
+  width: 70vw;
   background: #fff;
   z-index: 3;
+  border-radius: 10px;
 }
 
 .modal.header{
   box-sizing: border-box;
+  font-size: 16px;
+  height: 5%;
   width: 100%;
   padding: 4px 8px;
   display: flex;
+  line-height: 24px;
+  text-align: center;
   justify-content: space-between;
+  border-bottom: 5px;
 }
 
 .modal.header-title {
   display: flex;
   justify-content: center;
-  align-items: top;
+  align-items: center;
 }
 
 .modal.header-back {
@@ -626,10 +632,11 @@ label {
 
 .modal.text-area {
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   padding: 0;
   border: 0;
+  margin: 10px;
 }
 
 

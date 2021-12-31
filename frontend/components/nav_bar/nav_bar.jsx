@@ -13,6 +13,8 @@ class NavBar extends React.Component {
   }
 
   render() {
+
+    const { currentUser, openModal } = this.props;
     const display = currentUser ? (
       <>
         <Link to="/index">

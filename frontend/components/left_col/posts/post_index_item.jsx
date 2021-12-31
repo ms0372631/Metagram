@@ -13,8 +13,6 @@ class PostIndexItem extends React.Component {
     });
   }
 
-
-
   render () {
 
     const { post, user, currentUser, createComment, deletePost } = this.props;

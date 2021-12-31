@@ -15,12 +15,13 @@ class PostLikeCreate extends React.Component {
   componentDidMount() {
     this.props.requestPostLikes(this.props.post.id)
     .then(
-      () => this.setState({
-        numberofLikes: this.props.postLikes.length
+      payload => this.setState({
+        numberofLikes: Object.values(payload.postLikes).length,
+        postLikeId: Object.values(payload.postLikes).filter(postLike => postLike.authorId === this.props.currentUser.id)[0].id
       })
+      
     )
   }
-
 
   handleSubmit(e) {
     e.preventDefault();
@@ -38,7 +39,7 @@ class PostLikeCreate extends React.Component {
       const postLike = Object.assign({}, this.state);
       this.props.createPostLike(postLike, this.props.post.id)
       .then(
-        (payload) => this.setState({
+        payload => this.setState({
             postLikeId: payload.postLike.id,
             numberofLikes: this.state.numberofLikes + 1
         })

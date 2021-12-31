@@ -42,7 +42,6 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     this.clearState();
-    this.history.push('/index');
   }
 
   update(field) {

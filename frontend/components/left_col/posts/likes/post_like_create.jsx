@@ -15,7 +15,7 @@ class PostLikeCreate extends React.Component {
     this.props.requestPostLikes(this.props.post.id)
     .then(
       payload => this.setState({
-        postLikeId: Object.values(payload.postLikes).filter(postLike => postLike.authorId === this.props.currentUser.id)[0].id ===
+        postLikeId: Object.keys(payload.postLikes).length === 0 ? 0 : Object.values(payload.postLikes).filter(postLike => postLike.authorId === this.props.currentUser.id)[0].id
       })
     )
   }

@@ -1,7 +1,7 @@
 import PostIndexItem from "./post_index_item";
 import { connect } from 'react-redux';
 import { deletePost } from "../../../actions/post_actions";
-import { receivePostLikes } from '../../../actions/post_like_actions';
+import { requestPostLikes } from '../../../actions/post_like_actions';
 
 
 
@@ -13,7 +13,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
   deletePost: postId => dispatch(deletePost(postId)),
-  receivePostLikes: postId => dispatch(receivePostLikes(postId))
+  requestPostLikes: postId => dispatch(requestPostLikes(postId))
 })
 
 export default connect(mSTP, mDTP)(PostIndexItem)

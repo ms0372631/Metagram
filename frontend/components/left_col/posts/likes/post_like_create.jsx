@@ -7,7 +7,6 @@ class PostLikeCreate extends React.Component {
       postLikeId: 0,
       author_id: this.props.currentUser.id,
       post_id: this.props.post.id,
-      numberofLikes: 0
     });
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,10 +15,8 @@ class PostLikeCreate extends React.Component {
     this.props.requestPostLikes(this.props.post.id)
     .then(
       payload => this.setState({
-        numberofLikes: Object.values(payload.postLikes).length,
-        postLikeId: Object.values(payload.postLikes).filter(postLike => postLike.authorId === this.props.currentUser.id)[0].id
+        postLikeId: Object.values(payload.postLikes).filter(postLike => postLike.authorId === this.props.currentUser.id)[0].id ===
       })
-      
     )
   }
 
@@ -31,9 +28,9 @@ class PostLikeCreate extends React.Component {
       .then(
         () => this.setState({
           postLikeId: 0,
-          numberofLikes: this.state.numberofLikes - 1
         })
       )
+       this.props.updateLikes(this.props.numberofLikes - 1);
     }
     else {
       const postLike = Object.assign({}, this.state);
@@ -41,9 +38,9 @@ class PostLikeCreate extends React.Component {
       .then(
         payload => this.setState({
             postLikeId: payload.postLike.id,
-            numberofLikes: this.state.numberofLikes + 1
         })
       )
+       this.props.updateLikes(this.props.numberofLikes + 1);
     }
   }
 
@@ -57,10 +54,7 @@ class PostLikeCreate extends React.Component {
     }
     return (
       <>
-      <div className="reaction-wrapper">
         {like}
-      </div>
-         <p className="likes">{this.state.numberofLikes} likes</p>
       </>
     )
   }

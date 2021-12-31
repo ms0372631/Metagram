@@ -9,8 +9,25 @@ class PostIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = ({
-      likedbyCurrentUser: false
+      likedbyCurrentUser: false,
+      numberofLikes: 0
     });
+    this.updateLikes = this.updateLikes.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.requestPostLikes(this.props.post.id)
+    .then(
+      payload => this.setState({
+        numberofLikes: Object.values(payload.postLikes).length
+      })
+    )
+  }
+
+  updateLikes(num) {
+    this.setState({
+      numberofLikes: num
+    })
   }
 
   render () {
@@ -35,7 +52,10 @@ class PostIndexItem extends React.Component {
       </div>
       <img className="post-image" src={post.photoUrl} alt="" />
       <div className="post-content">
-        <PostLikeCreateContainer  post={post} user={user}/>
+      <div className="reaction-wrapper">
+        <PostLikeCreateContainer numberofLikes={this.state.numberofLikes} updateLikes={this.updateLikes} post={post} user={user}/>
+      </div>
+        <p className="likes">{this.state.numberofLikes} likes</p>
         <p className="description">
           <span>{user.username}</span> {post.body}
         </p>

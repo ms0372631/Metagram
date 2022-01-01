@@ -9,6 +9,7 @@ class PostCreate extends React.Component {
       body: '',
       photoFile: null,
       imageUrl: ''
+
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -32,9 +33,8 @@ class PostCreate extends React.Component {
       processData: false
     });
     this.props.closeModal();
+    setTimeout(() => location.reload(true), 3000);
   }
-
-
 
   updateFile(e) {
     const reader = new FileReader();

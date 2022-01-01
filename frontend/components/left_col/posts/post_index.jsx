@@ -1,5 +1,5 @@
 import React from "react";
-import PostItemContainer from './post_index_item_container';
+import PostIndexItemContainer from './post_index_item_container';
 
 class PostIndex extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class PostIndex extends React.Component {
         {
           this.props.posts.map(post => (
             <>
-              <PostItemContainer 
+              <PostIndexItemContainer 
                 key={post.id} 
                 post={post} 
                 createComment={this.props.createComment}/>

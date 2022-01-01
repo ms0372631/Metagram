@@ -1,8 +1,8 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
 import modal from '../modal';
-// export default ({ currentUser, openModal }) => {
+import SearchBarContainer from './search_bar_container';
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -46,7 +46,7 @@ class NavBar extends React.Component {
           <Link style={{height: "100%", marginTop: "5px"}} to="/index">
             <img className="brand-img" src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262822/logo_qb03ym.png" alt="Logo"></img>
           </Link>
-          <input type="text" className="search-box" placeholder="search"/>
+          <SearchBarContainer/>
           <div className="nav-items">
             {display}
           </div>

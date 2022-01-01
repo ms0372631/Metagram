@@ -20,6 +20,17 @@ class PostLikeCreate extends React.Component {
     )
   }
 
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevProps.post !== this.props.post) {
+  //     this.props.requestPostLikes(this.props.post.id)
+  //     .then(
+  //       payload => this.setState({
+  //         postLikeId: Object.keys(payload.postLikes).length === 0 ? 0 : Object.values(payload.postLikes).filter(postLike => postLike.authorId === this.props.currentUser.id)[0].id
+  //       })
+  //     )
+  //   }
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.postLikeId !== 0) {

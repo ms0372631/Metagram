@@ -24,16 +24,54 @@ class PostIndexItem extends React.Component {
     )
   }
 
+
+
   updateLikes(num) {
     this.setState({
       numberofLikes: num
     })
   }
 
-  render () {
+  timeSince(date) {
+  
+    var seconds = Math.floor((new Date() - new Date(date)) / 1000);
+    var interval = seconds / 31536000;
 
-    const { post, user, currentUser, createComment, deletePost } = this.props;
+    if (interval > 1) 
+      return Math.floor(interval) + ((Math.floor(interval) == 1) ? ' YEAR' : ' YEARS');
     
+    interval = seconds / 2592000;
+    if (interval > 1) 
+      return Math.floor(interval) + ((Math.floor(interval) == 1) ? ' MONTH' : ' MONTHS');
+
+    interval = seconds / 86400;
+    if (interval > 1)
+      return Math.floor(interval) + ((Math.floor(interval) == 1) ? ' DAY' : ' DAYS');
+    
+    interval = seconds / 3600;
+    if (interval > 1)
+      return Math.floor(interval) + ((Math.floor(interval) == 1) ? ' HOUR' : ' HOURS');
+    
+    interval = seconds / 60;
+    if (interval > 1)
+      return Math.floor(interval) + ((Math.floor(interval) == 1) ? ' MINUTE' : ' MINUTES');
+
+    return Math.floor(seconds) + 'SECONDS';
+  }
+
+  render () {
+    // if (this.props.post.up)
+    const { post, user, currentUser, createComment, deletePost } = this.props;
+  
+    let likes;
+
+    if (this.state.numberofLikes === 1) {
+      likes = (<p className="likes">{this.state.numberofLikes} like</p>)
+    }
+    else if (this.state.numberofLikes > 1) {
+      likes = (<p className="likes">{this.state.numberofLikes} likes</p>)
+    }
+    console.log(this.state.numberofLikes);
     if (!user)
       return '';
       
@@ -55,12 +93,12 @@ class PostIndexItem extends React.Component {
       <div className="reaction-wrapper">
         <PostLikeCreateContainer numberofLikes={this.state.numberofLikes} updateLikes={this.updateLikes} post={post} user={user}/>
       </div>
-        <p className="likes">{this.state.numberofLikes} likes</p>
+        {likes}
         <p className="description">
           <span>{user.username}</span> {post.body}
         </p>
         <CommentIndexContainer post={post}/>
-        <p className="post-time"></p>
+        <p className="post-time">{this.timeSince(this.props.post.createdAt)} AGO</p>
       </div>
       <CommentCreate post={post} currentUser={currentUser} createComment={createComment}/>
     </div>

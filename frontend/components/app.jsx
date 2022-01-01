@@ -1,7 +1,6 @@
 import React from "react";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
-import NavBarContainer from "./nav_bar/nav_bar_container";
 import UserShow from './users/user_show'
 import Main from "./main";
 import Modal from "./modal";
@@ -12,11 +11,12 @@ import { Switch, Route, Link } from 'react-router-dom';
 const App = () => (
   <>
     <Modal/>
-    <Route path='/users/:userId' component={UserShow} />
-    <AuthRoute exact path='/login' component={LoginFormContainer}/>
-    <AuthRoute exact path='/signup' component={SignupFormContainer}/>
-    <ProtectedRoute path='/index' component={Main}/>
-    <ProtectedRoute path='/' component={NavBarContainer} />
+    <Switch>
+      <ProtectedRoute exact path='/' component={Main}/>
+      <AuthRoute exact path='/signup' component={SignupFormContainer}/>
+      <AuthRoute exact path='/login' component={LoginFormContainer}/>
+      <Route path='/users/:userId' component={UserShow} />
+    </Switch>
   </>
 )
 

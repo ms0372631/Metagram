@@ -9,9 +9,7 @@ class NavBar extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match)
-    // if (this.props.match.url === '/')
-    //   this.props.history.push('/index');
+ 
   }
 
   render() {
@@ -19,7 +17,7 @@ class NavBar extends React.Component {
     const { currentUser, openModal } = this.props;
     const display = currentUser ? (
       <>
-        <Link to="/index">
+        <Link to="/">
           <img src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262821/home_thiw3x.png" className="icon" alt=""/>
         </Link>
         
@@ -45,7 +43,7 @@ class NavBar extends React.Component {
       <>
       <nav className="navbar">
         <div className="nav-wrapper">
-          <Link style={{height: "100%", marginTop: "5px"}} to="/index">
+          <Link style={{height: "100%", marginTop: "5px"}} to="/">
             <img className="brand-img" src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262822/logo_qb03ym.png" alt="Logo"></img>
           </Link>
           <SearchBarContainer/>

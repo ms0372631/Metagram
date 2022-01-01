@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { requestUsers } from '../../actions/user_actions';
 import UserShowSub from './user_show_sub_container';
+import NavBarContainer from '../nav_bar/nav_bar_container';
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class UserShow extends React.Component {
   render() {
     return (
       <>
+        <NavBarContainer/>
         <UserShowSub user={this.props.user}/>
       </>
     )

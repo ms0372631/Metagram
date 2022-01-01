@@ -19,7 +19,7 @@ class PostIndexItem extends React.Component {
     this.props.requestPostLikes(this.props.post.id)
     .then(
       payload => this.setState({
-        numberofLikes: Object.values(payload.postLikes).length
+        numberofLikes: Object.values(payload.postLikes).filter(postLike => postLike.postId === this.props.post.id).length
       })
     )
   }
@@ -71,7 +71,7 @@ class PostIndexItem extends React.Component {
     else if (this.state.numberofLikes > 1) {
       likes = (<p className="likes">{this.state.numberofLikes} likes</p>)
     }
-    console.log(this.state.numberofLikes);
+
     if (!user)
       return '';
       

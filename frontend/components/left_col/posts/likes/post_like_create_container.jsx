@@ -4,10 +4,15 @@ import PostLikeCreate from './post_like_create';
 
 
 const mSTP = (state, ownProps) => {
-
+  let _postLikes;
+  if (Object.keys(state.entities.postLikes) === 0) 
+    _postLikes = [];
+  if (Object.keys(state.entities.postLikes) === 1)
+    _postLikes = [state.entities.postLikes];
+  else
+    _postLikes = Object.values(state.entities.postLikes);
   return {
-  postLike: state.entities.postLikes,
-  postLikes: Object.values(state.entities.postLikes),
+  postLikes: _postLikes,
   currentUser: state.session.currentUser
 }}
 

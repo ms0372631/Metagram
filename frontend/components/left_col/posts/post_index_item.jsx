@@ -94,8 +94,11 @@ class PostIndexItem extends React.Component {
         <PostLikeCreateContainer numberofLikes={this.state.numberofLikes} updateLikes={this.updateLikes} post={post} user={user}/>
       </div>
         {likes}
-        <p className="description">
-          <span>{user.username}</span> {post.body}
+        <p className="description" >
+          <Link to={`/users/${user.id}`}>
+            <span>{user.username}</span> 
+          </Link>
+            {post.body}
         </p>
         <CommentIndexContainer post={post}/>
         <p className="post-time">{this.timeSince(this.props.post.createdAt)} AGO</p>

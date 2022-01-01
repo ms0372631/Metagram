@@ -14,9 +14,20 @@ class UserShowSub extends React.Component {
   render() {
 
     const {user, posts} = this.props;
-     
+    let photos = [];
+
     if (!user)
       return '';
+    
+    console.log(posts);
+
+    if (posts.length < 3) {
+      for (let i = 0; i < 3 - posts.length; ++i) {
+        photos.push(
+        <div className="gallery-item-empty" tabIndex="0"></div>
+        )
+      }
+    }
 
     return (
       <>
@@ -52,6 +63,7 @@ class UserShowSub extends React.Component {
                   <UserShowItem key={post.id} post={post} user={user}/>
                 ))
               }
+              {photos}
             </div>
             <div className="loader"></div>
           </div>

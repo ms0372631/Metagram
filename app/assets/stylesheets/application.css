@@ -468,6 +468,7 @@ label {
 }
 
 .post-time {
+  margin-top: 10px;
   color: rgba(0, 0, 0, 0.5);
   font-size: 12px;
 }
@@ -811,6 +812,20 @@ label {
 .gallery-item {
   position: relative;
   flex: 1 0 22em;
+  border: none;
+  border-width: 0; 
+  border: 0; 
+  margin: 1em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.gallery-item-empty {
+  position: relative;
+  flex: 1 0 22em;
+  border: none;
+  border-width: 0; 
+  border: 0; 
   margin: 1em;
   color: #fff;
   cursor: pointer;

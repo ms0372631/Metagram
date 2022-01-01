@@ -56,7 +56,7 @@ class PostIndexItem extends React.Component {
     if (interval > 1)
       return Math.floor(interval) + ((Math.floor(interval) == 1) ? ' MINUTE' : ' MINUTES');
 
-    return Math.floor(seconds) + 'SECONDS';
+    return Math.floor(seconds) + ' SECONDS';
   }
 
   render () {

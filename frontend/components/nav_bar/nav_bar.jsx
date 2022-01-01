@@ -9,7 +9,9 @@ class NavBar extends React.Component {
   }
 
   componentDidMount() {
-    this.props.history.push('/index');
+    console.log(this.props.match)
+    // if (this.props.match.url === '/')
+    //   this.props.history.push('/index');
   }
 
   render() {

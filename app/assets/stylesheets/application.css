@@ -506,8 +506,13 @@ label {
   outline: none;
   text-transform: capitalize;
   font-size: 16px;
+  font-weight: 500;
   color: rgb(0, 162, 255);
   opacity: 0.5;
+}
+
+.action-btn:hover, .comment-btn:hover {
+  cursor: pointer;
 }
 
 
@@ -663,8 +668,6 @@ label {
 
 /* usershow */
 
-
-
 .user {
   font-size: 10px;
 }
@@ -812,9 +815,7 @@ label {
 .gallery-item {
   position: relative;
   flex: 1 0 22em;
-  border: none;
-  border-width: 0; 
-  border: 0; 
+  height: 27em;
   margin: 1em;
   color: #fff;
   cursor: pointer;

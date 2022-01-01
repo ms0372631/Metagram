@@ -65,9 +65,8 @@ class PostCreate extends React.Component {
 
   render() {
     
-    let image;
-    let submit;
-
+    let image, submit;
+    
     if (this.state.imageUrl != '') {
       image = ( <img className="modal image" src={this.state.imageUrl} alt="your image" /> )
     }

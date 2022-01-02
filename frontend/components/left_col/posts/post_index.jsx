@@ -15,12 +15,10 @@ class PostIndex extends React.Component {
       <>
         {
           this.props.posts.map(post => (
-            <>
-              <PostIndexItemContainer 
-                key={post.id} 
-                post={post} 
-                createComment={this.props.createComment}/>
-            </>
+            <PostIndexItemContainer 
+              key={post.id} 
+              post={post} 
+              createComment={this.props.createComment}/>
           ))
         }
       </>
@@ -28,4 +26,4 @@ class PostIndex extends React.Component {
   }
 }
 
-export default PostIndex
+export default PostIndex;

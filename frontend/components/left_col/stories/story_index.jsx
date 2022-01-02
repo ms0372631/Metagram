@@ -18,7 +18,7 @@ class StoryIndex extends React.Component {
     return (
       <div className="status-wrapper">
         {this.props.users.map(user => 
-          <StoryIndexItem user={user}/>
+          <StoryIndexItem key={user.id} user={user}/>
         )}
       </div>
     )

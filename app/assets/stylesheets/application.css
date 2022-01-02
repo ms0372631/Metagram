@@ -285,6 +285,40 @@ label {
     color: rgba(0, 0, 0, 0.5);
 }
 
+/* drop down */
+
+.drop-down {
+  position: absolute;
+  top:53px;
+  width: 201px;
+  height: 200px;
+  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+  background-color: #ffff;
+  border-radius: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1px;
+  right: 1%;
+}
+
+.drop-down ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.drop-down ul li {
+  padding: 8px 16px;
+  list-style: none;
+}
+
+.drop-down ul li:hover {
+  background-color: #fafafa;
+}
+
+.drop-down ul li a {
+  text-decoration: none;
+  color: #2b2b2b
+}
+
 .nav-items{
     margin: 0;
     padding: 0;

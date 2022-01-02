@@ -14,32 +14,55 @@ class SearchBar extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.searchWord != this.state.searchWord) {
-      if (this.state.searchWord.length !== 0) {
-        let searchW = this.state.searchWord;
-        let searchS = [];
-        for (let i = 0; i < this.props.users.length; ++i) {
-          if (searchW.length > this.props.users[i].username.length)
-            continue;
-          let j = 0, k = 0;
-          while (j < searchW.length && k < this.props.users[i].username.length) {
-            console.log(this.state.searchWord)
-            if (j === searchW.length - 1 && searchW[j] === this.props.users[i].username[k]) {
-              searchS.push(this.props.users[i]);
-            }
-            if (searchW[j] !== this.props.users[i].username[k]) {
-            }
-            else {
-              ++j;
-              ++k;
-            }
+    if (prevState.searchWord != this.state.searchWord && this.state.searchWord != '') {
+      let searchW = this.state.searchWord;
+      let searchS = [];
+      for (let i = 0; i < this.props.users.length; ++i) {
+        if (searchW.length > this.props.users[i].username.length)
+          continue;
+        let j = 0, k = 0;
+        while (j < searchW.length) {
+          if (j === searchW.length - 1 && searchW[j] === this.props.users[i].username[k]) {
+            searchS.push(this.props.users[i]);
+            this.setState({
+              searchShown: searchS
+            })
+            break;
+          }
+          if (searchW[j] !== this.props.users[i].username[k]) {
+            break;
+          }
+          else {
+            ++j;
+            ++k;
           }
         }
-        this.setState({
-          searchShown: searchS
-        })
       }
-        console.log(this.state.searchShown)
+      console.log(searchS);
+    }
+  }
+
+  cheackMatch() {
+    let searchW = this.state.searchWord;
+    let searchS = [];
+    for (let i = 0; i < this.props.users.length; ++i) {
+      if (searchW.length > this.props.users[i].username.length)
+        continue;
+      let j = 0, k = 0;
+      while (j < searchW.length) {
+        if (j === searchW.length - 1 && searchW[j] === this.props.users[i].username[k]) {
+          searchS.push(this.props.users[i]);
+          console.log(searchS);
+          break;
+        }
+        if (searchW[j] !== this.props.users[i].username[k]) {
+          break;
+        }
+        else {
+          ++j;
+          ++k;
+        }
+      }
     }
   }
 

@@ -16,8 +16,8 @@ class UserShowItem extends React.Component {
     this.props.requestComments(this.props.post.id);
     this.props.requestPostLikes(this.props.post.id)
     .then(
-      payload => this.setState({
-        numberofLikes: Object.values(payload.postLikes).length
+      () => this.setState({
+        numberofLikes: this.props.postLikes.length
       })
     )
   }
@@ -46,16 +46,10 @@ class UserShowItem extends React.Component {
   }
 }
 
-const mSTP = (state, ownProps) => {
-  let _postLikes;
-  if (Object.keys(state.entities.postLikes).length === 1)
-    _postLikes = [state.entities.postLikes[Object.keys(state.entities.postLikes)[0]]];
-  else
-    _postLikes = Object.values(state.entities.postLikes);
-  return {
-
+const mSTP = (state, ownProps) => ({
+  postLikes: Object.values(state.entities.postLikes).filter(postLike => postLike.postId === ownProps.post.id),
   comments: Object.values(state.entities.comments).filter(comment => comment.postId === ownProps.post.id),
-}}
+})
 
 const mDTP = dispatch => ({
   requestComments: postId => dispatch(requestComments(postId)),

@@ -24,11 +24,6 @@ class SearchBar extends React.Component {
         while (j < searchW.length) {
           if (j === searchW.length - 1 && searchW[j] === this.props.users[i].username[k]) {
             searchS.push(this.props.users[i]);
-            if (i === this.props.users.length - 1) {
-              this.setState({
-                searchShown: searchS
-              })
-            }
             break;
           }
           if (searchW[j] !== this.props.users[i].username[k]) {
@@ -40,6 +35,10 @@ class SearchBar extends React.Component {
           }
         }
       }
+      this.setState({
+        searchShown: searchS
+      })
+      console.log(this.state.searchShown);
       console.log(searchS);
     }
   }

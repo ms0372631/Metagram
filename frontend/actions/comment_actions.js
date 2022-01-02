@@ -27,20 +27,20 @@ export const receiveCommentErrors = errors => ({
 
 export const requestComments = postId => dispatch => (
   CommentAPIUtil.fetchComments(postId)
-  .then(comments => dispatch(receiveComments(comments))
-  .fail(err => dispatch(receiveCommentErrors(err))))
+  .then(comments => dispatch(receiveComments(comments)))
+  .fail(err => dispatch(receiveCommentErrors(err)))
 )
 
 export const requestComment = commentId => dispatch => (
   CommentAPIUtil.fetchComment(commentId)
-  .then(comment => dispatch(receiveComment(comment))
-  .fail(err => dispatch(receiveCommentErrors(err))))
+  .then(comment => dispatch(receiveComment(comment)))
+  .fail(err => dispatch(receiveCommentErrors(err)))
 )
 
 export const createComment = (comment, postId) => dispatch => (
   CommentAPIUtil.createComment(comment, postId)
-  .then(comment => dispatch(receiveComment(comment))
-  .fail(err => dispatch(receiveCommentErrors(err))))
+  .then(comment => dispatch(receiveComment(comment)))
+  .fail(err => dispatch(receiveCommentErrors(err)))
 )
 
 export const updateComment = comment => dispatch => (

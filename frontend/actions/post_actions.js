@@ -15,9 +15,9 @@ export const receivePost = post => ({
   post
 })
 
-export const removePost = postId => ({
+export const removePost = post => ({
   type: REMOVE_POST,
-  postId
+  post
 })
 
 export const receivePostErrors = errors => ({
@@ -51,7 +51,7 @@ export const updatePost = post => dispatch => (
 
 export const deletePost = postId => dispatch => (
   PostAPIUtil.deletePost(postId)
-  .then(() => dispatch(removePost(postId)))
+  .then(post => dispatch(removePost(post)))
   .fail(err => dispatch(receivePostErrors(err)))
 )
 

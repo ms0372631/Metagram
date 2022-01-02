@@ -11,10 +11,9 @@ class CommentIndex extends React.Component {
   }
 
   render () {
-
+    console.log(this.props.comments);
     if (!this.props.comments || this.props.comments.length === 0)
       return "";
-    console.log(this.props.comments);
     return (
       <> 
         { 

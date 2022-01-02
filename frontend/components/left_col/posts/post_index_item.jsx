@@ -9,7 +9,6 @@ class PostIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = ({
-      likedbyCurrentUser: false,
       numberofLikes: 0
     });
     this.updateLikes = this.updateLikes.bind(this);
@@ -23,8 +22,6 @@ class PostIndexItem extends React.Component {
       })
     )
   }
-
-
 
   updateLikes(num) {
     this.setState({

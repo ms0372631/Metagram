@@ -16,7 +16,7 @@ class PostLikeCreate extends React.Component {
     .then(
       () => {
         this.setState({
-          postLikeId: this.props.postLikes.length === 0 ? 0 : ((this.props.postLikes.filter(postLike => postLike.authorId === this.props.currentUser.id && postLike.postId === this.props.post.id)).length !== 0 ? this.props.postLikes.filter(postLike => postLike.authorId === this.props.currentUser.id && postLike.postId === this.props.post.id).id : 0)
+          postLikeId: this.props.postLikes.length === 0 ? 0 : ((this.props.postLikes.filter(postLike => postLike.authorId === this.props.currentUser.id && postLike.postId === this.props.post.id)).length !== 0 ? this.props.postLikes.filter(postLike => postLike.authorId === this.props.currentUser.id && postLike.postId === this.props.post.id)[0].id : 0)
         })
       }
     )
@@ -35,6 +35,7 @@ class PostLikeCreate extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
     if (this.state.postLikeId !== 0) {
       this.props.deletePostLike(this.props.post.id, this.state.postLikeId)
       .then(
@@ -51,8 +52,9 @@ class PostLikeCreate extends React.Component {
         payload => this.setState({
             postLikeId: payload.postLike.id,
         })
+        .then(() => console.log(this.state.postLikeId))
       )
-       this.props.updateLikes(this.props.numberofLikes + 1);
+      this.props.updateLikes(this.props.numberofLikes + 1);
     }
   }
 

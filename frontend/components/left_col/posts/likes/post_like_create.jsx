@@ -20,6 +20,7 @@ class PostLikeCreate extends React.Component {
         })
       }
     )
+    
   }
 
   // componentDidUpdate(prevProps, prevState) {
@@ -52,7 +53,6 @@ class PostLikeCreate extends React.Component {
         payload => this.setState({
             postLikeId: payload.postLike.id,
         })
-        .then(() => console.log(this.state.postLikeId))
       )
       this.props.updateLikes(this.props.numberofLikes + 1);
     }

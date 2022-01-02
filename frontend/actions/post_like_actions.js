@@ -15,9 +15,9 @@ export const receivePostLike = postLike => ({
   postLike
 })
 
-export const removePostLike = postLikeId => ({
+export const removePostLike = postLike => ({
   type: REMOVE_POST_LIKE,
-  postLikeId
+  postLike
 })
 
 export const receivePostLikeErrors = errors => ({
@@ -45,6 +45,6 @@ export const createPostLike = (postLike, postId) => dispatch => (
 
 export const deletePostLike = (postId, postLikeId)  => dispatch => (
   PostLikeAPIUtil.deletePostLike(postId, postLikeId)
-  .then(postLikeId => dispatch(removePostLike(postLikeId)))
+  .then(postLike => dispatch(removePostLike(postLike)))
   .fail(err => dispatch(receivePostLikeErrors(err)))
 )

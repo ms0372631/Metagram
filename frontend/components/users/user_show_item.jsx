@@ -46,9 +46,16 @@ class UserShowItem extends React.Component {
   }
 }
 
-const mSTP = (state, ownProps) => ({
+const mSTP = (state, ownProps) => {
+  let _postLikes;
+  if (Object.keys(state.entities.postLikes).length === 1)
+    _postLikes = [state.entities.postLikes[Object.keys(state.entities.postLikes)[0]]];
+  else
+    _postLikes = Object.values(state.entities.postLikes);
+  return {
+
   comments: Object.values(state.entities.comments).filter(comment => comment.postId === ownProps.post.id),
-})
+}}
 
 const mDTP = dispatch => ({
   requestComments: postId => dispatch(requestComments(postId)),

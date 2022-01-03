@@ -289,15 +289,15 @@ label {
 
 .drop-down {
   position: absolute;
-  top:53px;
+  top: 40px;
   width: 201px;
-  height: 200px;
+  height: 193px;
   box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
   background-color: #ffff;
   border-radius: 5px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   z-index: 1px;
-  right: 1%;
+  right: -1%;
 }
 
 .drop-down ul {
@@ -306,7 +306,7 @@ label {
 }
 
 .drop-down ul li {
-  padding: 8px 16px;
+  padding: 10px 15px;
   list-style: none;
 }
 
@@ -315,8 +315,19 @@ label {
 }
 
 .drop-down ul li a {
+
+  margin-left: 10px;
+  font-size: 14px;
   text-decoration: none;
-  color: #2b2b2b
+  color: #2b2b2b;
+  vertical-align: text-top;
+}
+
+.drop-down .logout {
+  border-top: 1px solid #dbdbdb;
+}
+.drop-down .logout a{
+  margin-left: 0px;
 }
 
 .nav-items{

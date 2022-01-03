@@ -272,19 +272,108 @@ label {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    height: 25px;
+    width: 242px;
+    height: 34px;
     background: #fafafa;
-    border: 1px solid #dfdfdf;
-    border-radius: 2px;
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    font-size: 14px;
+    padding: 0 12px;
+    border-radius: 3px;
     color: rgba(0, 0, 0, 0.5);
     text-transform: capitalize;
+    align-items: stretch;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    vertical-align: baseline;
 }
 
 .search-box::placeholder{
-    color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
+.namecard {
+  padding: 8px 16px 8px 16px;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  align-content: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  vertical-align: baseline;
+  cursor: pointer;
+}
+
+.namecard .profile-pic {
+  width: 44px;
+  height: 44px;
+  left: "-20px";
+  margin: 0 12px;
+}
+
+.namecard .name {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.search-username-container {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  align-content: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  vertical-align: baseline;
+  cursor: pointer;
+}
+
+
+.search-username {
+  color: rgba(var(--i1d,38,38,38),1);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  align-items: stretch;
+  border: 0 soild #000;
+  box-sizing: border-box;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+
+.fullname {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(var(--f52,142,142,142),1);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 4px 0 -4px;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 0;
+  position: relative;
+}
 /* Profile drop down */
 
 .profile-drop-down {

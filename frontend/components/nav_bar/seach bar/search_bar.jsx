@@ -74,7 +74,7 @@ class SearchBar extends React.Component {
 
     return (
       <>  
-        <input type="text" style={{textTransform: 'lowercase'}} className="search-box" placeholder="search" onChange={this.updateSearchWord()}/>
+        <input type="text" style={{textTransform: 'lowercase'}} className="search-box" placeholder="Search" onChange={this.updateSearchWord()}/>
         {searchList}
       </>
     )

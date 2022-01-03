@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { connect } from 'react-redux';
 import UserShowSub from './user_show_sub';
 import { requestPosts, updatePost, deletePost} from '../../actions/post_actions';

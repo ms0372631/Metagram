@@ -76,10 +76,10 @@ class PostIndexItem extends React.Component {
     <div className="post">
       <div className="info">
         <div className="user">
-          <Link to={`/users/${user.id}`}>
+          <Link to={`/user/${user.id}`}>
             <div className="profile-pic"><img src="" alt="" /></div>
           </Link>
-          <Link to={`/users/${user.id}`}>
+          <Link to={`/user/${user.id}`}>
             <p className="username">{user.username}</p>
           </Link>
         </div>
@@ -92,7 +92,7 @@ class PostIndexItem extends React.Component {
       </div>
         {likes}
         <p className="description" >
-          <Link to={`/users/${user.id}`}>
+          <Link to={`/user/${user.id}`}>
             <span>{user.username}</span> 
           </Link>
             {post.body}

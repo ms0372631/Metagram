@@ -1,5 +1,5 @@
 import React from 'react';
-import UserShowSub from './user_show_sub_container';
+import UserShowSubContainer from './user_show_sub_container';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 
 class UserShow extends React.Component {
@@ -12,10 +12,11 @@ class UserShow extends React.Component {
   }
 
   render() {
+    
     return (
       <>
         <NavBarContainer/>
-        <UserShowSub user={this.props.user}/>
+        <UserShowSubContainer user={this.props.user}/>
       </>
     )
   }

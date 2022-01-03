@@ -8,13 +8,14 @@ class UserShowSub extends React.Component {
   }
 
   componentDidMount() {
+
     this.props.requestPosts();
   }
   
   render() {
 
     let photos = [];
-    if (!this.props.user)
+    if (!this.props.user || !this.props.posts)
       return '';
     
     const posts = this.props.posts.filter(post => post.authorId === this.props.user.id)

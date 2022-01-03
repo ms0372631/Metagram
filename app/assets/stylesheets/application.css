@@ -285,9 +285,9 @@ label {
     color: rgba(0, 0, 0, 0.5);
 }
 
-/* drop down */
+/* Profile drop down */
 
-.drop-down {
+.profile-drop-down {
   position: absolute;
   top: 40px;
   width: 201px;
@@ -300,21 +300,21 @@ label {
   right: -1%;
 }
 
-.drop-down ul {
+.profile-drop-down ul {
   display: flex;
   flex-direction: column;
 }
 
-.drop-down ul li {
+.profile-drop-down ul li {
   padding: 10px 15px;
   list-style: none;
 }
 
-.drop-down ul li:hover {
+.profile-drop-down ul li:hover {
   background-color: #fafafa;
 }
 
-.drop-down ul li a {
+.profile-drop-down ul li a {
 
   margin-left: 10px;
   font-size: 14px;
@@ -323,11 +323,27 @@ label {
   vertical-align: text-top;
 }
 
-.drop-down .logout {
+.profile-drop-down .logout {
   border-top: 1px solid #dbdbdb;
 }
-.drop-down .logout a{
+.profile-drop-down .logout a{
   margin-left: 0px;
+}
+
+/* Search Bar */
+
+.search-drop-down {
+  position: absolute;
+  top: 62px;
+  width: 375px;
+  height: 362px;
+  padding: 12px 0 0 0;
+  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+  background-color: #ffff;
+  border-radius: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1px;
+  right: 36.6%;
 }
 
 .nav-items{

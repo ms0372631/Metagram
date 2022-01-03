@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import UserShow from "./user_show_sub";
+import UserShow from "./user_show";
 import { requestUsers } from "../../actions/user_actions";
 
 const mSTP = (state, ownProps) => ({

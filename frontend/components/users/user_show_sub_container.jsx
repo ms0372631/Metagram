@@ -7,7 +7,7 @@ import { requestUsers } from '../../actions/user_actions'
 const mSTP = (state, ownProps) => {
   return {
   // state.entities.users[ownProps.match.params.userId],
-    posts: Object.values(state.entities.posts).filter(post => post.authorId === ownProps.user.id)
+    posts: Object.values(state.entities.posts)
   // .filter(post => post.authorId === ownProps.match.params.userId)
 }};
 

@@ -13,13 +13,11 @@ class UserShowSub extends React.Component {
   
   render() {
 
-    const {user, posts} = this.props;
     let photos = [];
-
-    if (!user)
+    if (!this.props.user)
       return '';
     
-    console.log(posts);
+    const posts = this.props.posts.filter(post => post.authorId === this.props.user.id)
 
     if (posts.length < 3) {
       for (let i = 0; i < 3 - posts.length; ++i) {
@@ -39,7 +37,7 @@ class UserShowSub extends React.Component {
                 <img src="" alt="" />
               </div>
               <div className="profile-user-settings">
-                <h1 className="profile-user-name">{user.username}</h1>
+                <h1 className="profile-user-name">{this.props.user.username}</h1>
                 <button className="btn profile-settings-btn" aria-label="profile settings">
                   <i className="fas fa-cog" aria-hidden="true"></i>
                 </button>
@@ -52,7 +50,7 @@ class UserShowSub extends React.Component {
                 </ul>
               </div>
               <div className="profile-bio">
-                <p><span className="profile-real-name">{user.fullname}</span> A Porsche 9-11 lover </p>
+                <p><span className="profile-real-name">{this.props.user.fullname}</span> A Porsche 9-11 lover </p>
               </div>
             </div>
           </div>
@@ -60,7 +58,7 @@ class UserShowSub extends React.Component {
             <div className="gallery">
               {
                 posts.map(post => (
-                  <UserShowItem key={post.id} post={post} user={user}/>
+                  <UserShowItem key={post.id} post={post} user={this.props.user}/>
                 ))
               }
               {photos}

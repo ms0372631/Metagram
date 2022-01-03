@@ -31,22 +31,24 @@ class NavBar extends React.Component {
   render() {
     
     let dropDownE;
-    if (this.state.toggleStatus === false) {
+    if (this.state.toggleStatus === true) {
       console.log('yes')
       dropDownE = (
         <div className="drop-down">
           <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "18px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}>
           </div>
           <ul>
-            <li>
-              <svg aria-label="Profile" color="#262626" fill="#262626" height="15" marginTop="5px"
-                  role="img" viewBox="0 0 32 32" width="15">
-                  <path
-                      d="M16 0C7.2 0 0 7.1 0 16c0 4.8 2.1 9.1 5.5 12l.3.3C8.5 30.6 12.1 32 16 32s7.5-1.4 10.2-3.7l.3-.3c3.4-3 5.5-7.2 5.5-12 0-8.9-7.2-16-16-16zm0 29c-2.8 0-5.3-.9-7.5-2.4.5-.9.9-1.3 1.4-1.8.7-.5 1.5-.8 2.4-.8h7.2c.9 0 1.7.3 2.4.8.5.4.9.8 1.4 1.8-2 1.5-4.5 2.4-7.3 2.4zm9.7-4.4c-.5-.9-1.1-1.5-1.9-2.1-1.2-.9-2.7-1.4-4.2-1.4h-7.2c-1.5 0-3 .5-4.2 1.4-.8.6-1.4 1.2-1.9 2.1C4.2 22.3 3 19.3 3 16 3 8.8 8.8 3 16 3s13 5.8 13 13c0 3.3-1.2 6.3-3.3 8.6zM16 5.7c-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 11c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z">
-                  </path>
-              </svg>
-              <a href="#"> Profile</a>
-            </li>
+            <Link to="/profile">
+              <li onClick={() => this.setState({ toggleStatus: false })}>
+                <svg aria-label="Profile" color="#262626" fill="#262626" height="15" margintop="5px"
+                    role="img" viewBox="0 0 32 32" width="15">
+                    <path
+                        d="M16 0C7.2 0 0 7.1 0 16c0 4.8 2.1 9.1 5.5 12l.3.3C8.5 30.6 12.1 32 16 32s7.5-1.4 10.2-3.7l.3-.3c3.4-3 5.5-7.2 5.5-12 0-8.9-7.2-16-16-16zm0 29c-2.8 0-5.3-.9-7.5-2.4.5-.9.9-1.3 1.4-1.8.7-.5 1.5-.8 2.4-.8h7.2c.9 0 1.7.3 2.4.8.5.4.9.8 1.4 1.8-2 1.5-4.5 2.4-7.3 2.4zm9.7-4.4c-.5-.9-1.1-1.5-1.9-2.1-1.2-.9-2.7-1.4-4.2-1.4h-7.2c-1.5 0-3 .5-4.2 1.4-.8.6-1.4 1.2-1.9 2.1C4.2 22.3 3 19.3 3 16 3 8.8 8.8 3 16 3s13 5.8 13 13c0 3.3-1.2 6.3-3.3 8.6zM16 5.7c-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 11c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z">
+                    </path>
+                </svg>
+                <a href="#"> Profile</a>
+              </li>
+            </Link>
             <li>
               <svg aria-label="Saved" className="_8-yf5 " color="#262626" fill="#262626" height="16"
                   role="img" viewBox="0 0 32 32" width="16">
@@ -74,7 +76,7 @@ class NavBar extends React.Component {
               </svg>
               <a href="#"> Switch Accounts</a>
             </li>
-            <li className="logout" style={{borderTop: '2px soild white'}}><a href="#">Log Out</a>
+            <li className="logout"><a href="#" onClick={() => { this.props.logout(); this.setState({ toggleStatus: false }) }}>Log Out</a>
             </li>
           </ul>
         </div>

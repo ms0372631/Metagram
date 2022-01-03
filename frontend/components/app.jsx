@@ -1,7 +1,8 @@
 import React from "react";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
-import UserShow from './users/user_show'
+import UserShowContainer from './users/user_show_container'
+import UserProfileContainer from './users/user_profile_container'
 import Main from "./main";
 import Modal from "./modal";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
@@ -12,10 +13,11 @@ const App = () => (
   <>
     <Modal/>
     <Switch>
-      <ProtectedRoute exact path='/' component={Main}/>
       <AuthRoute exact path='/signup' component={SignupFormContainer}/>
       <AuthRoute exact path='/login' component={LoginFormContainer}/>
-      <Route path='/users/:userId' component={UserShow} />
+      <ProtectedRoute exact path='/profile' component={UserProfileContainer}/>
+      <Route path='/users/:userId' component={UserShowContainer} />
+      <ProtectedRoute exact path='/' component={Main}/>
     </Switch>
   </>
 )

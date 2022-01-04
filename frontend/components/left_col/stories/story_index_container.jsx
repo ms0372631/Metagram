@@ -3,7 +3,7 @@ import { requestUsers } from '../../../actions/user_actions';
 import StoryIndex from './story_index'
 
 const mSTP = state => ({
-  users: Object.values(state.entities.users)
+  users: Object.values(state.entities.users).filter(user => user.id !== state.session.currentUser.id)
 });
 
 const mDTP = dispatch => ({

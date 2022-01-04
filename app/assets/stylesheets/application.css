@@ -312,8 +312,8 @@ label {
 .namecard .profile-pic {
   width: 44px;
   height: 44px;
-  left: "-20px";
-  margin: 0 12px;
+  left: -20px;
+  margin: 0 12px 0 0;
 }
 
 .namecard .name {
@@ -356,6 +356,17 @@ label {
   white-space: nowrap;
 }
 
+.search-clear {
+  position: relative;
+  left: 165px;
+  background-image: url(https://www.instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png);
+  background-position-x: -380px;
+  background-position-y: -96px;
+  background-size: 440px 411px;
+  height: 20px;
+  width: 20px;
+  z-index: 2;
+}
 
 .fullname {
   display: block;

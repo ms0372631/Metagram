@@ -4,7 +4,7 @@ import { logout } from '../../actions/session_actions';
 import UserIndex from './user _index';
 
 const mSTP = state => ({
-  users: Object.values(state.entities.users),
+  users: Object.values(state.entities.users).filter(user => user.id !== state.session.currentUser.id),
   currentUser: state.session.currentUser
 })
 

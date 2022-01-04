@@ -9,7 +9,8 @@ class PostIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = ({
-      numberofLikes: 0
+      numberofLikes: 0,
+      textAutofocus: false
     });
     this.updateLikes = this.updateLikes.bind(this);
   }
@@ -21,6 +22,12 @@ class PostIndexItem extends React.Component {
         numberofLikes: Object.values(payload.postLikes).filter(postLike => postLike.postId === this.props.post.id).length
       })
     )
+  }
+
+  updateTextbox() {
+    this.setState({
+
+    })
   }
 
   updateLikes(num) {
@@ -83,7 +90,7 @@ class PostIndexItem extends React.Component {
             <p className="username">{user.username}</p>
           </Link>
         </div>
-        <img className="options" src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262823/option_hdakyy.png" alt="" />
+        <svg aria-label="More options" className="options" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
       </div>
       <img className="post-image" src={post.photoUrl} alt="" />
       <div className="post-content">

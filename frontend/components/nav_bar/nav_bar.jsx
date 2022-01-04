@@ -110,6 +110,7 @@ class NavBar extends React.Component {
           <Link to="/login">Log In</Link>
       </div>
     );
+    
     return (
       <>
       <nav className="navbar">

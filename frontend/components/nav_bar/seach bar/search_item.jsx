@@ -12,7 +12,7 @@ export default ({user}) => (
           <div className='search-username-container'>
             <div className="search-username">{user.username}</div>
           </div>
-          <div className="fullname">{user.fullname}</div>
+          <div className="fullname">{user.fullname} • following</div>
         </div>
       </div>
     </Link>

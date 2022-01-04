@@ -68,15 +68,17 @@ class SearchBar extends React.Component {
         </>
       )
     }
+    else {
+       searchList = (<div className="search-icon"></div>)
+    }
 
     return (
-      <>  
-        <input type="text" className="search-box" placeholder="Search" value={this.state.searchWord} onChange={this.updateSearchWord()}/>
+      <>
+        <input type="text" className="search-box" placeholder="  Search" value={this.state.searchWord} onChange={this.updateSearchWord()}/>
         {searchList}
       </>
     )
   }
-
 }
 
 export default SearchBar;

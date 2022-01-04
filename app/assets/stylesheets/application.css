@@ -293,6 +293,17 @@ label {
   color: rgba(0, 0, 0, 0.5);
 }
 
+.search-icon {
+  position: relative;
+  right: 50px;
+  background-image: url(https://www.instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png);
+  background-position-x: -428px;
+  background-position-y: -241px;
+  background-size: 440px 411px;
+  height: 10px;
+  width: 10px;
+}
+
 .namecard {
   padding: 8px 16px 8px 16px;
   flex: 0 0 auto;
@@ -365,7 +376,6 @@ label {
   background-size: 440px 411px;
   height: 20px;
   width: 20px;
-  z-index: 2;
 }
 
 .fullname {

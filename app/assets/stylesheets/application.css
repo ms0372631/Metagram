@@ -996,6 +996,26 @@ label {
   cursor: pointer;
 }
 
+.gallery-like-icon {
+  background-image: url("https://www.instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png");
+  background-position-x: -382px;
+  background-position-y: -223px;
+  background-size: 440px 411px;
+  height: 19px;
+  width: 19px;
+  margin-right: 7px;
+}
+
+.gallery-comment-icon {
+  background-image: url("https://www.instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png");
+  background-position-x: -382px;
+  background-position-y: -263px;
+  background-size: 440px 411px;
+  height: 19px;
+  width: 19px;
+  margin-right: 7px;
+}
+
 .gallery-item-empty {
   position: relative;
   flex: 1 0 22em;

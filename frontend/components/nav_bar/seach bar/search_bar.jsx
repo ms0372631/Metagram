@@ -42,9 +42,6 @@ class SearchBar extends React.Component {
     }
   }
 
-
-
-
   updateSearchWord() {
     return e => this.setState({
       searchWord: e.currentTarget.value
@@ -74,7 +71,7 @@ class SearchBar extends React.Component {
 
     return (
       <>  
-        <input type="text"  className="search-box" placeholder="Search" value={this.state.searchWord} onChange={this.updateSearchWord()}/>
+        <input type="text" className="search-box" placeholder="Search" value={this.state.searchWord} onChange={this.updateSearchWord()}/>
         {searchList}
       </>
     )

@@ -31,12 +31,14 @@ class UserShowItem extends React.Component {
         <img className="gallery-image" src={post.photoUrl} alt="" />
         <div className="gallery-item-info">
           <ul>
+            <li className="gallery-like-icon">
+            </li>
             <li className="gallery-item-likes">
-              <span className="visually-hidden">Likes:</span>
-              <i className="fas fa-heart" aria-hidden="true">{this.state.numberofLikes}</i>
+              <i className="fas fa-heart" aria-hidden="true"> {this.state.numberofLikes}</i>
+            </li>
+            <li className="gallery-comment-icon">
             </li>
             <li className="gallery-item-comments">
-              <span className="visually-hidden">Comments:</span>
               <i className="fas fa-comment" aria-hidden="true"></i>{comments.length}
             </li>
           </ul>

@@ -49,20 +49,29 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    let searchList;
-    
-    if (this.state.searchWord != '') {
+    let searchList, searchItem;
+    if (this.state.searchShown.length === 0 && this.state.searchWord !== '') {
+      searchItem = (
+        <div className='no-found'>No results found.</div>
+      )
+    }
+    else {
+      searchItem = (
+        <ul>
+          {
+            this.state.searchShown.map(searchItem => (
+              <SearchItem user={searchItem}/>
+            ))
+          }
+        </ul>
+      )
+    }
+    if (this.state.searchWord !== '') {
       searchList = (
         <>
           <div className="search-drop-down">
             <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "175px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}/>
-            <ul>
-              {
-                this.state.searchShown.map(searchItem => (
-                  <SearchItem user={searchItem}/>
-                ))
-              }
-            </ul>
+            {searchItem}
           </div>
           <div className="search-clear" onClick={() => this.setState({ searchWord: '' })}></div>
         </>

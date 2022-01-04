@@ -320,6 +320,22 @@ label {
   cursor: pointer;
 }
 
+.no-found {
+  display: flex;
+  font-size: 14px;
+  color: rgba(var(--f52,142,142,142),1);
+  justify-content: center;
+  padding: 15px;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: relative;
+}
+
 .namecard .profile-pic {
   width: 44px;
   height: 44px;

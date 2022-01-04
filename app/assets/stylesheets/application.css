@@ -1017,7 +1017,11 @@ label {
   text-align: center;
 }
 
-.icon-container:not(:last-child) {
+.icon-container {
+  cursor: pointer;
+}
+
+.icon-container:not( :last-child){
   margin-right: 60px;
   align-items: center;
   color: rgba(var(--i1d,38,38,38),1);

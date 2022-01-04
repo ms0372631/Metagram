@@ -1004,6 +1004,53 @@ label {
   font-weight: 600;
 }
 
+.select-type {
+  align-items: center;
+  border-top: 1px solid rgba(var(--b38,219,219,219),1);
+  color: #8e8e8e;
+  display: flex;
+  flex-direction: row;
+  font-size: 22px;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.icon-container:not(:last-child) {
+  margin-right: 60px;
+  align-items: center;
+  color: rgba(var(--i1d,38,38,38),1);
+  margin-top: -1px;
+  display: flex;
+  flex-direction: row;
+  height: 52px;
+  justify-content: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.icon-container .content {
+  color: rgba(var(--i1d,38,38,38),1);
+}
+
+.icon-container .icon-word {
+  margin-left: 6px;
+  font-size: 12px;
+}
+
+
+.icon-container.icons {
+  display: block;
+  position: relative;
+  color: rgb(38, 38, 38);
+  fill: rgb(38, 38, 38);
+  height: 12px;
+  width: 12px;
+}
+
 /* gallery */
 
 .gallery {
@@ -1300,7 +1347,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
 }
 
 .profile-card .username {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   color: #000;
   text-align: left;

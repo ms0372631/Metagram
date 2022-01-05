@@ -98,7 +98,7 @@ class PostIndexItem extends React.Component {
         <PostLikeCreateContainer numberofLikes={this.state.numberofLikes} updateLikes={this.updateLikes} post={post} user={user}/>
       </div>
         {likes}
-        <p className="description" >
+        <p className="description-post" >
           <Link to={`/user/${user.id}`}>
             <span>{user.username}</span> 
           </Link>

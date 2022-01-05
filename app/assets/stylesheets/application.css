@@ -274,11 +274,11 @@ label {
     transform: translateX(-50%);
     width: 242px;
     height: 34px;
-    background: #fafafa;
-    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    background: rgb(239, 239, 239);
+    border: 0;
     font-size: 14px;
     padding: 0 12px;
-    border-radius: 3px;
+    border-radius: 5px;
     color: rgba(0, 0, 0, 0.5);
     text-transform: capitalize;
     align-items: stretch;
@@ -643,15 +643,28 @@ label {
   margin-bottom: 10px;
 }
 
-.description span {
+.description-post span {
   color: black;
+  font-size: 16px;
   font-weight: bold;
   margin-right: 10px;
 }
 
-.description {
- margin-bottom: 5px;
+.description-post {
+ margin-bottom: 10px;
  margin-top: 5px;
+}
+
+.description-comment span {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.description-comment {
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .post-time {
@@ -682,6 +695,16 @@ label {
   border: none;
   outline: none;
   font-size: 14px;
+}
+
+.comment-delete {
+  position: relative;
+  background-image: url(https://www.instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png);
+  background-position-x: -380px;
+  background-position-y: -96px;
+  background-size: 440px 411px;
+  height: 20px;
+  width: 20px;
 }
 
 .comment-btn, 

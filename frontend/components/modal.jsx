@@ -3,6 +3,7 @@ import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import PostCreateContainer from './nav_bar/posts/post_create_container';
 import PostDeleteContainer from './left_col/posts/post_delete_container';
+import CommentDelete from './left_col/posts/comments/comment_delete';
 
 function Modal({modal, ownProps, closeModal}) {
   if (!modal) {
@@ -16,6 +17,9 @@ function Modal({modal, ownProps, closeModal}) {
       break;
     case 'deletePost':
       component = <PostDeleteContainer postId={ownProps} closeModal={closeModal}/>;
+      break;
+    case 'deleteComment':
+      component = <CommentDelete commentId={ownProps} closeModal={closeModal}/>;
       break;
     default:
       return null;

@@ -90,7 +90,7 @@ class PostIndexItem extends React.Component {
             <p className="username">{user.username}</p>
           </Link>
         </div>
-        <svg aria-label="More options" className="options" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24" onClick={ () => this.props.openModal('deletePost', post.id)}><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
+        <svg aria-label="More options" className="options" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24" onClick={ () => this.props.openModal('deletePost', post)}><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
       </div>
       <img className="post-image" src={post.photoUrl} alt="" />
       <div className="post-content">

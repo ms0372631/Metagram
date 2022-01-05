@@ -16,10 +16,10 @@ function Modal({modal, ownProps, closeModal}) {
       component = <PostCreateContainer closeModal={closeModal}/>;
       break;
     case 'deletePost':
-      component = <PostDeleteContainer postId={ownProps} closeModal={closeModal}/>;
+      component = <PostDeleteContainer post={ownProps} closeModal={closeModal}/>;
       break;
     case 'deleteComment':
-      component = <CommentDelete commentId={ownProps} closeModal={closeModal}/>;
+      component = <CommentDelete comment={ownProps} closeModal={closeModal}/>;
       break;
     default:
       return null;

@@ -43,15 +43,15 @@ export const createComment = (comment, postId) => dispatch => (
   .fail(err => dispatch(receiveCommentErrors(err)))
 )
 
-export const updateComment = comment => dispatch => (
-  CommentAPIUtil.updateComment(comment)
+export const updateComment = (postId, comment) => dispatch => (
+  CommentAPIUtil.updateComment(postId, comment)
   .then(comment => dispatch(receiveComment(comment)))
   .fail(err => dispatch(receiveCommentErrors(err)))
 )
 
-export const deleteComment = commentId => dispatch => (
-  CommentAPIUtil.deleteComment(commentId)
-  .then(comment => dispatch(removePost(comment)))
+export const deleteComment = (postId, commentId) => dispatch => (
+  CommentAPIUtil.deleteComment(postId, commentId)
+  .then(comment => dispatch(removeComment(comment)))
   .fail(err => dispatch(receiveCommentErrors(err)))
 )
 

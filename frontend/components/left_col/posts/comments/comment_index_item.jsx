@@ -22,7 +22,7 @@ class CommentIndexItem extends React.Component {
                 <span>{user.username}</span> 
               </Link>
               {comment.body}
-              <div className='comment-delete' onClick={() => openModal('deleteComment', comment.id)}></div>
+              <div className='comment-delete' onClick={() => openModal('deleteComment', comment)}></div>
             </div>
            ) : (
             <div className="description-comment">

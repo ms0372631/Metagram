@@ -9,6 +9,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
     if @comment.delete
       render "api/comments/show"
     else

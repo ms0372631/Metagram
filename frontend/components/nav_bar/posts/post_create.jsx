@@ -78,11 +78,15 @@ class PostCreate extends React.Component {
       <>
         <div className="modal-form">
           <div className="modal header">
-            <button className="modal header-back" onClick={this.clearState}>back</button>
+            <button className='header-back-btn'>
+              <div className='modal header-back-container'>
+                <svg aria-label="Back" className="modal header-back" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24" onClick={this.clearState}><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="2.909" x2="22.001" y1="12.004" y2="12.004"></line><polyline fill="none" points="9.276 4.726 2.001 12.004 9.276 19.274" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></polyline></svg>
+              </div>
+            </button>
             <div className="modal header-title">Create new post</div>
-
-            
-            <button className="modal header-share" type="submit" form="rightform">Share</button>
+            <div className="modal header-share-container">
+              <button className="modal header-share" type="submit" form="rightform">Share</button>
+            </div>
  
           </div>
           <div className="modal bottom">

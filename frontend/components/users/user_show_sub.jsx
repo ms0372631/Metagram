@@ -115,9 +115,9 @@ class UserShowSub extends React.Component {
               </div>
               <div className="profile-user-settings">
                 <h1 className="profile-user-name">{this.props.user.username}</h1>
-                <button className="btn profile-settings-btn" aria-label="profile settings">
-                  <i className="fas fa-cog" aria-hidden="true"></i>
-                </button>
+                <button className="btn profile-edit-btn">fuck</button>
+                {/* <div className="follow-btn"></div> */}
+				        <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
               </div>
               <div className="profile-stats">
                 <ul>
@@ -127,7 +127,7 @@ class UserShowSub extends React.Component {
                 </ul>
               </div>
               <div className="profile-bio">
-                <p><span className="profile-real-name">{this.props.user.fullname}</span> A Porsche 9-11 lover </p>
+                <p><span className="profile-real-name">{this.props.user.fullname}</span></p>
               </div>
             </div>
             <div className="select-type">

@@ -2,6 +2,7 @@ import PostIndexItem from "./post_index_item";
 import { connect } from 'react-redux';
 import { deletePost } from "../../../actions/post_actions";
 import { requestPostLikes } from '../../../actions/post_like_actions';
+import { openModal } from "../../../actions/modal_actions";
 
 
 
@@ -13,7 +14,8 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
   deletePost: postId => dispatch(deletePost(postId)),
-  requestPostLikes: postId => dispatch(requestPostLikes(postId))
+  requestPostLikes: postId => dispatch(requestPostLikes(postId)),
+  openModal: (modal, ownProps) => dispatch(openModal(modal, ownProps))
 })
 
 export default connect(mSTP, mDTP)(PostIndexItem)

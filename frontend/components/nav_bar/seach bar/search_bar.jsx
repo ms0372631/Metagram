@@ -60,7 +60,7 @@ class SearchBar extends React.Component {
         <ul>
           {
             this.state.searchShown.map(searchItem => (
-              <SearchItem user={searchItem}/>
+              <SearchItem key={searchItem.id} user={searchItem}/>
             ))
           }
         </ul>

@@ -16,7 +16,11 @@ class Post < ApplicationRecord
 
   has_many :likes,
     primary_key: :id,
-    foreign_key: :like_id,
-    class_name: :like
+    foreign_key: :post_id,
+    class_name: :Postlike
+
+  has_many :likers,
+    through: :likes,
+    source: :author
   
 end

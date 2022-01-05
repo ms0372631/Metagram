@@ -18,6 +18,7 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find_by(id: params[:id])
     if @post.delete
       render "api/posts/show"
     else

@@ -2,7 +2,7 @@ import React from 'react';
 import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import PostCreateContainer from './nav_bar/posts/post_create_container';
-import PostDelete from './left_col/posts/post_delete';
+import PostDeleteContainer from './left_col/posts/post_delete_container';
 
 function Modal({modal, ownProps, closeModal}) {
   if (!modal) {
@@ -15,7 +15,7 @@ function Modal({modal, ownProps, closeModal}) {
       component = <PostCreateContainer closeModal={closeModal}/>;
       break;
     case 'deletePost':
-      component = <PostDelete postId={ownProps} closeModal={closeModal}/>;
+      component = <PostDeleteContainer postId={ownProps} closeModal={closeModal}/>;
       break;
     default:
       return null;
@@ -30,12 +30,10 @@ function Modal({modal, ownProps, closeModal}) {
   );
 }
 
-const mSTP = state => {
-  console.log(state);
-  return {
+const mSTP = state => ({
   modal: (state.ui.modal) ? state.ui.modal.modal : null,
   ownProps: (state.ui.modal) ? state.ui.modal.ownProps : null
-}}
+})
 
 const mDTP = dispatch => ({
   closeModal: () => dispatch(closeModal())

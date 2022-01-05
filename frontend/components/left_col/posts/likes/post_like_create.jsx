@@ -7,6 +7,7 @@ class PostLikeCreate extends React.Component {
       postLikeId: 0,
       author_id: this.props.currentUser.id,
       post_id: this.props.post.id,
+      receiver_id: this.props.post.authorId
     });
     this.handleSubmit = this.handleSubmit.bind(this);
   }

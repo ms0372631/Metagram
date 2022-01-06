@@ -698,13 +698,15 @@ label {
 }
 
 .comment-delete {
-  position: relative;
   background-image: url(https://www.instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png);
   background-position-x: -380px;
   background-position-y: -96px;
   background-size: 440px 411px;
   height: 20px;
   width: 20px;
+  margin-left: 10px;
+  display: inline-block;
+  position: absolute;
 }
 
 .comment-btn, 
@@ -788,9 +790,9 @@ label {
   display: flex;
   align-items: stretch;
   flex-direction: column;
-  height: 80vh;
+  height: 50vh;
   max-height: calc(100% - 40px);
-  width: 70vw;
+  width: 40vw;
   background: #fff;
   margin: 20px;
   z-index: 3;
@@ -876,17 +878,17 @@ label {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  border: 1px;
+  border-top: 1px solid lightgray;
 }
 
 .modal.bottom-left {
-  height: 50%;
+  height: auto;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  border-right: 1px solid lightgray;
 }
 
 .modal.image {
@@ -899,33 +901,90 @@ label {
 }
 
 .modal.bottom-right {
-  box-sizing: border-box;
-  width: 100%;
   display: flex;
+  box-sizing: border-box;
+  height: auto;
+  width: 50%;
+  border: 0 soild #000;
   flex-direction: column;
-  align-items: start;
-  border-left: 1px solid grey ;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.modal.username-container {
+  display: flex;
+  margin: 18px 16px 14px 16px;
+  align-items: stretch;
+  border: 0 soild #000;
+  box-sizing: border-box;
+  flex-direction: row;
 }
 
 .modal.username {
   display: flex;
+  border: 0 soild #000;
+  color: rgb(38, 38, 38);
+  font-size: 16px;
+  font-weight: 600;
   box-sizing: border-box;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  align-content: stretch;
+}
+
+.modal.profile-pic-container {
+  display: flex;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  flex-direction: column;
+  margin-right: 12px;
+  padding: 0;
+  position: relative;
+}
+
+.modal.profile-pic {
+  height: 100%;
   width: 100%;
-  height: 60px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: block;
+  flex: 0 0 auto;
+  overflow: hidden;
+  position: relative;
 }
 
 .modal.text-area {
-  vertical-align: text-top;
-  display: flex;
-  width: 100%;
-  padding: 0 16px;
-  padding: 0;
+  height: 24px !important;
+  background: 0 0;
   border: 0;
-  margin: 0;
+  overflow: auto;
+  padding: 0 16px;
+  resize: none;
   font-size: 16px;
   line-height: 24px;
+  margin: 0;
   max-height: 168px;
-  min-height: 168px;
+  color: rgba(var(--i1d,38,38,38),1);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  text-rendering: auto;
+  display: inline-block;
+  text-align: start;
+  cursor: text;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  column-count: initial !important;
+  justify-content: flex-start;
+  vertical-align: top;
 }
 
 
@@ -948,6 +1007,44 @@ label {
 .modal.modal-picture {
   width: 50%;
 }
+
+input[type="file"] {
+  display: none;
+}
+
+.post-create-btn {
+  border: 1px soild transparent;
+  background-color: rgba(var(--d69,0,149,246),1);
+  border-radius: 4px;
+  color: rgba(var(--eca,255,255,255),1);
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 5px 9px;
+  text-align: center;
+  width: auto;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.post-create-container {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  flex-direction: column;
+  margin: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
 
 /* usershow */
 
@@ -1296,7 +1393,6 @@ label {
       background-size: 569px 521px;
       height: 12px;
       width: 24px;
-    
     }
 
 

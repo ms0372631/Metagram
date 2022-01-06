@@ -5,7 +5,7 @@ class PostLikeCreate extends React.Component {
     super(props);
     this.state = ({
       postLikeId: 0,
-      author_id: this.props.currentUser.id,
+      author_id: (this.props.currentUser) ? this.props.currentUser.id : null,
       post_id: this.props.post.id,
       receiver_id: this.props.post.authorId
     });

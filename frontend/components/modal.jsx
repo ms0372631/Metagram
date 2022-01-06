@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import PostCreateContainer from './nav_bar/posts/post_create_container';
 import PostDeleteContainer from './left_col/posts/post_delete_container';
 import CommentDelete from './left_col/posts/comments/comment_delete';
+import SessionForm from './session/session_form';
+import login_form_container from './session/login_form_container';
+import { signup } from '../util/session_api_util';
+import signup_form_container from './session/signup_form_container';
 
 function Modal({modal, ownProps, closeModal}) {
   if (!modal) {
@@ -21,6 +25,10 @@ function Modal({modal, ownProps, closeModal}) {
     case 'deleteComment':
       component = <CommentDelete comment={ownProps} closeModal={closeModal}/>;
       break;
+    case 'login':
+      component = <sessionModal closeModal={closeModal}/>;
+      break;
+    
     default:
       return null;
   }

@@ -4,7 +4,7 @@ class CommentCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      author_id: this.props.currentUser.id,
+      author_id: (this.props.currentUser) ? this.props.currentUser.id : null,
       body: '',
       post_id: this.props.post.id
     };

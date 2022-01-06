@@ -16,7 +16,7 @@ class CommentIndexItem extends React.Component {
     return (
       <div onMouseEnter={ () => this.setState({ hover: true }) } onMouseLeave={ () => this.setState({ hover: false }) }> 
         {
-           (this.state.hover && comment.authorId === currentUser.id )? (
+           (currentUser && this.state.hover && comment.authorId === currentUser.id )? (
             <div className="description-comment">
               <Link to={`/user/${user.id}`}>
                 <span>{user.username}</span> 

@@ -1,1 +1,1 @@
-json.extract! @post_like, :id, :author_id, :post_id, :receiver_id
+json.extract! @post_like, :id, :author_id, :post_id, :receiver_id, :created_at

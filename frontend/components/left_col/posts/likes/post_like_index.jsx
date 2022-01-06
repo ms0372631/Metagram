@@ -43,10 +43,10 @@ class PostLikeIndex extends React.Component {
 
     let likeList, yesterday = [], week = [], earlier = [];
 
-    // for (let i = 0; i < this.props.postLikes[i].length; ++i) {
-    //   let time = '';
-    //   if (this.timeSince(this.props.postLikes[i].createAt)) 
-    // }
+    for (let i = 0; i < this.props.postLikes[i].length; ++i) {
+      let time = '';
+      if (this.timeSince(this.props.postLikes[i].createAt)) 
+    }
 
     if (this.state.toggleStatus) {
       likeList = (

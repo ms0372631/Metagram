@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { requestPosts, updatePost, deletePost } from "../../../actions/post_actions";
 import { requestUsers } from "../../../actions/user_actions";
-import { createComment } from "../../../actions/comment_actions"
+import { createComment } from "../../../actions/comment_actions";
 import PostIndex from "./post_index";
 
 const mSTP = state => ({

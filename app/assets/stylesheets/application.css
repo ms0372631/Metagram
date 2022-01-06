@@ -1197,6 +1197,17 @@ input[type="file"] {
 }
 
 .icon-container {
+  align-items: center;
+  color: rgba(var(--i1d,38,38,38),1);
+  margin-top: -1px;
+  display: flex;
+  flex-direction: row;
+  height: 52px;
+  justify-content: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-align: center;
   cursor: pointer;
 }
 

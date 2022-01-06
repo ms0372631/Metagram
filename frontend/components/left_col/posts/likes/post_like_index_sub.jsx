@@ -1,23 +1,36 @@
 import React from 'react';
-import { connect } from "react-redux";
+import PostLikeIndexItem from './post_like_index_item';
+
+// ({timeFrame, postLikes})
 
 class PostLikeIndexSub extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  render() {
-    let yesterday = [], week = [], earlier = [];
+  render () {
+
+    const sortedPostLikes = this.props.postLikes.sort(function(a, b) {
+      var keyA = new Date(a.updatedAt), keyB = new Date(b.updatedAt);
+      if (keyA < keyB) return 1;
+      else return -1;
+    });
     return (
-      <div>
-        
+      <div className='timeframe'>
+        <div className='timeframe-word-container'>
+          <div className='timeframe-word'>
+            <div className='timeframe-text'>{this.props.timeFrame}</div>
+          </div>
+          {
+            sortedPostLikes.map(postLike => (
+              <PostLikeIndexItem key={postLike.id} postLike={postLike}/>
+            ))
+          }
+        </div>
       </div>
     )
   }
-};
+}
 
-const mSTP = (state, ownProps) => ({
-  post: state.entities.posts[ownProps.postLike.postId]
-})
+export default PostLikeIndexSub;
 
-export default connect(mSTP, null)(PostLikeIndexSub)

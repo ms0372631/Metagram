@@ -41,11 +41,18 @@ class PostLikeIndex extends React.Component {
     if (this.props.postLikes.length === 0)
       return '';
 
-    let likeList, yesterday = [], week = [], earlier = [];
+    let likeList, today = [], yesterday = [], week = [], earlier = [];
 
     for (let i = 0; i < this.props.postLikes[i].length; ++i) {
-      let time = '';
-      if (this.timeSince(this.props.postLikes[i].createAt)) 
+      let time = this.timeSince(this.props.postLikes[i].createdAt);
+      if (time[time.length - 1] === 's' ||  time[time.length - 1] === 'm' || time[time.length - 1] === 'h')
+        today.push(this.props.postLikes[i]);
+      else if (time[time.length - 1] === 'd' && time[time.length - 2] === '1')
+        yesterday.push(this.props.postLikes[i]);
+      else if (time[time.length - 1] === 'd')
+        week.push(this.props.postLikes[i]);
+      else
+        earlier.push(this.props.postLikes[i]);
     }
 
     if (this.state.toggleStatus) {
@@ -53,7 +60,10 @@ class PostLikeIndex extends React.Component {
         <div style={{height: "362px", overflow: "hidden auto"}}>
           <div className="like-drop-down">
             <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "62px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}/>
-            <PostLikeIndexSub/>
+            <PostLikeIndexSub timeFrame={'Today'} postLikes={today}/>
+            <PostLikeIndexSub timeFrame={'Yesterday'} postLikes={yesterday}/>
+            <PostLikeIndexSub timeFrame={'This Week'} postLikes={week}/>
+            <PostLikeIndexSub timeFrame={'Earlier'} postLikes={earlier}/>
           </div>
         </div>
       )
@@ -65,7 +75,7 @@ class PostLikeIndex extends React.Component {
           <div style={{height: "362px", overflow: "hidden auto"}}>
             <div className="like-drop-down">
               <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "62px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}/>
-              <PostLikeIndexSub/>
+              {likeList}
             </div>
           </div>
         ) : (

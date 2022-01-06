@@ -49,7 +49,7 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    let searchList, searchItem;
+    let searchList, searchItem, searchIcon, searchClear;
     if (this.state.searchShown.length === 0 && this.state.searchWord !== '') {
       searchItem = (
         <div className='no-found'>No results found.</div>
@@ -60,7 +60,7 @@ class SearchBar extends React.Component {
         <ul>
           {
             this.state.searchShown.map(searchItem => (
-              <SearchItem key={searchItem.id} user={searchItem}/>
+              <SearchItem user={searchItem}/>
             ))
           }
         </ul>
@@ -68,23 +68,31 @@ class SearchBar extends React.Component {
     }
     if (this.state.searchWord !== '') {
       searchList = (
-        <>
           <div className="search-drop-down">
             <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "175px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}/>
             {searchItem}
           </div>
-          <div className="search-clear" onClick={() => this.setState({ searchWord: '' })}></div>
-        </>
+      )
+      searchClear = (
+        <div className="search-clear" onClick={() => this.setState({ searchWord: '' })}></div>
       )
     }
     else {
-       searchList = (<div className="search-icon"></div>)
+       searchIcon = (
+          <>
+            <svg aria-label="Search" class="search-icon " color="#8e8e8e" fill="#8e8e8e" height="16" role="img" viewBox="0 0 24 24" width="16"><path d="M19 10.5A8.5 8.5 0 1110.5 2a8.5 8.5 0 018.5 8.5z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="16.511" x2="22" y1="16.511" y2="22"></line></svg>
+          </>
+       )
     }
 
     return (
       <>
-        <input type="text" className="search-box" placeholder="  Search" value={this.state.searchWord} onChange={this.updateSearchWord()}/>
-        {searchList}
+        <div className='search-box-container'>
+          <input type="text" className="search-box" placeholder="Search" autoCapitalize='none' value={this.state.searchWord} onChange={this.updateSearchWord()}/>
+          {searchList}
+        {searchIcon}
+        {searchClear}
+        </div>
       </>
     )
   }

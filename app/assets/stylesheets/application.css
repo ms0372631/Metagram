@@ -265,43 +265,78 @@ label {
 }
 
 .brand-img{
-    height: 100%;
+  height: 100%;
   }
 
-.search-box{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 242px;
-    height: 34px;
-    background: rgb(239, 239, 239);
-    border: 0;
-    font-size: 14px;
-    padding: 0 12px;
-    border-radius: 5px;
-    color: rgba(0, 0, 0, 0.5);
-    text-transform: capitalize;
-    align-items: stretch;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    vertical-align: baseline;
+.search-box-container {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  height: 36px;
+  min-width: 125px;
+  width: 268px;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
+
+.search-box{
+  background: rgba(var(--bb2,239,239,239),1);
+  font-size: 16px;
+  border: 0;
+  padding: 3px 32px;
+  z-index: 2;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  line-height: 18px;
+  display: inline-block;
+  text-align: start;
+  cursor: text;
+  z-index: 3;
+}
+
+.search-box-content {
+  display: flex;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  flex-direction: column; 
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.search-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgb(142, 142, 142);
+  fill: rgb(142, 142, 142);
+  height: 16px;
+  width: 16px;
+  z-index: 4;
+}
+
+.search-word {
+  line-height: 25px;
+  display: inline-block;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 
 .search-box::placeholder{
   color: rgba(0, 0, 0, 0.5);
-}
-
-.search-icon {
-  position: relative;
-  right: 50px;
-  background-image: url(https://www.instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png);
-  background-position-x: -428px;
-  background-position-y: -241px;
-  background-size: 440px 411px;
-  height: 10px;
-  width: 10px;
 }
 
 .namecard {
@@ -384,14 +419,16 @@ label {
 }
 
 .search-clear {
-  position: relative;
-  left: 165px;
+  position: absolute;
+  top: 7.5px;
+  left: 235px;
   background-image: url(https://www.instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png);
   background-position-x: -380px;
   background-position-y: -96px;
   background-size: 440px 411px;
   height: 20px;
   width: 20px;
+  z-index: 4;
 }
 
 .fullname {
@@ -460,7 +497,7 @@ label {
 
 .search-drop-down {
   position: absolute;
-  top: 62px;
+  top: 50px;
   width: 375px;
   height: 362px;
   padding: 12px 0 0 0;
@@ -469,7 +506,6 @@ label {
   border-radius: 5px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   z-index: 1px;
-  right: 36.6%;
 }
 
 .nav-items{
@@ -480,7 +516,7 @@ label {
     position: relative;
 }
 
-.icon{
+.nav-icon{
     height: 100%;
     cursor: pointer;
     margin: 0 10px;

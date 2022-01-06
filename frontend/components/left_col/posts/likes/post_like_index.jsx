@@ -43,8 +43,9 @@ class PostLikeIndex extends React.Component {
 
     let likeList, today = [], yesterday = [], week = [], earlier = [];
 
-    for (let i = 0; i < this.props.postLikes[i].length; ++i) {
+    for (let i = 0; i < this.props.postLikes.length; ++i) {
       let time = this.timeSince(this.props.postLikes[i].createdAt);
+      console.log(time);
       if (time[time.length - 1] === 's' ||  time[time.length - 1] === 'm' || time[time.length - 1] === 'h')
         today.push(this.props.postLikes[i]);
       else if (time[time.length - 1] === 'd' && time[time.length - 2] === '1')
@@ -71,16 +72,7 @@ class PostLikeIndex extends React.Component {
 
     return (
       <div className="likes-box-container">
-        {(this.state.toggleStatus) ? (
-          <div style={{height: "362px", overflow: "hidden auto"}}>
-            <div className="like-drop-down">
-              <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "62px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}/>
-              {likeList}
-            </div>
-          </div>
-        ) : (
-          <></>
-        )}
+        {likeList}
       </div>
     )
   }

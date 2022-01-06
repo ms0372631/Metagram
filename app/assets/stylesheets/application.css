@@ -539,6 +539,27 @@ label {
     background-size: cover;
 }
 
+/* post like dropdown */
+.like-drop-down {
+  position: absolute;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 423px;
+  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+  background-color: #ffff;
+  border-radius: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1px;
+  right: -1%;
+}
 /* story */
 
 .main{
@@ -970,6 +991,7 @@ label {
   flex-direction: row;
   align-items: center;
   align-content: stretch;
+  margin: 0;
 }
 
 .modal.profile-pic-container {
@@ -1044,9 +1066,9 @@ label {
   width: 50%;
 }
 
-input[type="file"] {
+/* input[type="file"] {
   display: none;
-}
+} */
 
 .post-create-btn {
   border: 1px soild transparent;

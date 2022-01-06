@@ -15,7 +15,8 @@ class PostDelete extends React.Component {
     const postLikes = this.props.postLikes;
     this.props.deletePost(this.props.post.id);
     for (let i = 0; i < postLikes.length; ++i) {
-      this.props.deletePostLike(this.props.postId, postLikes[i].id);
+      this.props.deletePostLike(this.props.post.id, postLikes[i].id);
+      console.log('yo');
     }
     this.props.closeModal();
   }

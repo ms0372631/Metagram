@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import modal from '../modal';
 import SearchBarContainer from './seach bar/search_bar_container';
+import PostLikeIndexContainer from '../left_col/posts/likes/post_like_index_container';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = ({
-      toggleStatus: false
+      profileToggleStatus: false,
+      likeToggleStatus: false
     });
   }
 
@@ -16,30 +18,30 @@ class NavBar extends React.Component {
   }
 
   dropDown() {
-    if (this.state.toggleStatus) {
+    if (this.state.profileToggleStatus) {
       this.setState({
-        toggleStatus: false
+        profileToggleStatus: false
       });
     }
     else {
       this.setState({
-        toggleStatus: true
+        profileToggleStatus: true
       });
     }
   }
 
   render() {
     
-    let dropDown;
-    if (this.state.toggleStatus === true) {
-      console.log('yes')
+    let profileDropDown;
+    
+    if (this.state.profileToggleStatus === true) {
       dropDown = (
         <div className="profile-drop-down">
           <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "18px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}>
           </div>
           <ul>
             <Link to="/profile">
-              <li onClick={() => this.setState({ toggleStatus: false })}>
+              <li onClick={() => this.setState({ profileToggleStatus: false })}>
                 <svg aria-label="Profile" color="#262626" fill="#262626" height="15" margintop="5px"
                     role="img" viewBox="0 0 32 32" width="15">
                     <path
@@ -76,7 +78,7 @@ class NavBar extends React.Component {
               </svg>
               <a href="#"> Switch Accounts</a>
             </li>
-            <li className="logout"><a href="#" onClick={() => { this.props.logout(); this.setState({ toggleStatus: false }) }}>Log Out</a>
+            <li className="logout"><a href="#" onClick={() => { this.props.logout(); this.setState({ profileToggleStatus: false }) }}>Log Out</a>
             </li>
           </ul>
         </div>
@@ -95,8 +97,12 @@ class NavBar extends React.Component {
         
         <svg className="nav-icon" aria-label="Find People" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><polygon fill="none" points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></polygon><polygon fillRule="evenodd" points="10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056"></polygon><circle cx="12.001" cy="12.005" fill="none" r="10.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></circle></svg>
 
-        <svg className="nav-icon" aria-label="Activity Feed" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"></path></svg>
-        
+        {(this.state.likeToggleStatus) ? (
+          <svg className="nav-icon" aria-label="Activity Feed" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 48 48" width="24" onClick={() => this.setState({ likeToggleStatus: false })}><path d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path></svg>
+        ) : (
+          <svg className="nav-icon" aria-label="Activity Feed" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24" onClick={() => this.setState({ likeToggleStatus: true })}><path d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"></path></svg>
+        )}
+
         <svg className="nav-icon" aria-label="Profile" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24" onClick={() => this.dropDown()}><circle cx="12.004" cy="12.004" fill="none" r="10.5" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></circle><path d="M18.793 20.014a6.08 6.08 0 00-1.778-2.447 3.991 3.991 0 00-2.386-.791H9.38a3.994 3.994 0 00-2.386.791 6.09 6.09 0 00-1.779 2.447" fill="none" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></path><circle cx="12.006" cy="9.718" fill="none" r="4.109" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></circle></svg>
 
       </>
@@ -121,7 +127,11 @@ class NavBar extends React.Component {
           <SearchBarContainer/>
           <div className="nav-items">
             {display}
-            {dropDown}
+            {profileDropDown}
+            {(this.state.likeToggleStatus) ? (
+              <PostLikeIndexContainer toggleStatus={this.state.likeToggleStatus}/> ) : (
+              <></>
+            )}
           </div>
         </div>
       </nav>

@@ -6,13 +6,13 @@ import { requestPostLikes } from '../../../actions/post_like_actions';
 import { deletePostLike } from '../../../actions/post_like_actions';
 
 const mSTP = (state, ownProps) => ({
-  postLikes: Object.values(state.entities.postLikes).filter(postLike => postLike.postId === ownProps.postId)
+  postLikes: Object.values(state.entities.postLikes).filter(postLike => postLike.postId === ownProps.post.id)
 })
 
 const mDTP = dispatch => ({
   requestPostLikes: postId => dispatch(requestPostLikes(postId)),
   deletePost: postId => dispatch(deletePost(postId)),
-  deletePostLike: (postLikeId, postId) => dispatch(deletePostLike(postLikeId, postId)),
+  deletePostLike: (postId, postLikeId) => dispatch(deletePostLike(postId, postLikeId)),
   closeModal: () => dispatch(closeModal())
 })
 

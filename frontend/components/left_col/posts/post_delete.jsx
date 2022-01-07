@@ -28,7 +28,11 @@ class PostDelete extends React.Component {
     return (
       <>
         <div className='deletePost'>
-          <div className='deletePost-content' onClick={() => this.postDelete()}>Delete</div>
+          {(this.props.post.authorId === this.props.currentUser.id) ? (
+            <div className='deletePost-content' onClick={() => this.postDelete()}>Delete</div>
+          ) : (
+            <div className='deletePost-content' style={{color: "rgb(142, 142, 142)"}}>Delete</div>
+          )}
           <div className='deletePost-content' onClick={() => this.props.closeModal()}>Cancel</div>
         </div>
       </>

@@ -11,7 +11,6 @@ class UserShowSub extends React.Component {
   }
 
   componentDidMount() {
-
     this.props.requestPosts();
   }
   
@@ -23,7 +22,7 @@ class UserShowSub extends React.Component {
     
     const posts = this.props.posts.filter(post => post.authorId === this.props.user.id)
 
-    if (posts.length < 3) {
+    if (posts.length < 3 && posts.length > 0) {
       for (let i = 0; i < 3 - posts.length; ++i) {
         photos.push(
         <div className="gallery-item-empty" tabIndex="0"></div>
@@ -40,7 +39,18 @@ class UserShowSub extends React.Component {
           </span>
         </a>
       );
-      postcontent = (
+      postcontent = (posts.length === 0) ? (
+        <div className='no-post-container'>
+          <div className='no-post'>
+            <div className='camera-icon-container'>
+              <span className='camera-icon'></span>
+            </div>
+            <div className='no-post-word-container'>
+              <h1 className='no-post-word'>No Posts Yet</h1>
+            </div>
+          </div>
+        </div>
+        ) : (
         <div className="container">
             <div className="gallery">
               {

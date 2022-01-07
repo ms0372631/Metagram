@@ -7,7 +7,8 @@ import { requestComments, deleteComment } from '../../../actions/comment_actions
 
 const mSTP = (state, ownProps) => ({
   postLikes: Object.values(state.entities.postLikes).filter(postLike => postLike.postId === ownProps.post.id),
-  comments: Object.values(state.entities.comments).filter(comment => comment.postId === ownProps.post.id)
+  comments: Object.values(state.entities.comments).filter(comment => comment.postId === ownProps.post.id),
+  currentUser: state.session.currentUser
 })
 
 const mDTP = dispatch => ({

@@ -19,7 +19,7 @@ class CommentIndexItem extends React.Component {
            (currentUser && this.state.hover && comment.authorId === currentUser.id )? (
             <div className="description-comment">
               <Link to={`/user/${user.id}`}>
-                <span>{user.username}</span> 
+                <span className='description-comment-username'>{user.username}</span> 
               </Link>
               {comment.body}
               <div className='comment-delete' onClick={() => openModal('deleteComment', comment)}></div>
@@ -27,7 +27,7 @@ class CommentIndexItem extends React.Component {
            ) : (
             <div className="description-comment">
               <Link to={`/user/${user.id}`}>
-                <span>{user.username}</span> 
+                <span className='description-comment-username'>{user.username}</span> 
               </Link>
               {comment.body}
             </div>

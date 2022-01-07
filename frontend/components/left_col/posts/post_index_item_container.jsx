@@ -13,7 +13,6 @@ const mSTP = (state, ownProps) => ({
 })
 
 const mDTP = dispatch => ({
-  deletePost: postId => dispatch(deletePost(postId)),
   requestPostLikes: postId => dispatch(requestPostLikes(postId)),
   openModal: (modal, ownProps) => dispatch(openModal(modal, ownProps))
 })

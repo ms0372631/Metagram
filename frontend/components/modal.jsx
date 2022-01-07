@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PostCreateContainer from './nav_bar/posts/post_create_container';
 import PostDeleteContainer from './left_col/posts/post_delete_container';
 import CommentDelete from './left_col/posts/comments/comment_delete';
+import PostItemLikesIndex from './left_col/posts/likes/post_item_likes_index';
 import SessionForm from './session/session_form';
 import login_form_container from './session/login_form_container';
 import { signup } from '../util/session_api_util';
@@ -28,7 +29,9 @@ function Modal({modal, ownProps, closeModal}) {
     case 'login':
       component = <sessionModal closeModal={closeModal}/>;
       break;
-    
+    case "receivePostLikes":
+      component = <PostItemLikesIndex post={ownProps} closeModal={closeModal}/>;
+      break;
     default:
       return null;
   }

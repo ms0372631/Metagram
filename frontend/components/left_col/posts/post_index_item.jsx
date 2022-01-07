@@ -58,16 +58,16 @@ class PostIndexItem extends React.Component {
   }
 
   render () {
-    // if (this.props.post.up)
-    const { post, user, currentUser, createComment, deletePost } = this.props;
+
+    const { post, user, currentUser, createComment, openModal } = this.props;
   
     let likes;
 
     if (this.state.numberofLikes === 1) {
-      likes = (<p className="likes">{this.state.numberofLikes} like</p>)
+      likes = (<p className="likes" onClick={() => openModal('receivePostLikes', post)}>{this.state.numberofLikes} like</p>)
     }
     else if (this.state.numberofLikes > 1) {
-      likes = (<p className="likes">{this.state.numberofLikes} likes</p>)
+      likes = (<p className="likes" onClick={() => openModal('receivePostLikes', post)}>{this.state.numberofLikes} likes</p>)
     }
 
     if (!user)
@@ -84,7 +84,7 @@ class PostIndexItem extends React.Component {
             <p className="username">{user.username}</p>
           </Link>
         </div>
-        <svg aria-label="More options" className="options" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24" onClick={ () => this.props.openModal('deletePost', post)}><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
+        <svg aria-label="More options" className="options" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24" onClick={ () => openModal('deletePost', post)}><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
       </div>
       <img className="post-image" src={post.photoUrl} alt="" />
       <div className="post-content">
@@ -99,7 +99,7 @@ class PostIndexItem extends React.Component {
         {likes}
         <p className="description-post" >
           <Link to={`/user/${user.id}`}>
-            <span>{user.username}</span> 
+            <span className='description-post-username'>{user.username}</span> 
           </Link>
             {post.body}
         </p>

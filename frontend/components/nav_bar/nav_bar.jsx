@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import modal from '../modal';
 import SearchBarContainer from './seach bar/search_bar_container';
-import PostLikeIndexContainer from '../left_col/posts/likes/post_like_index_container';
+import PostLikeIndexContainer from '../nav_bar/post_likes/post_like_index_container';
 
 class NavBar extends React.Component {
   constructor(props) {

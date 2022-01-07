@@ -1046,9 +1046,9 @@ label {
   width: 50%;
 }
 
-/* input[type="file"] {
+input[type="file"] {
   display: none;
-} */
+}
 
 .post-create-btn {
   border: 1px soild transparent;
@@ -1066,6 +1066,8 @@ label {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 18px;
+  z-index: 99;
+  margin-top: 20px;
 }
 
 .post-create-container {
@@ -1886,7 +1888,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
   width: 100%;
 }
 
-.timeframe-content-container:last-child {
+.timeframe:last-child {
   border-bottom: 1px solid lightgray;
 }
 

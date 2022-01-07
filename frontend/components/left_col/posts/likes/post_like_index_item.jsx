@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { requestPosts } from '../../../../actions/post_actions';
 
 class PostLikeIndexItem extends React.Component {
@@ -35,30 +36,34 @@ class PostLikeIndexItem extends React.Component {
 
   render() {
     return (
-      <div className='timeframe-content-container'>
-          <div>
-            <canvas className="timeframe-canvas" height="108" width="108" style={{position: "absolute", top: "-5px", left: "-5px", width: "54px", height: "54px"}}></canvas>
-            <span className='timeframe-profile-container'>
-              <img className="timeframe-profile" src="" alt="" />
-            </span>
-          </div>
-          <div className='timeframe-text'>
-            <span className='timeframe-text-username-container'>
-              <a className='timeframe-text-username'>{this.props.username}</a>
-              <span> liked your post.</span>
-            </span>
-            <time className='timeframe-time'>{this.timeSince(this.props.postLike.createdAt)}</time>
-          </div>
-          <div className='timeframe-image-outside'> 
-            <a className='timeframe-image-container'>
-              <div className='timeframe-image-wrapper'>
-                <div className='timeframe-image'>
-                  <img className="timeframe-img" src={this.props.post.photoUrl} alt="" />
-                </div>
+      <>
+        <Link to={`/user/${this.props.postLike.authorId}`}>
+          <div className='timeframe-content-container'>
+              <div>
+                <canvas className="timeframe-canvas" height="108" width="108" style={{position: "absolute", top: "-5px", left: "-5px", width: "54px", height: "54px"}}></canvas>
+                <span className='timeframe-profile-container'>
+                  <img className="timeframe-profile" src="" alt="" />
+                </span>
               </div>
-            </a>
+              <div className='timeframe-text'>
+                <span className='timeframe-text-username-container'>
+                  <a className='timeframe-text-username'>{this.props.username}</a>
+                  <span> liked your post.</span>
+                </span>
+                <time className='timeframe-time'>{this.timeSince(this.props.postLike.createdAt)}</time>
+              </div>
+              <div className='timeframe-image-outside'> 
+                <a className='timeframe-image-container'>
+                  <div className='timeframe-image-wrapper'>
+                    <div className='timeframe-image'>
+                      <img className="timeframe-img" src={this.props.post.photoUrl} alt="" />
+                    </div>
+                  </div>
+                </a>
+              </div>
           </div>
-      </div>
+        </Link>
+      </>
     )
   }
 }

@@ -781,6 +781,7 @@ label {
 
 .reaction-wrapper .icon.save {
   margin-left: auto;
+  margin-right: 0;
 }
 
 .post-like {
@@ -1434,7 +1435,8 @@ label {
       margin-left: 2rem;
     }
 
-    .user .follow-btn {
+    .follow-btn {
+ 
       background-image: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_2x_77929eccc37e.png/77929eccc37e.png);
       background-position-x: -520px;
       background-position-y: -475px;
@@ -1857,7 +1859,6 @@ emove or comment-out the code block below to see how the browser will fall-back 
   display: block;
   overflow: hidden;
   padding-bottom: 100%;
-
 }
 
 .timeframe-img {
@@ -1883,6 +1884,10 @@ emove or comment-out the code block below to see how the browser will fall-back 
 .timefram-profile {
   height: 100%;
   width: 100%;
+}
+
+.timeframe-content-container:last-child {
+  border-bottom: 1px solid lightgray;
 }
 
 

@@ -18,13 +18,13 @@ class UserIndex extends React.Component {
       <>
         <div className="right-col">
           <div className="profile-card">
-            <Link to={`/user/${currentUser.id}`}>
+            <Link to="/profile">
               <div className="profile-pic">
                 <img src="" alt="" />
               </div>
             </Link>
             <div>
-              <Link to={`/user/${currentUser.id}`}>
+              <Link to={"/profile"}>
                 <p className="username">{currentUser.username}</p>
               </Link>
               <p className="sub-text">{currentUser.fullname}</p>

@@ -695,6 +695,7 @@ label {
 .likes {
   font-weight: bold;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .description-post span {

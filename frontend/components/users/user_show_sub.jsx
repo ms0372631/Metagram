@@ -143,8 +143,8 @@ class UserShowSub extends React.Component {
               <div className="profile-stats">
                 <ul>
                   <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{posts.length}</span> posts</li>
-                  <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{this.props.users.length}</span> followers</li>
-                  <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{this.props.users.length}</span> following</li>
+                  <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{this.props.users.length - 1}</span> followers</li>
+                  <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{this.props.users.length - 1}</span> following</li>
                 </ul>
               </div>
               <div className="profile-bio">

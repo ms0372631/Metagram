@@ -18,7 +18,7 @@ class PostItemLikesIndex extends React.Component {
               <div className="likes-box-header-right-wrapper">
                 <button className="likes-box-header-right-container">
                   <div>
-                    <svg aria-label="Close" className="likes-box-header-right" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="21" x2="3" y1="3" y2="21"></line><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="21" x2="3" y1="21" y2="3"></line></svg>
+                    <svg aria-label="Close" className="likes-box-header-right" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24" onClick={() => this.props.closeModal()}><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="21" x2="3" y1="3" y2="21"></line><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="21" x2="3" y1="21" y2="3"></line></svg>
                   </div>
                 </button>
               </div>
@@ -42,5 +42,6 @@ class PostItemLikesIndex extends React.Component {
 const mSTP = (state, ownProps) => ({
   postLikes: Object.values(state.entities.postLikes).filter(postLike => postLike.postId === ownProps.post.id)
 })
+
 
 export default connect(mSTP, null)(PostItemLikesIndex);

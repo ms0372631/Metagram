@@ -1126,7 +1126,6 @@ input[type="file"] {
 
 .user *, .user *::before, .user *::after {
   box-sizing: border-box;
-  
 }
 
 .user body {
@@ -1136,9 +1135,9 @@ input[type="file"] {
   padding-bottom: 3em;
 }
 
-.user img {
+/* .user img {
   display: block;
-}
+} */
 
 .user .container {
   max-width: 93.5em;
@@ -1189,7 +1188,6 @@ input[type="file"] {
 
 .user .profile-pic img {
   border-radius: 50%;
-  display: block;
 }
 
 .user .profile-user-settings,
@@ -1858,7 +1856,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
   position: relative;
 }
 
-.timeframe-text {
+.timeframe-header-text {
   display: block;
   color: rgba(var(--i1d,38,38,38),1);
   font-weight: 600;
@@ -1879,7 +1877,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
   align-items: center;
   flex-direction: row;
   min-height: 40px;
-  padding: 12px 16px 13px;
+  padding: 12px 16px 12px;
   position: relative;
   border: 0 solid #000;
   box-sizing: border-box;
@@ -1965,8 +1963,9 @@ emove or comment-out the code block below to see how the browser will fall-back 
 }
 
 .timeframe-img {
-  height: 100%;
+  height: 40px;
   left: 0;
+  object-fit: cover;
   position: absolute;
   top: 0;
   user-select: none;
@@ -1989,7 +1988,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
   width: 100%;
 }
 
-.timeframe:last-child {
+.timeframe-word-container:last-child {
   border-bottom: 1px solid lightgray;
 }
 

@@ -6,7 +6,7 @@ export default ({user}) => (
   <>
     <Link to={`user/${user.id}`}>
       <div className="namecard">
-        <canvas style={{position: "absolute", top: "-100px", left: "-5px", width: "54px", height: "54px"}}></canvas>
+        <canvas style={{position: "absolute", top: "-100px", left: "-5px", width: "52px", height: "52px"}}></canvas>
         <img className="profile-pic" src="" alt="" />
         <div className='name'>
           <div className='search-username-container'>

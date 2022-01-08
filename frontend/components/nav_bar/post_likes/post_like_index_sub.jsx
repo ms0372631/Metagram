@@ -21,7 +21,7 @@ class PostLikeIndexSub extends React.Component {
       <div className='timeframe'>
         <div className='timeframe-word-container'>
           <div className='timeframe-word'>
-            <div className='timeframe-text'>{this.props.timeFrame}</div>
+            <div className='timeframe-header-text'>{this.props.timeFrame}</div>
           </div>
           {
             sortedPostLikes.map(postLike => (

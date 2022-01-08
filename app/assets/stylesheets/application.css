@@ -1242,6 +1242,59 @@ input[type="file"] {
   font-weight: 300;
 }
 
+.following-btn-wrapper {
+  flex: 1 0 auto;
+  margin-right: 8px;
+  margin-left: 20px;
+  display: block;
+  position: relative;
+}
+
+.following-btn-container {
+  height: 100%;
+  padding: 0 24px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(var(--i1d,38,38,38),1);
+  border: 1px solid rgba(var(--d69,0,149,246),1);
+  border: 1px solid rgba(var(--d69,0,149,246),1);
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  outline: 0;
+  margin-left: 20px;
+  line-height: 26px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+  height: 30px;
+  width: 74px; 
+  border-color: #dbdbdb;
+}
+
+.following-btn {
+  height: 28px;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  box-sizing: border-box;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  color: rgba(var(--i1d,38,38,38),1);
+}
+
+.following-btn-img {
+  background-image: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_2x_77929eccc37e.png/77929eccc37e.png);
+  background-size: 569px 521px;
+  background-position: -520px -475px;
+  height: 12px;
+  width: 24px;
+}
+
 .user .profile-edit-btn {
   font-size: 1.4em;
   line-height: 1.8;

@@ -23,7 +23,7 @@ class UserIndex extends React.Component {
                 <img src="" alt="" />
               </div>
             </Link>
-            <div>
+            <div style={{paddingRight: "65px"}}>
               <Link to={"/profile"}>
                 <p className="username">{currentUser.username}</p>
               </Link>

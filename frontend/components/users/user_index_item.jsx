@@ -9,7 +9,7 @@ const UserIndexItem = ({user}) => {
         <img src="" alt="" />
       </Link>
     </div>
-    <div>
+    <div style={{paddingRight: "70px"}}>
       <Link to={`/user/${user.id}`}>
         <p className="username">{user.username}</p>
       </Link>

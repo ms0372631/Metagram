@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import modal from '../modal';
 import SearchBarContainer from './seach bar/search_bar_container';
 import PostLikeIndexContainer from '../nav_bar/post_likes/post_like_index_container';
+import { $CombinedState } from 'redux';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -15,6 +16,16 @@ class NavBar extends React.Component {
 
   componentDidMount() {
  
+  }
+
+  hide(e) {
+    if (e && e.relatedTarget) {
+      e.relatedTarget.click();
+    }
+    this.setState({
+      profileToggleStatus: false,
+      likeToggleStatus: false
+    })
   }
 
   dropDown() {
@@ -41,7 +52,7 @@ class NavBar extends React.Component {
           </div>
           <ul>
             <Link to="/profile">
-              <li onClick={() => this.setState({ profileToggleStatus: false })}>
+              <li onClick={() => this.setState({ profileToggleStatus: false, likeToggleStatus: false })}>
                 <svg aria-label="Profile" color="#262626" fill="#262626" height="15" margintop="5px"
                     role="img" viewBox="0 0 32 32" width="15">
                     <path
@@ -78,7 +89,7 @@ class NavBar extends React.Component {
               </svg>
               <a href="#"> Switch Accounts</a>
             </li>
-            <li className="logout"><a href="#" onClick={() => { this.props.logout(); this.setState({ profileToggleStatus: false }) }}>Log Out</a>
+            <li className="logout"><a href="#" onClick={() => { this.props.logout(); this.setState({ profileToggleStatus: false, likeToggleStatus: false }) }}>Log Out</a>
             </li>
           </ul>
         </div>
@@ -103,17 +114,18 @@ class NavBar extends React.Component {
           <svg className="nav-icon" aria-label="Activity Feed" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24" onClick={() => this.setState({ likeToggleStatus: true })}><path d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"></path></svg>
         )}
 
-        <svg className="nav-icon" aria-label="Profile" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24" onClick={() => this.dropDown()}><circle cx="12.004" cy="12.004" fill="none" r="10.5" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></circle><path d="M18.793 20.014a6.08 6.08 0 00-1.778-2.447 3.991 3.991 0 00-2.386-.791H9.38a3.994 3.994 0 00-2.386.791 6.09 6.09 0 00-1.779 2.447" fill="none" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></path><circle cx="12.006" cy="9.718" fill="none" r="4.109" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></circle></svg>
+        <svg className="nav-icon" aria-label="Profile" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24" onBlur={this.hide} onClick={() => this.dropDown()}><circle cx="12.004" cy="12.004" fill="none" r="10.5" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></circle><path d="M18.793 20.014a6.08 6.08 0 00-1.778-2.447 3.991 3.991 0 00-2.386-.791H9.38a3.994 3.994 0 00-2.386.791 6.09 6.09 0 00-1.779 2.447" fill="none" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></path><circle cx="12.006" cy="9.718" fill="none" r="4.109" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></circle></svg>
 
       </>
     ) : (
       <div className="session-bar">
-          <Link className="session-btn" to="/signup">
-            <button type="button">
-              Sign Up
+          <Link to="/signup">
+            <button className="signup-btn" type="button">Sign Up
             </button>
           </Link>
-          <Link to="/login">Log In</Link>
+          <Link to="/login">
+            <div className='login-btn'>Log In</div>
+          </Link>
       </div>
     );
     
@@ -129,7 +141,7 @@ class NavBar extends React.Component {
             {display}
             {profileDropDown}
             {(this.state.likeToggleStatus) ? (
-              <PostLikeIndexContainer toggleStatus={this.state.likeToggleStatus}/> ) : (
+              <PostLikeIndexContainer onBlur={this.hide} toggleStatus={this.state.likeToggleStatus}/> ) : (
               <></>
             )}
           </div>

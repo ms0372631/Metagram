@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { requestPosts } from '../../../actions/post_actions';
+
 class PostLikeIndexItem extends React.Component {
   constructor(props) {
     super(props);

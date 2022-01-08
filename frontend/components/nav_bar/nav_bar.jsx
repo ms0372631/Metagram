@@ -133,8 +133,8 @@ class NavBar extends React.Component {
       <>
       <nav className="navbar">
         <div className="nav-wrapper">
-          <Link style={{height: "100%", marginTop: "5px"}} to="/">
-            <img className="brand-img" src="https://res.cloudinary.com/dpx0kwaoi/image/upload/v1638262822/logo_qb03ym.png" alt="Logo"></img>
+          <Link style={{height: "100%", marginTop: "25px"}} to="/">
+            <img className="brand-img" style={{height: "29px", width: "103px"}} src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" alt="Logo"></img>
           </Link>
           <SearchBarContainer/>
           <div className="nav-items">

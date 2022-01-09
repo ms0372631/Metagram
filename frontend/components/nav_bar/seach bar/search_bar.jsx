@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
       searchWord: '',
       searchShown: []
     });
+    this.clearSearchWord = this.clearSearchWord.bind(this);
   }
 
   componentDidMount() {
@@ -42,6 +43,12 @@ class SearchBar extends React.Component {
     }
   }
 
+  clearSearchWord() {
+    this.setState({
+      searchWord: ''
+    })
+  }
+
   updateSearchWord() {
     return e => this.setState({
       searchWord: e.currentTarget.value
@@ -60,7 +67,7 @@ class SearchBar extends React.Component {
         <ul>
           {
             this.state.searchShown.map(searchItem => (
-              <SearchItem key={searchItem.id} user={searchItem}/>
+              <SearchItem key={searchItem.id} user={searchItem} clearSearchWord={this.clearSearchWord}/>
             ))
           }
         </ul>

@@ -7,7 +7,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-  requestUsers: () => dispatch(requestUsers())
+  requestUsers: () => dispatch(requestUsers()),
 });
 
 export default connect(mSTP, mDTP)(SearchBar);

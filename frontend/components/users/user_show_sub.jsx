@@ -140,7 +140,7 @@ class UserShowSub extends React.Component {
               <div className="profile-user-settings">
                 <div style={{display: 'flex', flexDirection: 'row'}}>
                   <h1 className="profile-user-name">{this.props.user.username}</h1>
-                  <div clasName="following-btn-wrapper">
+                  <div className="following-btn-wrapper">
                     <button className='following-btn-container'>
                       <div className='following-btn'>
                         <span className='following-btn-img'></span>

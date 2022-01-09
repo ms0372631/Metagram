@@ -78,7 +78,7 @@ class PostIndexItem extends React.Component {
       <div className="info">
         <div className="user">
           <Link to={ user.id === currentUser.id ? ("/profile") : (`/user/${user.id}`) }>
-            <div className="profile-pic"><img src="" alt="" /></div>
+            <div className="profile-pic"><img src={user.photoUrl} alt="" /></div>
           </Link>
           <Link to={ user.id === currentUser.id ? ("/profile") : (`/user/${user.id}`) }>
             <p className="username">{user.username}</p>

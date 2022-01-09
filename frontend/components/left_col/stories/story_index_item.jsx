@@ -6,7 +6,7 @@ export default ({user}) => (
     <Link to={`user/${user.id}`}>
       <div className="status-card">
         <div className="profile-pic">
-          <img src="" alt="" />
+          <img src={user.photoUrl} alt="" />
         </div>
         <p className="username">{user.username}</p>
       </div>

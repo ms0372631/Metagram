@@ -27,5 +27,3 @@
 /config/master.key
 
 bundle.js*
-
-/db/seeds.rb

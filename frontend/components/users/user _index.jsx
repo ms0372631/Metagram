@@ -20,7 +20,7 @@ class UserIndex extends React.Component {
           <div className="profile-card">
             <Link to="/profile">
               <div className="profile-pic">
-                <img src="" alt="" />
+                <img src={currentUser.photoUrl} alt="" />
               </div>
             </Link>
             <div style={{paddingRight: "65px"}}>

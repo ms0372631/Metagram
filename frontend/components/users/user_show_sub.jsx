@@ -134,30 +134,38 @@ class UserShowSub extends React.Component {
         <div className="user">
           <div className="container">
             <div className="profile">
-              <div className="profile-image">
-                <img src="" alt="" />
-              </div>
-              <div className="profile-user-settings">
-                <div style={{display: 'flex', flexDirection: 'row'}}>
-                  <h1 className="profile-user-name">{this.props.user.username}</h1>
-                  <div className="following-btn-wrapper">
-                    <button className='following-btn-container'>
-                      <div className='following-btn'>
-                        <span className='following-btn-img'></span>
-                      </div>
+              <div className="profile-image-wrapper">
+                <div className='profile-image-container'>
+                  <div className='profile-image-pic'>
+                    <button className='profile-image-btn'>
+                      <img className="profile-image-content" src={this.props.user.photoUrl} alt="" />
                     </button>
                   </div>
                 </div>
               </div>
-              <div className="profile-stats">
-                <ul>
-                  <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{posts.length}</span> posts</li>
-                  <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{this.props.users.length - 1}</span> followers</li>
-                  <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{this.props.users.length - 1}</span> following</li>
-                </ul>
-              </div>
-              <div className="profile-bio">
-                <p><span className="profile-real-name">{this.props.user.fullname}</span></p>
+              <div style={{display: "flex", flexDirection: 'column'}}>
+                <div className="profile-user-settings">
+                  <div style={{display: 'flex', flexDirection: 'row'}}>
+                    <h1 className="profile-user-name">{this.props.user.username}</h1>
+                    <div className="following-btn-wrapper">
+                      <button className='following-btn-container'>
+                        <div className='following-btn'>
+                          <span className='following-btn-img'></span>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="profile-stats">
+                  <ul>
+                    <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{posts.length}</span> posts</li>
+                    <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{this.props.users.length - 1}</span> followers</li>
+                    <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{this.props.users.length - 1}</span> following</li>
+                  </ul>
+                </div>
+                <div className="profile-bio">
+                  <p><span className="profile-real-name">{this.props.user.fullname}</span></p>
+                </div>
               </div>
             </div>
             <div className="select-type">

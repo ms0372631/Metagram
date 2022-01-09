@@ -7,7 +7,7 @@ const SearchItem = ({user, currentUser, clearSearchWord}) => (
   <Link to={ user.id == currentUser.id ? ("/profile") : `user/${user.id}` }>
     <div className="namecard" onClick={() => clearSearchWord()}>
       <canvas style={{position: "absolute", top: "-100px", left: "-5px", width: "52px", height: "52px"}}></canvas>
-      <img className="profile-pic" src="" alt="" />
+      <img className="profile-pic" src={user.photoUrl} alt="" />
       <div className='name'>
         <div className='search-username-container'>
           <div className="search-username">{user.username}</div>

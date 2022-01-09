@@ -4,8 +4,9 @@ import SearchItem from './search_item'
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = ({
-      searchWord: '',
+      searchWord: this.props.searchState,
       searchShown: []
     });
     this.clearSearchWord = this.clearSearchWord.bind(this);

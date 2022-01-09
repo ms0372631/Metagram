@@ -114,7 +114,7 @@ class PostCreate extends React.Component {
               <div className='modal username-container'>
                 <div className="modal profile-pic-container">
                   <span className="_2dbep " role="link" tabIndex="-1" style={{width:'28px', height: '28px'}}>
-                    <img alt="" className="modal profile-pic" crossOrigin="anonymous" datazztestid="user-avatar" draggable="false" src=""/>
+                    <img alt="" className="modal profile-pic" crossOrigin="anonymous" datazztestid="user-avatar" draggable="false" src={this.props.currentUser.photoUrl}/>
                   </span>
               </div>
                 <div className="modal username">{this.props.currentUser.fullname}</div>

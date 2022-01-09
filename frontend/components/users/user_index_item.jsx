@@ -6,7 +6,7 @@ const UserIndexItem = ({user}) => {
   <div className="profile-card">
     <div className="profile-pic">
       <Link to={`/user/${user.id}`}>
-        <img src="" alt="" />
+        <img src={user.photoUrl} alt="" />
       </Link>
     </div>
     <div style={{paddingRight: "70px"}}>

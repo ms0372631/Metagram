@@ -1292,6 +1292,7 @@ input[type="file"] {
   top: 0;
   width: 100%;
   cursor: pointer;
+  object-fit: cover;
 }
 
 

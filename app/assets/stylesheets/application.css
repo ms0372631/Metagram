@@ -1945,7 +1945,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
 }
 
 .deletePost-content:not( :first-child) {
-  color: rgba(38, 38, 38);
+  color: rgb(38, 38, 38);
   font-weight: 400;
   font-size: 14px;
   background-color: transparent;

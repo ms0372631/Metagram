@@ -668,6 +668,7 @@ label {
   text-align: center;
   font-size: 12px;
   margin-top: 5px;
+  padding-bottom: 1px;
   color: black
 }
 
@@ -1870,7 +1871,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
   color: rgba(0, 0, 0, 0.5);
   font-size: 12px;
   font-weight: 500;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 .action-btn {
@@ -2171,7 +2172,9 @@ emove or comment-out the code block below to see how the browser will fall-back 
 .timeframe-profile {
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
+
 
 .timeframe-word-container:last-child {
   border-bottom: 1px solid lightgray;

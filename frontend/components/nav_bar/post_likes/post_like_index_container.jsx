@@ -5,7 +5,7 @@ import { requestPostLikes } from "../../../actions/post_like_actions";
 
 const mSTP = state => ({
   currentUser: state.session.currentUser,
-  postLikes: Object.values(state.entities.postLikes).filter(postLike => postLike.receiverId === state.session.currentUser.id),
+  postLikes: Object.values(state.entities.postLikes).filter(postLike => postLike.receiverId === state.session.currentUser.id && postLike.authorId !== state.session.currentUser.id),
 });
 
 const mDTP = dispatch => ({

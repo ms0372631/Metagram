@@ -28,7 +28,7 @@ class PostItemLikesIndex extends React.Component {
             <div className="likes-box-content-container" style={{height: "356px", overflow: "hidden auto"}}>
               <div className="likes-box-content" style={{flexDirection: "column", paddingBottom: "65px", paddingTop: "0px"}}>
                 {this.props.postLikes.map(postLike => (
-                  <PostItemLikesIndexItem key={postLike.id} postLike={postLike}/>
+                  <PostItemLikesIndexItem key={postLike.id} postLike={postLike} currentUser={this.props.currentUser}/>
                 ))}
               </div>
             </div>
@@ -40,6 +40,7 @@ class PostItemLikesIndex extends React.Component {
 }
 
 const mSTP = (state, ownProps) => ({
+  currentUser: state.session.currentUser,
   postLikes: Object.values(state.entities.postLikes).filter(postLike => postLike.postId === ownProps.post.id)
 })
 

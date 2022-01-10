@@ -35,7 +35,11 @@ class PostItemLikesIndexItem extends React.Component {
               </div>
             </div>
             <div className="likes-box-btn-container">
-              <button className="likes-box-btn">Following</button>
+              {(this.props.currentUser.id === this.props.user.id) ? (
+                <></>
+              ) : (
+                <button className="likes-box-btn">Following</button>
+              )}
             </div>
           </div>
         </Link>

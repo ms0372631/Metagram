@@ -6,14 +6,19 @@ class SearchBar extends React.Component {
     super(props);
     console.log(this.props);
     this.state = ({
-      searchWord: this.props.searchState,
+      searchWord: '',
       searchShown: []
     });
     this.clearSearchWord = this.clearSearchWord.bind(this);
   }
 
-  componentDidMount() {
-    this.props.requestUsers();
+  componentDidUpdate(prevProps, prevState) {
+    console.log('yo');
+    if (prevProps.dropDownStatus != this.props.dropDownStatus) {
+      this.setState({
+        searchWord: ''
+      })
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {

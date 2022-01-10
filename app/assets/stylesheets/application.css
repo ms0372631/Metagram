@@ -555,7 +555,7 @@ label {
   width: 375px;
   height: 362px;
   padding: 12px 0 0 0;
-  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   background-color: #ffff;
   border-radius: 5px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -1979,7 +1979,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
   padding: 0;
   width: 500px;
   height: 423px;
-  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   background-color: #ffff;
   border-radius: 5px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

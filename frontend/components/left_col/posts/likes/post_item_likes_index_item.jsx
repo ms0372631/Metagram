@@ -42,7 +42,7 @@ class PostItemLikesIndexItem extends React.Component {
               )}
             </div>
           </div>
-        </Link>
+        </Link> 
       </>
     )
   }

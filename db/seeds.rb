@@ -15,5 +15,5 @@ User.create(username: 'docstrange', email: 'drstrange@email.com', fullname: 'Doc
 User.create(username: 'taylorswift', email: 'tswift@email.com', fullname: 'Taylor Swift', password: 'tttttt', photo_url: 'https://res.cloudinary.com/dpx0kwaoi/image/upload/v1641783486/collage-1616576914.jpg_uqdljs.jpg')
 User.create(username: 'thisisbillgates', email: 'bgate@email.com', fullname: 'Bill Gates', password: 'bbbbbb', photo_url: 'https://res.cloudinary.com/dpx0kwaoi/image/upload/v1641784857/Bill_Gates_2017__28cropped_29_fi86oz.jpg')
 User.create(username: 'kanyewest', email: 'ye@email.com', fullname: 'ye', password: 'kkkkkk', photo_url: 'https://res.cloudinary.com/dpx0kwaoi/image/upload/v1641784959/1200px-Kanye_West_at_the_2009_Tribeca_Film_Festival_yszul9.jpg')
-User.create(username: '', email: '', fullname: '', password: '', photo_url: '')
-User.create(username: '', email: '', fullname: '', password: '', photo_url: '')
+# User.create(username: '', email: '', fullname: '', password: '', photo_url: '')
+# User.create(username: '', email: '', fullname: '', password: '', photo_url: '')

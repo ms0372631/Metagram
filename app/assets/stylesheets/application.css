@@ -2379,6 +2379,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
   width: 100%;
   cursor: pointer;
   color: rgba(var(--fe0,0,55,107),1);
+  object-fit: cover;
 }
 
 .likes-box-user-container {

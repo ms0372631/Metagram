@@ -17,7 +17,7 @@ class PostItemLikesIndexItem extends React.Component {
                 <div className="likes-box-img-content">
                   <canvas className="likes-box-canvas" height="108" width="108" style={{position: "absolute", top: "-5px", left: "-5px", width: "54px", height: "54px"}}></canvas>
                   <a className="likes-box-img" href="">
-                    <img className="likes-box-profile-pic" src="" alt="" />
+                    <img className="likes-box-profile-pic" src={this.props.user.photoUrl} alt="" />
                   </a>
                 </div>
               </div>

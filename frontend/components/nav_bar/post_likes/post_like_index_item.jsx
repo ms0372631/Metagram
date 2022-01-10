@@ -42,12 +42,12 @@ class PostLikeIndexItem extends React.Component {
               <div>
                 <canvas className="timeframe-canvas" height="108" width="108" style={{position: "absolute", top: "-5px", left: "-5px", width: "54px", height: "54px"}}></canvas>
                 <span className='timeframe-profile-container'>
-                  <img className="timeframe-profile" src="" alt="" />
+                  <img className="timeframe-profile" src={this.props.user.photoUrl} alt="" />
                 </span>
               </div>
               <div className='timeframe-text'>
                 <span className='timeframe-text-username-container'>
-                  <a className='timeframe-text-username'>{this.props.username}</a>
+                  <a className='timeframe-text-username'>{this.props.user.username}</a>
                   <span> liked your post.</span>
                 </span>
                 <time className='timeframe-time'>{this.timeSince(this.props.postLike.createdAt)}</time>
@@ -70,7 +70,7 @@ class PostLikeIndexItem extends React.Component {
 
 const mSTP = (state, ownProps) => ({
   post: state.entities.posts[ownProps.postLike.postId],
-  username: state.entities.users[ownProps.postLike.authorId].username
+  user: state.entities.users[ownProps.postLike.authorId]
 })
 
 const mDTP = dispatch => ({

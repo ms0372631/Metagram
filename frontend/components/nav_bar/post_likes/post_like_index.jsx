@@ -37,26 +37,31 @@ class PostLikeIndex extends React.Component {
   }
 
   render() {
-    if (this.props.postLikes.length === 0)
-      return '';
-
     let likeList, today = [], yesterday = [], week = [], earlier = [];
-
-    for (let i = 0; i < this.props.postLikes.length; ++i) {
-      let time = this.timeSince(this.props.postLikes[i].createdAt);
-      console.log(time);
-      if (time[time.length - 1] === 's' ||  time[time.length - 1] === 'm' || time[time.length - 1] === 'h')
-        today.push(this.props.postLikes[i]);
-      else if (time[time.length - 1] === 'd' && time[time.length - 2] === '1')
-        yesterday.push(this.props.postLikes[i]);
-      else if (time[time.length - 1] === 'd')
-        week.push(this.props.postLikes[i]);
-      else
-        earlier.push(this.props.postLikes[i]);
-    }
-
-    if (this.state.toggleStatus) {
+    if (this.props.postLikes.length === 0)
       likeList = (
+        <div className="like-drop-down">
+          <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "62px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}/>
+          <div className="no-activity">No activities yet.</div>
+        </div>
+      )
+
+    else {
+      for (let i = 0; i < this.props.postLikes.length; ++i) {
+        let time = this.timeSince(this.props.postLikes[i].createdAt);
+        console.log(time);
+        if (time[time.length - 1] === 's' ||  time[time.length - 1] === 'm' || time[time.length - 1] === 'h')
+          today.push(this.props.postLikes[i]);
+        else if (time[time.length - 1] === 'd' && time[time.length - 2] === '1')
+          yesterday.push(this.props.postLikes[i]);
+        else if (time[time.length - 1] === 'd')
+          week.push(this.props.postLikes[i]);
+        else
+          earlier.push(this.props.postLikes[i]);
+      }
+
+      if (this.state.toggleStatus) {
+        likeList = (
           <div className="like-drop-down">
             <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "62px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}/>
             <PostLikeIndexSub timeFrame={'Today'} postLikes={today}/>
@@ -64,8 +69,9 @@ class PostLikeIndex extends React.Component {
             <PostLikeIndexSub timeFrame={'This Week'} postLikes={week}/>
             <PostLikeIndexSub timeFrame={'Earlier'} postLikes={earlier}/>
           </div>
-      )
-    }
+        )
+      }
+    }  
 
     return (
       <div className="likes-box-square">

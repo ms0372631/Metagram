@@ -41,7 +41,7 @@ class PostLikeIndex extends React.Component {
     if (this.props.postLikes.length === 0)
       likeList = (
         <div className="like-drop-down">
-          <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "62px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}/>
+          <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "62px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgba(0 0 0 / 10%)"}}/>
           <div className="no-activity">No activities yet.</div>
         </div>
       )
@@ -63,7 +63,7 @@ class PostLikeIndex extends React.Component {
       if (this.state.toggleStatus) {
         likeList = (
           <div className="like-drop-down">
-            <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "62px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}/>
+            <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "62px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgba(0 0 0 / 10%)"}}/>
             <PostLikeIndexSub timeFrame={'Today'} postLikes={today}/>
             <PostLikeIndexSub timeFrame={'Yesterday'} postLikes={yesterday}/>
             <PostLikeIndexSub timeFrame={'This Week'} postLikes={week}/>

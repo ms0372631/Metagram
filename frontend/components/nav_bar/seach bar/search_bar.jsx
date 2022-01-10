@@ -82,7 +82,7 @@ class SearchBar extends React.Component {
     if (this.state.searchWord !== '') {
       searchList = (
           <div className="search-drop-down">
-            <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "175px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgb(0 0 0 / 10%)"}}/>
+            <div className="square" style={{width: "15px", height: "15px", backgroundColor: "#ffffff", position: "absolute", top: "-8px", right: "175px", zIndex: "0", transform: "rotateZ(45deg)", boxShadow: "-2px -2px 2px 0px rgba(0 0 0 / 10%)"}}/>
             <div className='search-box-wrapper'>
               {searchItem}
             </div>

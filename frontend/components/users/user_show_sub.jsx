@@ -17,7 +17,7 @@ class UserShowSub extends React.Component {
   render() {
 
     let photos = [], postsState, videosState, savedState, taggedState, postcontent;
-    if (!this.props.user || !this.props.posts)
+    if (!this.props.posts)
       return '';
     
     const posts = this.props.posts.filter(post => post.authorId === this.props.user.id)
@@ -147,13 +147,16 @@ class UserShowSub extends React.Component {
                 <div className="profile-user-settings">
                   <div style={{display: 'flex', flexDirection: 'row'}}>
                     <h1 className="profile-user-name">{this.props.user.username}</h1>
-                    <div className="following-btn-wrapper">
-                      <button className='following-btn-container'>
-                        <div className='following-btn'>
-                          <span className='following-btn-img'></span>
-                        </div>
-                      </button>
-                    </div>
+                    {this.props.user.id !== this.props.currentUser.id ? (
+                      <div className="following-btn-wrapper">
+                        <button className='following-btn-container'>
+                          <div className='following-btn'>
+                            <span className='following-btn-img'></span>
+                          </div>
+                        </button>
+                      </div>) : (
+                      <></>
+                    )}
                   </div>
                 </div>
                 <div className="profile-stats">

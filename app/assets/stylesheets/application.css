@@ -429,6 +429,7 @@ label {
   left: -20px;
   margin: 0 12px 0 0;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .namecard .name {
@@ -995,12 +996,14 @@ label {
 }
 
 .modal.image {
+  position: relative;
   display: flex;
+  align-items: stretch;
   box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  flex-direction: column;
+  flex-shrink: 0;
   width: 100%;
+  height: auto;
 }
 
 .modal.bottom-right {
@@ -1054,6 +1057,7 @@ label {
   margin-right: 12px;
   padding: 0;
   position: relative;
+
 }
 
 .modal.profile-pic {
@@ -1066,10 +1070,12 @@ label {
   overflow: hidden;
   position: relative;
   padding: 0;
+  object-fit: cover;
 }
 
 .modal.text-area {
   height: 24px !important;
+  width: auto;
   background: 0 0;
   border: 0;
   overflow: auto;
@@ -1090,6 +1096,7 @@ label {
   column-count: initial !important;
   justify-content: flex-start;
   vertical-align: top;
+
 }
 
 

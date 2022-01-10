@@ -8,7 +8,7 @@ const mSTP = (state, ownProps) => {
 //     _comments = [state.entities.comments]
 //  ents = Object.values(state.entities.comments)
   return {
-  comments: Object.values(state.entities.comments)
+  comments: Object.values(state.entities.comments).filter(comment => comment.postId === ownProps.post.id)
 }}
 
 const mDTP = dispatch => ({

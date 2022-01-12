@@ -17,4 +17,4 @@ const followingReducer = (state = {}, action) => {
   }
 }
 
-export default followingReducer;
+export default followingsReducer;

@@ -11,10 +11,18 @@ class PostIndex extends React.Component {
 
   render() {
 
+    const sortedPosts = this.props.posts.sort(function(a, b) {
+      var keyA = new Date(a.updatedAt), keyB = new Date(b.updatedAt);
+      if (keyA < keyB)
+        return 1;
+      else
+        return -1;
+    });
+
     return (
       <>
         {
-          this.props.posts.map(post => (
+          sortedPosts.map(post => (
             <PostIndexItemContainer 
               key={post.id} 
               post={post} 

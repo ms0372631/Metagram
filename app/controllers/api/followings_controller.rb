@@ -23,9 +23,9 @@ class Api::FollowingsController < ApplicationController
   end
 
   def destroy
-    @following = @Following.find(params[:id])
+    @following = Following.find(params[:id])
     if @following.delete
-      render 'api/following/show'
+      render 'api/followings/show'
     else
       render json: @following.errors.full_messages
     end
@@ -33,7 +33,7 @@ class Api::FollowingsController < ApplicationController
 
   private
 
-  def following
+  def following_params
     params.require(:following).permit(:receiver_id, :author_id)
   end
 

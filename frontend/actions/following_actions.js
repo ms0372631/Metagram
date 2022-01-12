@@ -1,4 +1,4 @@
-import * FollowingAPIUtil from '../util/following_api_util';
+import * as FollowingAPIUtil from '../util/following_api_util';
 
 export const RECEIVE_FOLLOWINGS = 'RECEIVE_FOLLOWINGS';
 export const RECEIVE_FOLLOWING = 'RECEIVE_FOLLOWING';
@@ -10,7 +10,7 @@ export const receiveFollowings = followings => ({
   followings
 })
 
-export const receievFollowing = following => ({
+export const receiveFollowing = following => ({
   type: RECEIVE_FOLLOWING,
   following
 })
@@ -20,7 +20,7 @@ export const removeFollowing = following => ({
   following
 })
 
-export const receievFollowingErrors = errors => ({
+export const receiveFollowingErrors = errors => ({
   type: RECEIVE_FOLLOWING_ERRORS,
   errors
 })
@@ -28,7 +28,7 @@ export const receievFollowingErrors = errors => ({
 export const requestFollowings = followingId => dispatch => (
   FollowingAPIUtil.fetchFollowings(followingId)
   .then(followings => dispatch(receiveFollowings(followings)))
-  .fail(err => dispatch(receievFollowingErrors(err)))
+  .fail(err => dispatch(receiveFollowingErrors(err)))
 )
 
 export const requestFollowing = (userId, followingId) => dispatch => (
@@ -44,7 +44,7 @@ export const createFollowing = (following, userId) => dispatch => (
 )
 
 export const deleteFollowing = (userId, followingId) => dispatch => (
-  FollowingAPI.deleteFollowing(userId, followingId)
+  FollowingAPIUtil.deleteFollowing(userId, followingId)
   .then(following => dispatch(removeFollowing(following)))
   .fail(err => dispatch(receiveFollowingErrors(err)))
 )

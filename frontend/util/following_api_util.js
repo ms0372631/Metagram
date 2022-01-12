@@ -16,12 +16,12 @@ export const fetchFollowing = (userId, followingId) => (
 export const createFollowing = (following, userId) => (
   $.ajax({
     method: 'POST',
-    url: `api/users/${userId}/followings`
+    url: `api/users/${userId}/followings`,
     data: { following }
   })
 )
 
-export const deleteFollowing = ( userId, followingId ) => (
+export const deleteFollowing = (userId, followingId) => (
   $.ajax({
     method: 'DELETE',
     url: `api/users/${userId}/followings/${followingId}`

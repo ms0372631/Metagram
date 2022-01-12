@@ -135,8 +135,8 @@ class NavBar extends React.Component {
       <>
       <nav className="navbar">
         <div className="nav-wrapper">
-          <Link style={{height: "100%", marginTop: "25px"}} to="/">
-            <img className="brand-img" style={{height: "29px", width: "103px"}} src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" alt="Logo"></img>
+          <Link style={{height: "100%", marginTop: "30px"}} to="/">
+            <img className="brand-img" style={{height: "29px", width: "103px"}} src="https://fontmeme.com/permalink/220112/008758525d0a2369b874036af4922a3a.png" alt="Logo"></img>
           </Link>
           <SearchBarContainer dropDownStatus={this.state.profileToggleStatus || this.state.likeToggleStatus}/>
           <div className="nav-items">

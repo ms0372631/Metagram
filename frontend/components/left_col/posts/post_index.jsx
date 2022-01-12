@@ -7,11 +7,21 @@ class PostIndex extends React.Component {
   }
   componentDidMount() {
     this.props.requestPosts();
+    this.props.requestFollowings();
   }
 
   render() {
+   
+    const {followings, posts} = this.props;
 
-    const sortedPosts = this.props.posts.sort(function(a, b) {
+    let followingPosts = [];
+    for (let i = 0; i < followings.length; ++i) {
+      for (let j = 0; j < posts.length; ++j) {
+        if (followings[i].receiverId === posts[j].authorId)
+          followingPosts.push(posts[j]);
+      }
+    }
+    const sortedPosts = followingPosts.sort(function(a, b) {
       var keyA = new Date(a.updatedAt), keyB = new Date(b.updatedAt);
       if (keyA < keyB)
         return 1;

@@ -1,12 +1,13 @@
 import { connect } from "react-redux";
 import FollowingCreate from "./following_create";
-import { createFollowing, deleteFollowing } from "../../../actions/following_actions";
+import { createFollowing, deleteFollowing, requestFollowings } from "../../../actions/following_actions";
 
-const mSTP = state => ({
-  
+const mSTP = (state, ownProps) => ({
+  followings: Object.values(state.entities.followings)
 })
 
 const mDTP = dispatch => ({
+  requestFollowings: () => dispatch(requestFollowings()),
   createFollowing: (following, userId) => dispatch(createFollowing(following, userId)),
   deleteFollowing: (userId, followingId) => dispatch(deleteFollowing(userId, followingId))
 })

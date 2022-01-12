@@ -8,7 +8,19 @@ class FollowingCreate extends React.Component {
       author_id: this.props.currentUser.id,
       receiver_id: this.props.user.id
     }
+    console.log(this.props.followingId)
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.requestFollowings()
+    .then(
+      () => {
+        this.setState({
+          followingId: this.props.followings.length === 0 ? 0 : (this.props.followings.length === 0 ? 0 : this.props.followings.filter(following => following.receiverId === this.props.user.id)[0].id)
+        })
+      }
+    )
   }
 
   handleSubmit(e) {

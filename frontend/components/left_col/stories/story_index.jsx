@@ -9,15 +9,27 @@ class StoryIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestUsers();
+    this.props.requestFollowings();
   }
 
   render() {
-    if (Object.keys(this.props.users).length === 0)
+
+    const {users, followings} = this.props;
+
+    if (Object.keys(users).length === 0)
       return "";
- 
+    
+    let followingStories = [];
+    for (let i = 0; i < users.length; ++i) {
+      for (let j = 0; j < followings.length; ++j) {
+        if (users[i].id === followings[j].receiverId)
+          followingStories.push(users[i]);
+      }
+    }
+      
     return (
       <div className="status-wrapper">
-        {this.props.users.map(user => 
+        {followingStories.map(user => 
           <StoryIndexItem key={user.id} user={user}/>
         )}
       </div>

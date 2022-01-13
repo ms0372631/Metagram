@@ -8,7 +8,7 @@ const followingsReducer = (state = {}, action) => {
       nextState[action.following.id] = action.following;
       return nextState;
     case RECEIVE_FOLLOWINGS:
-      return Object.assign({}, action.followings);
+      return Object.assign(nextState, action.followings);
     case REMOVE_FOLLOWING:
       delete nextState[action.following.id];
       return nextState;

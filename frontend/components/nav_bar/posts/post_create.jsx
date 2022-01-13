@@ -114,7 +114,7 @@ class PostCreate extends React.Component {
               <div className='modal username-container'>
                 <div className="modal profile-pic-container">
                   <span className="_2dbep " role="link" tabIndex="-1" style={{width:'28px', height: '28px'}}>
-                    <img alt="" className="modal profile-pic" crossOrigin="anonymous" datazztestid="user-avatar" draggable="false" src={this.props.currentUser.photoUrl ? this.props.currentUser.photoUrl : "https://instagram.fbho4-2.fna.fbcdn.net/v/t51.2885-19/44884218_345707102882519_2446069589734326272_n.jpg?_nc_ht=instagram.fbho4-2.fna.fbcdn.net&_nc_cat=1&_nc_ohc=wXe0UPuQ03kAX8cJBSZ&edm=AEA5CHQBAAAA&ccb=7-4&ig_cache_key=YW5vbnltb3VzX3Byb2ZpbGVfcGlj.2-ccb7-4&oh=00_AT-QiXa_SldO27w2D6vSaPMXtm244ZbJi8ipFGK0DONYaA&oe=61E579CF&_nc_sid=75d5da"}/>
+                    <img alt="" className="modal profile-pic" crossOrigin="anonymous" datazztestid="user-avatar" draggable="false" src={this.props.currentUser.photoUrl ? this.props.currentUser.photoUrl : "https://res.cloudinary.com/dpx0kwaoi/image/upload/v1642084849/44884218_345707102882519_2446069589734326272_n.jpg_samy6y.jpg"}/>
                   </span>
               </div>
                 <div className="modal username">{this.props.currentUser.fullname}</div>

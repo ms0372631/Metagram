@@ -21,7 +21,7 @@ class FollowingDelete extends React.Component {
             <div className="unfollow-profile-wrapper">
               <div className="unfollow-profile-container">
                 <div className="unfollow-profile">
-                  <img className="unfollow-img" src={this.props.user.photoUrl} alt="" />
+                  <img className="unfollow-img" src={this.props.user.photoUrl ? this.props.user.photoUrl : "https://res.cloudinary.com/dpx0kwaoi/image/upload/v1642084849/44884218_345707102882519_2446069589734326272_n.jpg_samy6y.jpg"} alt="" />
                 </div>
               </div>
             </div>

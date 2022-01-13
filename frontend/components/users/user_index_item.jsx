@@ -41,7 +41,7 @@ class UserIndexItem extends React.Component {
           <p className="sub-text">Suggested For you</p>
         </div>
         {(followStatus) ? (
-          <button className="action-btn">Following</button>
+          <div className="unfollow-btn">Following</div>
         ) : (
           <button className="action-btn" onClick={() => createFollowing(following, user.id)}>Follow</button>
         )}

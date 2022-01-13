@@ -1894,6 +1894,18 @@ emove or comment-out the code block below to see how the browser will fall-back 
   opacity: 1;
   font-weight: 700;
   margin-top: 12px;
+  font-size: 14px;
+  text-align: right;
+}
+
+.unfollow-btn {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  margin: -2px 0 -3px;
+  text-align: right;
+  cursor: pointer;
 }
 
 .suggestion-text {

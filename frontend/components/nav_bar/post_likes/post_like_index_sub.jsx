@@ -12,7 +12,7 @@ class PostLikeIndexSub extends React.Component {
       return '';
 
     const sortedPostLikes = this.props.postLikes.sort(function(a, b) {
-      var keyA = new Date(a.updatedAt), keyB = new Date(b.updatedAt);
+      var keyA = new Date(a.createdAt), keyB = new Date(b.creatededAt);
       if (keyA < keyB) return 1;
       else return -1;
     });

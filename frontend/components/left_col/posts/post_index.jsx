@@ -22,7 +22,7 @@ class PostIndex extends React.Component {
       }
     }
     const sortedPosts = followingPosts.sort(function(a, b) {
-      var keyA = new Date(a.updatedAt), keyB = new Date(b.updatedAt);
+      var keyA = new Date(a.createdAt), keyB = new Date(b.createdAt);
       if (keyA < keyB)
         return 1;
       else

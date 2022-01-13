@@ -28,7 +28,6 @@ class UserIndexItem extends React.Component {
         break;
       }
     }
-    console.log(followStatus)
     return (
       <div className="profile-card">
         <div className="profile-pic">

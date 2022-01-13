@@ -4,7 +4,6 @@ import SearchItem from './search_item'
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = ({
       searchWord: '',
       searchShown: []
@@ -13,7 +12,6 @@ class SearchBar extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('yo');
     if (prevProps.dropDownStatus != this.props.dropDownStatus) {
       this.setState({
         searchWord: ''

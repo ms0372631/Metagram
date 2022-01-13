@@ -63,7 +63,6 @@ class PostCreate extends React.Component {
   }
 
   postCreateButton(e) {
-    console.log('o')
     const PostCreateContainerEl = e.target.parentElement;
     PostCreateContainerEl.querySelector('#file-upload').click();
   }

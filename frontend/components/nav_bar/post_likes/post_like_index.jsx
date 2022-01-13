@@ -49,7 +49,6 @@ class PostLikeIndex extends React.Component {
     else {
       for (let i = 0; i < this.props.postLikes.length; ++i) {
         let time = this.timeSince(this.props.postLikes[i].createdAt);
-        console.log(time);
         if (time[time.length - 1] === 's' ||  time[time.length - 1] === 'm' || time[time.length - 1] === 'h')
           today.push(this.props.postLikes[i]);
         else if (time[time.length - 1] === 'd' && time[time.length - 2] === '1')

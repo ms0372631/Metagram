@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import FollowingCreateContainer from '../left_col/followings.jsx/following_create_container';
+import FollowingCreateContainer from '../left_col/followings/following_create_container';
 import UserShowItem from './user_show_item'
 
 class UserShowSub extends React.Component {

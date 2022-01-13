@@ -5,12 +5,11 @@ import PostCreateContainer from './nav_bar/posts/post_create_container';
 import PostDeleteContainer from './left_col/posts/post_delete_container';
 import CommentDelete from './left_col/posts/comments/comment_delete';
 import PostItemLikesIndex from './left_col/posts/likes/post_item_likes_index';
-import FollowingDelete from './left_col/followings.jsx/following_delete';
+import FollowingDelete from './left_col/followings/following_delete';
 import SessionForm from './session/session_form';
 import login_form_container from './session/login_form_container';
 import { signup } from '../util/session_api_util';
 import signup_form_container from './session/signup_form_container';
-import following_delete from './left_col/followings.jsx/following_delete';
 
 function Modal({modal, ownProps, closeModal}) {
   if (!modal) {

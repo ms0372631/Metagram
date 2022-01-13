@@ -19,8 +19,8 @@ class UserIndexItem extends React.Component {
     if (this.props.followings.length === 0)
       return '';
 
-    const {user, followings, createFollowing, currentUser} = this.props;
-    let followingItem = followings.filter(following => following.receiverId === user.id)[0]
+    const {user, followings, createFollowing, currentUser, openModal} = this.props;
+    const followingItem = Object.assign({}, followings.filter(following => following.receiverId === user.id)[0])
     
     let followStatus;
     const following = Object.assign({}, {author_id: currentUser.id, receiver_id: user.id})

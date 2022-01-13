@@ -22,7 +22,7 @@ class PostIndex extends React.Component {
         for (let i = 0; i < followings.length; ++i) {
           if (followings[i].receiverId === posts[j].authorId || (posts[j].authorId === currentUser.id && !flag))
             followingPosts.push(posts[j]);
-          if (posts[j].authorId === this.props.currentUser.id)
+          if (posts[j].authorId === currentUser.id)
             flag = true
         }
       }

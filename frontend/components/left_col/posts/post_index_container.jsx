@@ -15,7 +15,7 @@ const mSTP = state => ({
 const mDTP = dispatch => ({
   requestPosts: () => dispatch(requestPosts()),
   requestUsers: () => dispatch(requestUsers()),
-  requestFollowings: userId => dispatch(requestFollowings(userId)),
+  requestFollowings: () => dispatch(requestFollowings()),
   updatePost: post => dispatch(updatePost(post)),
   deletePost: postId => dispatch(deletePost(postId)),
   createComment: (comment, postId) => dispatch(createComment(comment, postId))

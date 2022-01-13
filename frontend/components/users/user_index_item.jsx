@@ -11,7 +11,7 @@ class UserIndexItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestFollowings(this.props.currentUser.id);
+    this.props.requestFollowings();
   }
 
   render() {
@@ -58,7 +58,7 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-  requestFollowings: userId => dispatch(requestFollowings(userId)),
+  requestFollowings: () => dispatch(requestFollowings()),
   createFollowing: (following, userId) => dispatch(createFollowing(following, userId)),
   openModal: (modal, ownProps) => dispatch(openModal(modal, ownProps))
 })

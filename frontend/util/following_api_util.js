@@ -1,8 +1,15 @@
 
-export const fetchFollowings = userId => (
+// export const fetchFollowings = userId => (
+//   $.ajax({
+//     method: 'GET',
+//     url: `api/users/${userId}/followings`
+//   })
+// )
+
+export const fetchFollowings = () => (
   $.ajax({
     method: 'GET',
-    url: `api/users/${userId}/followings`
+    url: 'api/followings'
   })
 )
 

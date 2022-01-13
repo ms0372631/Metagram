@@ -13,6 +13,7 @@ class UserShowSub extends React.Component {
 
   componentDidMount() {
     this.props.requestPosts();
+    this.props.requestFollowings();
   }
   
   render() {
@@ -20,6 +21,9 @@ class UserShowSub extends React.Component {
     let photos = [], postsState, videosState, savedState, taggedState, postcontent;
     if (!this.props.posts)
       return '';
+
+    let followers = this.props.followings.filter(following => following.receiverId === this.props.user.id).length;
+    let followings = this.props.followings.filter(following => following.authorId === this.props.user.id).length;
     
     const posts = this.props.posts.filter(post => post.authorId === this.props.user.id)
 
@@ -158,8 +162,8 @@ class UserShowSub extends React.Component {
                 <div className="profile-stats">
                   <ul>
                     <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{posts.length}</span> posts</li>
-                    <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{this.props.users.length - 1}</span> followers</li>
-                    <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{this.props.users.length - 1}</span> following</li>
+                    <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{followers}</span> followers</li>
+                    <li><span className="profile-stat-count" style={{fontWeight: "600"}}>{followings}</span> following</li>
                   </ul>
                 </div>
                 <div className="profile-bio">

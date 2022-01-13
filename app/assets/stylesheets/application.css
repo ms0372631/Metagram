@@ -2619,6 +2619,7 @@ emove or comment-out the code block below to see how the browser will fall-back 
     height: 90px;
     aspect-ratio: auto 90 / 90;
     width: 90px;
+    object-fit: cover;
 }
 
 .unfollow-text-wrapper {

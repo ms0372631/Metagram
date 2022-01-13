@@ -8,7 +8,7 @@ const mSTP = (state, ownProps) => ({
 })
 
 const mDTP = dispatch => ({
-  requestFollowings: userId => dispatch(requestFollowings(userId)),
+  requestFollowings: () => dispatch(requestFollowings()),
   createFollowing: (following, userId) => dispatch(createFollowing(following, userId)),
   deleteFollowing: (userId, followingId) => dispatch(deleteFollowing(userId, followingId))
 })

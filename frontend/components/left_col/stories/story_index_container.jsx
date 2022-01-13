@@ -11,7 +11,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
   requestUsers: () => dispatch(requestUsers()),
-  requestFollowings: userId => dispatch(requestFollowings(userId))
+  requestFollowings: () => dispatch(requestFollowings())
 });
 
 export default connect(mSTP, mDTP)(StoryIndex);

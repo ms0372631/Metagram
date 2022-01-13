@@ -25,8 +25,8 @@ export const receiveFollowingErrors = errors => ({
   errors
 })
 
-export const requestFollowings = followingId => dispatch => (
-  FollowingAPIUtil.fetchFollowings(followingId)
+export const requestFollowings = () => dispatch => (
+  FollowingAPIUtil.fetchFollowings()
   .then(followings => dispatch(receiveFollowings(followings)))
   .fail(err => dispatch(receiveFollowingErrors(err)))
 )

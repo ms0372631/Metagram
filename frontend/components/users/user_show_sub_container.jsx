@@ -2,22 +2,21 @@
 import { connect } from 'react-redux';
 import UserShowSub from './user_show_sub';
 import { requestPosts, updatePost, deletePost} from '../../actions/post_actions';
-import { requestUsers } from '../../actions/user_actions'
+import { requestFollowings } from "../../actions/following_actions";
+
 
 const mSTP = (state, ownProps) => {
   return {
-  // state.entities.users[ownProps.match.params.userId],
     posts: Object.values(state.entities.posts),
-    users: Object.values(state.entities.users),
-    currentUser: state.session.currentUser
-  // .filter(post => post.authorId === ownProps.match.params.userId)
+    currentUser: state.session.currentUser,
+    followings: Object.values(state.entities.followings)
 }};
 
 const mDTP = dispatch => ({
   requestPosts: () => dispatch(requestPosts()),
-  requestUsers: () => dispatch(requestUsers()),
   updatePost: post => dispatch(updatePost(post)),
-  deletePost: postId => dispatch(deletePost(postId))
+  deletePost: postId => dispatch(deletePost(postId)),
+  requestFollowings: () => dispatch(requestFollowings())
 });
 
 export default connect(mSTP, mDTP)(UserShowSub);

@@ -1,4 +1,5 @@
 import React from "react";
+import following_delete from "../followings/following_delete";
 import PostIndexItemContainer from './post_index_item_container';
 
 class PostIndex extends React.Component {
@@ -15,10 +16,13 @@ class PostIndex extends React.Component {
     const {followings, posts} = this.props;
 
     let followingPosts = [];
-    for (let i = 0; i < followings.length; ++i) {
-      for (let j = 0; j < posts.length; ++j) {
-        if (followings[i].receiverId === posts[j].authorId)
+    for (let j = 0; j < posts.length; ++j) {
+      let flag = false;
+      for (let i = 0; i < followings.length; ++i) {
+        if (followings[i].receiverId === posts[j].authorId || (posts[j].authorId === this.props.currentUser.id && !flag))
           followingPosts.push(posts[j]);
+        if (posts[j].authorId === this.props.currentUser.id)
+          flag = true
       }
     }
     const sortedPosts = followingPosts.sort(function(a, b) {

@@ -18,11 +18,16 @@ class PostIndex extends React.Component {
     let followingPosts = [];
     for (let j = 0; j < posts.length; ++j) {
       let flag = false;
-      for (let i = 0; i < followings.length; ++i) {
-        if (followings[i].receiverId === posts[j].authorId || (posts[j].authorId === this.props.currentUser.id && !flag))
-          followingPosts.push(posts[j]);
-        if (posts[j].authorId === this.props.currentUser.id)
-          flag = true
+      if (followings.length !== 0) {
+        for (let i = 0; i < followings.length; ++i) {
+          if (followings[i].receiverId === posts[j].authorId || (posts[j].authorId === this.props.currentUser.id && !flag))
+            followingPosts.push(posts[j]);
+          if (posts[j].authorId === this.props.currentUser.id)
+            flag = true
+        }
+      }
+      else {
+        followingPosts = posts;
       }
     }
     const sortedPosts = followingPosts.sort(function(a, b) {

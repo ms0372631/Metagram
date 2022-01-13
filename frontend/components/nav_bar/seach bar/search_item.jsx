@@ -12,7 +12,7 @@ const SearchItem = ({user, currentUser, clearSearchWord}) => (
         <div className='search-username-container'>
           <div className="search-username">{user.username}</div>
         </div>
-        {user.id !== currentUser.id ? (<div className="fullname">{user.fullname} • following</div>) : (<div className="fullname">{user.fullname}</div>)}
+        <div className="fullname">{user.fullname}</div>
       </div>
     </div>
   </Link>

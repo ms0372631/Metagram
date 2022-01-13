@@ -15,23 +15,20 @@ class UserIndexItem extends React.Component {
   }
 
   render() {
-
-    if (this.props.followings.length === 0)
-      return '';
-
-    const {user, followings, createFollowing, currentUser, openModal} = this.props;
-    const followingItem = Object.assign({}, followings.filter(following => following.receiverId === user.id)[0])
     
-    let followStatus;
+    const {user, followings, createFollowing, currentUser, openModal} = this.props;
+    const followingItem = followings.filter(following => following.receiverId === user.id)[0]
     const following = Object.assign({}, {author_id: currentUser.id, receiver_id: user.id})
+    
+    let followStatus = false;
 
     for (let i = 0; i < followings.length; ++i) {
       if (followings[i].receiverId === user.id) {
-        followStatus = true
+        followStatus = true;
         break;
       }
     }
-    
+    console.log(followStatus)
     return (
       <div className="profile-card">
         <div className="profile-pic">

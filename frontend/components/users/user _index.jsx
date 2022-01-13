@@ -11,7 +11,7 @@ class UserIndex extends React.Component {
   render() {
     const {users, currentUser, logout} = this.props;
     
-    if (!currentUser)
+    if (!currentUser || !users || users.length === 0)
       return ''
 
     return (

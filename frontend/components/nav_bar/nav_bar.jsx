@@ -82,7 +82,7 @@ class NavBar extends React.Component {
               </svg>
               <a href="#"> Settings</a>
             </li>
-            <li>
+            <li onClick={() => { this.props.logout(); this.setState({ profileToggleStatus: false, likeToggleStatus: false })}}>
               <svg aria-label="Switch Accounts" className="_8-yf5 " color="#262626" fill="#262626"
                   height="16" role="img" viewBox="0 0 32 32" width="16">
                   <path
@@ -91,7 +91,7 @@ class NavBar extends React.Component {
               </svg>
               <a href="#"> Switch Accounts</a>
             </li>
-            <li className="logout"><a href="#" onClick={() => { this.props.logout(); this.setState({ profileToggleStatus: false, likeToggleStatus: false }) }}>Log Out</a>
+            <li className="logout" onClick={() => { this.props.logout(); this.setState({ profileToggleStatus: false, likeToggleStatus: false })}}><a href="#" >Log Out</a>
             </li>
           </ul>
         </div>

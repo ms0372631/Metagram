@@ -539,6 +539,7 @@ label {
 }
 
 .profile-drop-down .logout {
+  cursor: pointer;
   border-top: 1px solid #dbdbdb;
 }
 .profile-drop-down .logout a{

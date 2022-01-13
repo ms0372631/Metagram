@@ -23,7 +23,7 @@ class UserIndexItem extends React.Component {
     let followStatus = false;
 
     for (let i = 0; i < followings.length; ++i) {
-      if (followings[i].receiverId === user.id) {
+      if (followings[i].receiverId === user.id && followings[i].author_id === currentUser.id) {
         followStatus = true;
         break;
       }

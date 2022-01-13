@@ -9,7 +9,7 @@ class StoryIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestUsers();
-    this.props.requestFollowings();
+    this.props.requestFollowings(this.props.currentUser.id);
   }
 
   render() {

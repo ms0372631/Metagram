@@ -13,7 +13,7 @@ class FollowingCreate extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestFollowings()
+    this.props.requestFollowings(this.props.currentUser.id)
     .then(
       () => {
         this.setState({

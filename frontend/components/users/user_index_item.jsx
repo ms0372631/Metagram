@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { requestFollowings } from "../../actions/following_actions";
 import { createFollowing } from "../../actions/following_actions";
+import { openModal } from "../../actions/modal_actions";
 
 class UserIndexItem extends React.Component {
   constructor(props) {
@@ -10,13 +11,17 @@ class UserIndexItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestFollowings();
+    this.props.requestFollowings(this.props.currentUser.id);
   }
 
   render() {
 
-    const {user, followings, createFollowing, currentUser} = this.props;
+    if (this.props.followings.length === 0)
+      return '';
 
+    const {user, followings, createFollowing, currentUser} = this.props;
+    let followingItem = followings.filter(following => following.receiverId === user.id)[0]
+    
     let followStatus;
     const following = Object.assign({}, {author_id: currentUser.id, receiver_id: user.id})
 
@@ -41,7 +46,7 @@ class UserIndexItem extends React.Component {
           <p className="sub-text">Suggested For you</p>
         </div>
         {(followStatus) ? (
-          <div className="unfollow-btn">Following</div>
+          <div className="unfollow-btn" onClick={() => openModal('deleteFollowing', followingItem)}>Following</div>
         ) : (
           <button className="action-btn" onClick={() => createFollowing(following, user.id)}>Follow</button>
         )}
@@ -56,8 +61,9 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-  requestFollowings: () => dispatch(requestFollowings()),
-  createFollowing: (following, userId) => dispatch(createFollowing(following, userId))
+  requestFollowings: userId => dispatch(requestFollowings(userId)),
+  createFollowing: (following, userId) => dispatch(createFollowing(following, userId)),
+  openModal: (modal, ownProps) => dispatch(openModal(modal, ownProps))
 })
 
 export default connect(mSTP, mDTP)(UserIndexItem);

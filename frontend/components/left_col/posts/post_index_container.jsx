@@ -8,13 +8,14 @@ import PostIndex from "./post_index";
 const mSTP = state => ({
   followings: Object.values(state.entities.followings).filter(following => following.authorId === state.session.currentUser.id),
   posts: Object.values(state.entities.posts),
-  users: Object.values(state.entities.users)
+  users: Object.values(state.entities.users),
+  currentUser: state.session.currentUser
 })
 
 const mDTP = dispatch => ({
   requestPosts: () => dispatch(requestPosts()),
   requestUsers: () => dispatch(requestUsers()),
-  requestFollowings: () => dispatch(requestFollowings()),
+  requestFollowings: userId => dispatch(requestFollowings(userId)),
   updatePost: post => dispatch(updatePost(post)),
   deletePost: postId => dispatch(deletePost(postId)),
   createComment: (comment, postId) => dispatch(createComment(comment, postId))

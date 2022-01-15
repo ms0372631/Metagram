@@ -576,6 +576,42 @@ label {
     display: inline-block;
 }
 
+.profile-toggle {
+  border: 1px solid rgba(var(--i1d,38,38,38),1);
+  border-radius: 50%;
+  height: 28px;
+  left: 91.5%;
+  position: absolute;
+  top: 54%;
+  transform: translate(-50%,-50%);
+  width: 28px;
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.profile-container {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-color: rgba(var(--b3f,250,250,250),1);
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: block;
+  flex: 0 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.navbar-profile-img {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+
 .error_messages {
   margin-bottom: 0.5rem;
   inline-size: 16rem;

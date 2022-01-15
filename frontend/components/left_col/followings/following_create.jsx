@@ -16,7 +16,7 @@ class FollowingCreate extends React.Component {
     .then(
       () => {
         this.setState({
-          followingId: this.props.followings.length === 0 ? 0 : (this.props.followings.length === 0 ? 0 : this.props.followings.filter(following => following.receiverId === this.props.user.id)[0].id)
+          followingId: this.props.followings.length === 0 ? 0 : (this.props.followings.filter(following => following.receiverId === this.props.user.id && following.authorId === this.props.currentUser.id).length === 0 ? 0 : this.props.followings.filter(following => following.receiverId === this.props.user.id && following.authorId === this.props.currentUser.id)[0].id)
         })
       }
     )

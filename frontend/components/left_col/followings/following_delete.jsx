@@ -35,7 +35,7 @@ class FollowingDelete extends React.Component {
               </div>
             </div>
             <div className="unfollow-button-container">
-              <button className="unfollow-modal-button" onClick={() => { this.props.deleteFollowing(this.props.currentUser.id, this.props.following.id); this.props.closeModal(); }}>Unfollow</button>
+              <button className="unfollow-modal-button" onClick={() => { this.props.deleteFollowing(this.props.user.id, this.props.following.id); this.props.closeModal(); }}>Unfollow</button>
               <button className="unfollow-modal-cancel" onClick={() => this.props.closeModal()}>Cancel</button>
             </div>
           </div>

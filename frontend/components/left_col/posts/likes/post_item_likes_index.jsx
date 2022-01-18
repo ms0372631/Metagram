@@ -1,10 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import PostItemLikesIndexItem from "./post_item_likes_index_item";
+import { requestFollowings } from "../../../../actions/following_actions";
 
 class PostItemLikesIndex extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    this.props.requestFollowings();
   }
 
   render() {
@@ -28,7 +33,7 @@ class PostItemLikesIndex extends React.Component {
             <div className="likes-box-content-container" style={{height: "356px", overflow: "hidden auto"}}>
               <div className="likes-box-content" style={{flexDirection: "column", paddingBottom: "65px", paddingTop: "0px"}}>
                 {this.props.postLikes.map(postLike => (
-                  <PostItemLikesIndexItem key={postLike.id} postLike={postLike} currentUser={this.props.currentUser}/>
+                  <PostItemLikesIndexItem key={postLike.id} postLike={postLike} currentUser={this.props.currentUser} closeModal={this.props.closeModal} followings={this.props.followings.filter(following => following.authorId === this.props.currentUser.id)}/>
                 ))}
               </div>
             </div>
@@ -41,8 +46,12 @@ class PostItemLikesIndex extends React.Component {
 
 const mSTP = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  postLikes: Object.values(state.entities.postLikes).filter(postLike => postLike.postId === ownProps.post.id)
+  postLikes: Object.values(state.entities.postLikes).filter(postLike => postLike.postId === ownProps.post.id),
+  followings: Object.values(state.entities.followings)
 })
 
+const mDTP = dispatch => ({
+  requestFollowings: () => dispatch(requestFollowings())
+})
 
-export default connect(mSTP, null)(PostItemLikesIndex);
+export default connect(mSTP, mDTP)(PostItemLikesIndex);

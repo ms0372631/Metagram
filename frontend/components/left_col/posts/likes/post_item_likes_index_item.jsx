@@ -8,10 +8,11 @@ class PostItemLikesIndexItem extends React.Component {
   }
 
   render() {
+  
     return (
       <>
         <Link to={`/user/${this.props.user.id}`}>
-          <div className="likes-box-item-container">
+          <div className="likes-box-item-container" onClick={() => this.props.closeModal()}>
             <div className="likes-box-img-wrapper">
               <div className="likes-box-img-container">
                 <div className="likes-box-img-content">
@@ -35,10 +36,10 @@ class PostItemLikesIndexItem extends React.Component {
               </div>
             </div>
             <div className="likes-box-btn-container">
-              {(this.props.currentUser.id === this.props.user.id) ? (
-                <></>
-              ) : (
+              {(this.props.currentUser.id !== this.props.user.id && this.props.followings.filter(following => following.receiverId === this.props.user.id).length) ? (
                 <button className="likes-box-btn">Following</button>
+              ) : (
+                <></>
               )}
             </div>
           </div>

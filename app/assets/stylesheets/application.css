@@ -81,7 +81,7 @@ a {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 6rem;
   font-size: 14px;
 }
 
@@ -580,7 +580,7 @@ label {
   border: 1px solid rgba(var(--i1d,38,38,38),1);
   border-radius: 50%;
   height: 28px;
-  left: 91.5%;
+  left: 91.75%;
   position: absolute;
   top: 54%;
   transform: translate(-50%,-50%);

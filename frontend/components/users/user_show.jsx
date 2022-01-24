@@ -1,6 +1,7 @@
 import React from 'react';
 import UserShowSubContainer from './user_show_sub_container';
 import NavBarContainer from '../nav_bar/nav_bar_container';
+import Footer from '../footer/footer';
 
 class UserShow extends React.Component {
   constructor(props) {

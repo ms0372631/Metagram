@@ -25,7 +25,13 @@ class UserShowSub extends React.Component {
     let followers = this.props.followings.filter(following => following.receiverId === this.props.user.id).length;
     let followings = this.props.followings.filter(following => following.authorId === this.props.user.id).length;
     
-    const posts = this.props.posts.filter(post => post.authorId === this.props.user.id)
+    const posts = this.props.posts.filter(post => post.authorId === this.props.user.id).sort(function(a, b) {
+      var keyA = new Date(a.createdAt), keyB = new Date(b.createdAt);
+      if (keyA < keyB)
+        return 1;
+      else
+        return -1;
+    });
 
     if (posts.length < 3 && posts.length > 0) {
       for (let i = 0; i < 3 - posts.length; ++i) {

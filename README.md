@@ -1,6 +1,6 @@
-# Metagram
+[Live Demo](https://meta-gram.herokuapp.com/#/)
 
-Live Demo(https://meta-gram.herokuapp.com/#/)
+# Metagram
 
 Welcome to Metagram, an cloned website of the social media platform, Instagram, where the users are allowed to create account, view all posts from all the users in the post index page, create posts with images and leave comments on any post.
 # Technologies

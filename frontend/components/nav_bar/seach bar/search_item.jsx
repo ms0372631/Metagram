@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
 const SearchItem = ({user, currentUser, clearSearchWord}) => (
-  <Link to={ user.id == currentUser.id ? ("/profile") : `user/${user.id}` }>
+  <Link to={ user.id == currentUser.id ? ("/profile") : `/user/${user.id}` }>
     <div className="namecard" onClick={() => clearSearchWord()}>
       <canvas style={{position: "absolute", top: "-100px", left: "-5px", width: "52px", height: "52px"}}></canvas>
       <img className="profile-pic" src={user.photoUrl ? user.photoUrl : "https://res.cloudinary.com/dpx0kwaoi/image/upload/v1642084849/44884218_345707102882519_2446069589734326272_n.jpg_samy6y.jpg"} alt="" />

@@ -23,6 +23,26 @@ Welcome to Metagram, an cloned website of the social media platform, Instagram, 
 - User can create posts with an image and description that would be shown both on the index page and user profile page
 
 
+## Ability to like a post
+
+- User can like any post that shows on the news feed
+
+
+## Ability to follow/unfollow a user
+
+- User can follow someone to see all his/her posts on the news feed and vice vera
+
+
 ## Ability to view the number of comments and posts on user profile page
 
 - User can see the number of posts and the number of comments of each post when hoverd over
+
+
+## Ability to view the users who likes a post
+
+- User can see the all the users who like a specific post and the following status of each user
+
+## Ability to view the activites in chronological order
+
+- User can see the all the likes received with timeline
+
